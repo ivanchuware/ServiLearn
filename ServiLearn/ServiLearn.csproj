@@ -67,6 +67,12 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="ONG.cs" />
+    <Compile Include="PantallaCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaCurso.Designer.cs">
+      <DependentUpon>PantallaCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaCurso.resx">
+      <DependentUpon>PantallaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
