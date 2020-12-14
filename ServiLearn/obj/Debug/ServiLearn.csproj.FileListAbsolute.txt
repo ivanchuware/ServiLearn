@@ -8,3 +8,12 @@ C:\Users\aaron\source\repos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.Ge
 C:\Users\aaron\source\repos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CoreCompileInputs.cache
 C:\Users\aaron\source\repos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
 C:\Users\aaron\source\repos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csprojAssemblyReference.cache
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Login.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Main.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Form1.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Properties.Resources.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.GenerateResource.cache
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CoreCompileInputs.cache
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
