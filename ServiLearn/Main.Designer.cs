@@ -29,9 +29,7 @@ namespace ServiLearn
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -43,11 +41,6 @@ namespace ServiLearn
             this.label1.Size = new System.Drawing.Size(343, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "ServiLearn";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Main
             // 
@@ -65,6 +58,5 @@ namespace ServiLearn
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
