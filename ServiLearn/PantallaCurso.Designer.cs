@@ -1,7 +1,7 @@
 ﻿
 namespace ServiLearn
 {
-    partial class Form1
+    partial class PantallaCurso
     {
         /// <summary>
         /// Required designer variable.
