@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ServiLearn
 {
-    public partial class Form1 : Form
+    public partial class PantallaCurso : Form
     {
-        public Form1()
+        public PantallaCurso()
         {
             InitializeComponent();
         }
