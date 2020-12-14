@@ -46,10 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="Curso.cs" />
     <Compile Include="Docente.cs" />
     <Compile Include="Error.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
