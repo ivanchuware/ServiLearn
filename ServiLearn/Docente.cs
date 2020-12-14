@@ -54,38 +54,6 @@ namespace ServiLearn
             return lista;
         }
 
-        public string Nombre
-        {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Docente SET Nombre = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                nombre = value;
-            }
-        }
-
-        public string Clave
-        {
-            get
-            {
-                return clave;
-            }
-
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("UPDATE Docente SET Clave = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                clave = value;
-            }
-        }
-
         public string Email
         {
             get
@@ -130,7 +98,7 @@ namespace ServiLearn
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                 miBD.Update("UPDATE Docente SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
-                telefono = value;
+                direccion = value;
             }
         }
     }
