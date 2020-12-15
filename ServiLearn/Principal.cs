@@ -42,19 +42,29 @@ namespace ServiLearn
                 MessageBox.Show(e.Message);
             }
         }
+        List<Tuple<int, int>> indiceIdCurso;
+        List<Tuple<int, int>> indiceIdEvento;
+
         private void actualizarCursos()
         {
             lbCursos.Items.Clear();
+            indiceIdCurso = new List<Tuple<int, int>>();
+            int index = 0;
             string filter = tbBuscadorCurso.Text;
             foreach (object[] tupla in tuplasCursos)
             {
                 try
                 {
+
                     string nombre = (string)tupla[2];
-                    if (nombre.Contains(filter)) {
+
+                    if (nombre.Contains(filter))
+                    {
                         lbCursos.Items.Add(nombre);
+                        indiceIdCurso.Add(new Tuple<int, int>(index, (int)tupla[0]));
+                        index++;
                     }
-                    
+
                 }
                 catch (Exception e)
                 {
@@ -68,15 +78,21 @@ namespace ServiLearn
         {
             lbEventos.Items.Clear();
             string filter = tbBuscadorEvento.Text;
+            indiceIdEvento = new List<Tuple<int, int>>();
+            int index = 0;
             foreach (object[] tupla in tuplasEventos)
             {
                 try
                 {
+
+
                     string nombre = (string)tupla[2];
                     if (nombre.Contains(filter))
                     {
-                        
+
                         lbEventos.Items.Add(nombre);
+                        indiceIdEvento.Add(new Tuple<int, int>(index, (int)tupla[0]));
+                        index++;
                     }
 
                 }
@@ -86,7 +102,42 @@ namespace ServiLearn
                 }
             }
 
+
+
         }
+
+        private bool CuentaEnCurso(Cuenta u, Curso c)
+        {
+            int idCuenta = u.id;
+            int idCurso = c.Id;
+            bool r;
+            
+            MySQLDB miBD = new MySQLDB();
+            try
+            {
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Curso WHERE id_Cuenta = '" + idCuenta + "' and id_Curso = '" + idCurso + "';")[0];
+
+
+                if (idCuenta != (int)tupla[0] || idCurso != (int)tupla[1])
+                {
+
+                    r = false;
+
+                }
+                else
+                {
+                    r = true;
+                }
+            }
+            catch
+            {
+                r = false;
+            }
+           
+            return r;
+        }
+
+
         public Principal(Cuenta u, int t)
         {
             user = u;
@@ -160,12 +211,41 @@ namespace ServiLearn
 
         private void lbCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int selectedCurso = -1;
+            foreach (Tuple<int, int> tupla in indiceIdCurso)
+            {
 
+                if (lbCursos.SelectedIndex == tupla.Item1)
+                {
+                    selectedCurso = tupla.Item2;
+                }
+            }
+            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Curs: " + selectedCurso);
         }
 
         private void tbBuscadorCurso_TextChanged(object sender, EventArgs e)
         {
             actualizarCursos();
+        }
+
+        private void lbCursos_DoubleClick(object sender, EventArgs e)
+        {
+            //String nombre = (String)lbCursos.SelectedItem;
+            Curso curso = new Curso(lbCursos.SelectedItem.ToString());
+            
+
+
+            if (CuentaEnCurso(user,curso)==true)
+            {
+                PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
+                ventana1.ShowDialog();
+            }
+            else
+            {
+                PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
+                ventana2.ShowDialog();
+            }
+           
         }
     }
 }
