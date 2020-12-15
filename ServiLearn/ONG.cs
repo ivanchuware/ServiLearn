@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BDLibrary;
 
 namespace ServiLearn
 {
     class ONG : Cuenta
     {
+        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
+        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
+        private static string BD_USER = Properties.Settings.Default.BD_USER;
+        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
+
         private string email;
         private string telefono;
         private string direccion;
@@ -16,7 +22,7 @@ namespace ServiLearn
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 object[] tupla = miBD.Select("SELECT * FROM ONG WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -39,7 +45,7 @@ namespace ServiLearn
         {
             List<ONG> lista = new List<ONG>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email FROM ONG;"))
             {
@@ -63,7 +69,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE ONG SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
@@ -79,7 +85,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE ONG SET Telefono = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 telefono = value;
@@ -95,7 +101,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE ONG SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 direccion = value;

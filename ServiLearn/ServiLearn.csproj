@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
+    <Compile Include="BDLibrary.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Docente.cs" />

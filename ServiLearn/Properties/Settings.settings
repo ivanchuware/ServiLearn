@@ -1,7 +1,25 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ServiLearn.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BD_SERVER" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com</Value>
+    </Setting>
+    <Setting Name="BD_NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">apsgrupo11</Value>
+    </Setting>
+    <Setting Name="apsgrupo11ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com;Initial Catalog=apsgrupo11;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com;Initial Catalog=apsgrupo11;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="BD_USER" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">grupo11</Value>
+    </Setting>
+    <Setting Name="BD_PWD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">villalbaaguayo2020</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
