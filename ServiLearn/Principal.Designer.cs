@@ -124,6 +124,7 @@
             this.lbCursos.Size = new System.Drawing.Size(169, 173);
             this.lbCursos.TabIndex = 10;
             this.lbCursos.SelectedIndexChanged += new System.EventHandler(this.lbCursos_SelectedIndexChanged);
+            this.lbCursos.DoubleClick += new System.EventHandler(this.lbCursos_DoubleClick);
             // 
             // lbEventos
             // 

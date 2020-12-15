@@ -132,6 +132,12 @@
     <Compile Include="PantallaCurso.Designer.cs">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreviewCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewCurso.Designer.cs">
+      <DependentUpon>PreviewCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewCurso.resx">
+      <DependentUpon>PreviewCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
