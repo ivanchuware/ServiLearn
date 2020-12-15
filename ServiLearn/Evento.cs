@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BDLibrary;
 using System.Threading.Tasks;
 
 namespace ServiLearn
 {
     class Evento
     {
+        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
+        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
+        private static string BD_USER = Properties.Settings.Default.BD_USER;
+        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
+
         private string nombre;
         private string descripcion;
         private int fecha;
 
         public Evento(string n, string d, int fecha)
         {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
             object[] tupla = miBD.Select("SELECT * FROM Evento WHERE Nombre = '" + n + "';")[0];
 
             nombre = (string)tupla[0];
@@ -25,7 +31,7 @@ namespace ServiLearn
         public List<Evento> ListaEventos()
         {
             List<Evento> lista = new List<Evento>();
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Descripcion, Fecha FROM Evento;"))
             {
@@ -46,7 +52,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE Evento SET Nombre = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
@@ -62,7 +68,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE Evento SET Descripcion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 descripcion = value;
@@ -78,7 +84,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE Evento SET Fecha = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 fecha = value;

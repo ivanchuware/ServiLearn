@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BDLibrary;
 using System.Threading.Tasks;
 
 namespace ServiLearn
 {
     class Alumno : Cuenta
     {
+        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
+        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
+        private static string BD_USER = Properties.Settings.Default.BD_USER;
+        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
+
         private string email;
 
         public Alumno(string n, string c, string e) : base(n,c)
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 object[] tupla = miBD.Select("SELECT * FROM Alumno WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -35,7 +41,7 @@ namespace ServiLearn
         {
             List<Alumno> lista = new List<Alumno>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave FROM Alumno;"))
             {
@@ -57,7 +63,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
                 miBD.Update("UPDATE Alumno SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
