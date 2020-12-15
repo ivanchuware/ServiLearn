@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ServiLearn
+{
+    public partial class TipoUsuario : Form
+    {
+        private Cuenta user;
+        private int tipo;
+        private Login ventanaAnterior;
+
+        public TipoUsuario(Login l)
+        {
+            tipo = -1;
+            InitializeComponent();
+            ventanaAnterior = l;
+        }
+
+        
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void TipoUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tipo = 0;
+            Registro ventana = new Registro(tipo);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tipo = 1;
+            Registro ventana = new Registro(tipo);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tipo = 2;
+            Registro ventana = new Registro(tipo);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tipo = 3;
+            Registro ventana = new Registro(tipo);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
+    }
+}
