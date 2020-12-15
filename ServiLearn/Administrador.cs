@@ -9,18 +9,26 @@ namespace ServiLearn
 {
     class Administrador : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
-
         private string email;
 
+        public static bool esAdmin(int id)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Admin WHERE id_Admin = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
+            }
+        }
         public Administrador(string n, string c, string e) : base(n, c)
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 object[] tupla = miBD.Select("SELECT * FROM Administrador WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -41,7 +49,7 @@ namespace ServiLearn
         {
             List<Administrador> lista = new List<Administrador>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+            MySQLDB miBD = new MySQLDB();
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave FROM Administrador;"))
             {
@@ -63,7 +71,8 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
+
                 miBD.Update("UPDATE Administrador SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
