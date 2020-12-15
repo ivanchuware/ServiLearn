@@ -94,6 +94,7 @@
             this.buttonCrearCurso.TabIndex = 7;
             this.buttonCrearCurso.Text = "Crear curso";
             this.buttonCrearCurso.UseVisualStyleBackColor = true;
+            this.buttonCrearCurso.Click += new System.EventHandler(this.buttonCrearCurso_Click);
             // 
             // buttonCrearEvento
             // 

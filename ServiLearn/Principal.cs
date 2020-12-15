@@ -230,22 +230,35 @@ namespace ServiLearn
 
         private void lbCursos_DoubleClick(object sender, EventArgs e)
         {
-            //String nombre = (String)lbCursos.SelectedItem;
-            Curso curso = new Curso(lbCursos.SelectedItem.ToString());
-            
+            try
+            {
+                string n = lbCursos.SelectedItem.ToString();
+
+                Curso curso = new Curso(n);
 
 
-            if (CuentaEnCurso(user,curso)==true)
+
+                if (CuentaEnCurso(user, curso) == true)
+                {
+                    PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
+                    ventana1.ShowDialog();
+                }
+                else
+                {
+                    PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
+                    ventana2.ShowDialog();
+                }
+            } catch (Exception exc)
             {
-                PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
-                ventana1.ShowDialog();
-            }
-            else
-            {
-                PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
-                ventana2.ShowDialog();
+
             }
            
+        }
+
+        private void buttonCrearCurso_Click(object sender, EventArgs e)
+        {
+            CreacionCurso ventana = new CreacionCurso(user, tipo);
+            ventana.ShowDialog();
         }
     }
 }

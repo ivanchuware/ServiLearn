@@ -95,6 +95,12 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
+    <Compile Include="CreacionCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreacionCurso.Designer.cs">
+      <DependentUpon>CreacionCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cuenta.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Docente.cs" />
@@ -134,6 +140,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreacionCurso.resx">
+      <DependentUpon>CreacionCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
