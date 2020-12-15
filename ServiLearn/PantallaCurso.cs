@@ -12,8 +12,14 @@ namespace ServiLearn
 {
     public partial class PantallaCurso : Form
     {
-        public PantallaCurso()
+        private Cuenta user;
+        private int tipo;
+        private Curso curso;
+        public PantallaCurso(Cuenta u, int t, Curso c)
         {
+            user = u;
+            tipo = t;
+            curso = c;
             InitializeComponent();
         }
 

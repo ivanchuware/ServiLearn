@@ -46,3 +46,4 @@ W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\Syst
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\System.Numerics.Vectors.xml
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.PreviewCurso.resources
