@@ -20,7 +20,7 @@ namespace ServiLearn
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 object[] tupla = miBD.Select("SELECT * FROM Administrador WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -41,7 +41,7 @@ namespace ServiLearn
         {
             List<Administrador> lista = new List<Administrador>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+            MySQLDB miBD = new MySQLDB();
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave FROM Administrador;"))
             {
@@ -63,7 +63,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Administrador SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;

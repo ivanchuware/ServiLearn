@@ -9,17 +9,15 @@ namespace ServiLearn
 {
     class Invitado : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
+        
 
-        private string nombre;
-        private string clave;
-        public Invitado(string n, string c) : base(c, c)
+       
+        public Invitado(string n, string c, bool r) : base(c, c, r)
         {
 
+            
         }
+
 
         public string Nombre
         {
@@ -30,7 +28,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Invitado SET Nombre = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
@@ -46,7 +44,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Invitado SET Clave = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 clave = value;

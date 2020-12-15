@@ -9,20 +9,34 @@ namespace ServiLearn
 {
     class Docente : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
+       
 
         private string email;
         private string telefono;
         private string direccion;
 
+
+        public Docente(string n, string c, string e,string d, string t, bool r) : base(n, c, r)
+        {
+
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Docente VALUES(" + idCuenta + ", '" + e + "', '" + d + "', '" + t + "');");
+
+           
+            this.email = e;
+            this.telefono = t;
+            this.direccion = d;
+
+
+        }
+
         public Docente(string n, string c, string e, string t, string d) : base(n,c)
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 object[] tupla = miBD.Select("SELECT * FROM Docente WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -45,7 +59,7 @@ namespace ServiLearn
         {
             List<Docente> lista = new List<Docente>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+            MySQLDB miBD = new MySQLDB();
 
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email, Telefono, Direccion FROM Docente;"))
             {
@@ -69,7 +83,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
@@ -85,7 +99,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Telefono = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 telefono = value;
@@ -101,7 +115,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 direccion = value;
