@@ -13,6 +13,7 @@ namespace ServiLearn
 
         public string nombre;
         public string clave;
+        public int id;
 
 
 
@@ -37,7 +38,8 @@ namespace ServiLearn
             {
                 MySQLDB miBD = new MySQLDB();
                 object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
-                
+
+                id = (int)tupla[0];
                 nombre = (string)tupla[1];
                 clave = (string)tupla[2];
 
@@ -52,6 +54,18 @@ namespace ServiLearn
             {
                 throw new Error("Datos incorrectos: ");
             }
+        }
+
+        public Cuenta(int i)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
+
+            id = (int)tupla[0];
+            nombre = (string)tupla[1];
+            clave = (string)tupla[2];
+
         }
 
         public string Nombre

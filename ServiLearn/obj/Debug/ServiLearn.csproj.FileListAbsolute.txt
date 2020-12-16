@@ -89,3 +89,5 @@ C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.cspro
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Registro.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.TipoUsuario.resources
