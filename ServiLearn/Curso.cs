@@ -7,34 +7,68 @@ using System.Threading.Tasks;
 
 namespace ServiLearn
 {
-    class Curso
+    public class Curso
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
-
         private string nombre;
         private string descripcion;
+        private int id;
+        private int idOwner;
+        private string adicional;
 
+        public Curso(string n)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
+
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
+        }
+
+        public Curso(int id)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE id_Curso = " + id + ";")[0];
+
+            try
+            {
+                adicional = (string)tupla[4];
+            }
+            catch (Exception e)
+            {
+                adicional = "";
+                Console.WriteLine(e.Message);
+            }
+
+            this.id = id;
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+           
+        }
         public Curso(string n, string d)
         {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE Nombre = '" + n + "';")[0];
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
 
-            nombre = (string)tupla[0];
-            descripcion = (string)tupla[1];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
         }
 
         public List<Curso> ListaCursos()
         {
             List<Curso> lista = new List<Curso>();
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+            MySQLDB miBD = new MySQLDB();
 
-            foreach (object[] tupla in miBD.Select("SELECT Nombre, Descripcion FROM Curso;"))
+            foreach (object[] tupla in miBD.Select("SELECT nombre, descripcion FROM Curso;"))
             {
-                string n = (string)tupla[0];
-                string d = (string)tupla[1];
+                string n = (string)tupla[2];
+                string d = (string)tupla[3];
                 lista.Add(new Curso(n, d));
             }
             return lista;
@@ -49,8 +83,8 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                miBD.Update("UPDATE Curso SET Nombre = '" + value
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET nombre = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
             }
@@ -65,13 +99,55 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                miBD.Update("UPDATE Curso SET Descripcion = '" + value
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET descripcion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 descripcion = value;
             }
         }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            
+        }
+        public String Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+
+            set
+            {
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET adicional = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
+                descripcion = value;
+            }
+        }
+        public int IdOwner
+        {
+            get
+            {
+                return idOwner;
+            }
+        }
+
+        public void BorrarCurso()
+        {
+            MySQLDB miBD = new MySQLDB();
+            miBD.Delete("DELETE FROM Cuenta_Curso where id_Curso = '" + id + "';");
+            miBD.Delete("DELETE FROM Curso where nombre = '" + nombre + "';");
+            nombre = descripcion = null;
+
+        }
+
+
+
+
     }
-
-
 }

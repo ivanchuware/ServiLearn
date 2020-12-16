@@ -9,104 +9,44 @@ namespace ServiLearn
 {
     class ONG : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
-
         private string email;
         private string telefono;
         private string direccion;
 
-        public ONG(string n, string c, string e, string t, string d) : base(n, c)
+        public static bool esOng(int id)
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                object[] tupla = miBD.Select("SELECT * FROM ONG WHERE Nombre = '" + n + "';")[0];
-
-                email = (string)tupla[2];
-                telefono = (string)tupla[3];
-                direccion = (string)tupla[4];
-
-                if (!clave.Equals(c))
-                {
-                    nombre = clave = email = telefono = direccion = null;
-                    throw new Error("Usuario o Contraseña Incorrecta: ");
-                }
+                MySQLDB miBD = new MySQLDB();
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Ong WHERE id_Ong = " + id + ";");
+                return tuplas.Count != 0;
             }
-            catch
+            catch (Exception e)
             {
-                throw new Error("Usuario o Contraseña Incorrecta: ");
+                throw new Error(e.Message);
             }
         }
-
-        public static List<ONG> ListaONGs()
+        public ONG(string n, string c, string e, string t, string d) : base(n, c)
         {
-            List<ONG> lista = new List<ONG>();
 
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-
-            foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email FROM ONG;"))
-            {
-                string n = (string)tupla[0];
-                string p = (string)tupla[1];
-                string e = (string)tupla[2];
-                string t = (string)tupla[3];
-                string d = (string)tupla[4];
-                lista.Add(new ONG(n, p, e,t,d));
-            }
-
-            return lista;
         }
 
-        public string Email
+        public ONG(string n, string c, string e, string t, string d, bool r) : base(n, c, r)
         {
-            get
-            {
-                return email;
-            }
 
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                miBD.Update("UPDATE ONG SET Email = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                email = value;
-            }
-        }
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Ong VALUES(" + idCuenta + ", '" + e + "', '" + t + "', '" + d + "');");
 
-        public string Telefono
-        {
-            get
-            {
-                return telefono;
-            }
 
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                miBD.Update("UPDATE ONG SET Telefono = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                telefono = value;
-            }
-        }
+            this.email = e;
+            this.telefono = t;
+            this.direccion = d;
 
-        public string Direccion
-        {
-            get
-            {
-                return direccion;
-            }
 
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-                miBD.Update("UPDATE ONG SET Direccion = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                direccion = value;
-            }
         }
 
     }
 }
+

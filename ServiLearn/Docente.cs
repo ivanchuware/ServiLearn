@@ -2,27 +2,54 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BDLibrary;
 using System.Threading.Tasks;
+using BDLibrary;
 
 namespace ServiLearn
 {
     class Docente : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
 
         private string email;
         private string telefono;
         private string direccion;
 
-        public Docente(string n, string c, string e, string t, string d) : base(n,c)
+        public static bool esDocente(int id)
         {
             try
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Docente WHERE id_Docente = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
+            }
+        }
+
+        public Docente(string n, string c, string e, string d, string t, bool r) : base(n, c, r)
+        {
+
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Docente VALUES(" + idCuenta + ", '" + e + "', '" + d + "', '" + t + "');");
+
+
+            this.email = e;
+            this.telefono = t;
+            this.direccion = d;
+
+
+        }
+
+
+        public Docente(string n, string c, string e, string t, string d) : base(n, c)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
                 object[] tupla = miBD.Select("SELECT * FROM Docente WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
@@ -44,9 +71,7 @@ namespace ServiLearn
         public static List<Docente> ListaDocentes()
         {
             List<Docente> lista = new List<Docente>();
-
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
-
+            MySQLDB miBD = new MySQLDB();
             foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email, Telefono, Direccion FROM Docente;"))
             {
                 string n = (string)tupla[0];
@@ -54,11 +79,14 @@ namespace ServiLearn
                 string e = (string)tupla[2];
                 string t = (string)tupla[3];
                 string d = (string)tupla[4];
-                lista.Add(new Docente(n, p, e,t,d));
+                lista.Add(new Docente(n, p, e, t, d));
             }
 
             return lista;
         }
+
+
+
 
         public string Email
         {
@@ -69,7 +97,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
@@ -85,7 +113,7 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Telefono = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 telefono = value;
@@ -101,10 +129,10 @@ namespace ServiLearn
 
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, BD_USER, BD_PWD);
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
-                direccion = value;
+                telefono = value;
             }
         }
     }
