@@ -47,6 +47,7 @@ W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\Syst
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.PreviewCurso.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.CreacionCurso.resources
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.exe.config
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.exe
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.pdb

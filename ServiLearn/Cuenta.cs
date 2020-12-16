@@ -58,6 +58,18 @@ namespace ServiLearn
             }
         }
 
+        public Cuenta(int i)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
+
+            id = (int)tupla[0];
+            nombre = (string)tupla[1];
+            clave = (string)tupla[2];
+
+        }
+
         public string Nombre
         {
             get
