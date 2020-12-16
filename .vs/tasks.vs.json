@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarea-ServiLearn",
+      "appliesTo": "ServiLearn/ServiLearn.csproj",
+      "type": "msbuild"
+    }
+  ]
+}

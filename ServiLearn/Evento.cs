@@ -1,33 +1,16 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using BDLibrary;
-using System.Threading.Tasks;
 
 namespace ServiLearn
 {
     public class Evento
     {
-
         private string nombre;
         private string descripcion;
         private string adicional;
         private int id;
         private int idOwner;
-
-        public Evento(string n, string d)
-        {
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
-            id = (int)tupla[0];
-            idOwner = (int)tupla[1];
-            nombre = (string)tupla[2];
-            descripcion = (string)tupla[3];
-            adicional = (string)tupla[4];
-
-
-        }
 
         public Evento(string n)
         {
@@ -53,6 +36,18 @@ namespace ServiLearn
             {
                 adicional = "";
             }
+
+
+        }
+        public Evento(string n, string d)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
 
 
         }
@@ -82,12 +77,11 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Evento SET Nombre = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
+                miBD.Update("UPDATE Evento SET nombre = '" + value
+                        + "' WHERE nombre = '" + nombre + "';");
                 nombre = value;
             }
         }
-
         public string Adicional
         {
             get
@@ -113,7 +107,6 @@ namespace ServiLearn
             }
         }
 
-
         public String Descripcion
         {
             get
@@ -130,6 +123,8 @@ namespace ServiLearn
             }
         }
 
+
+
         public void BorrarEvento()
         {
             MySQLDB miBD = new MySQLDB();
@@ -138,7 +133,5 @@ namespace ServiLearn
             nombre = descripcion = null;
 
         }
-
-
     }
 }

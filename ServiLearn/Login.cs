@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ServiLearn
@@ -33,18 +26,27 @@ namespace ServiLearn
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 user = new Cuenta(tbUsuario.Text, tbClave.Text);
 
-                if (Invitado.esInvitado(user.id)) {
+                if (Invitado.esInvitado(user.id))
+                {
                     tipo = 0;
-                } else if (Alumno.esAlumno(user.id)) {
+                }
+                else if (Alumno.esAlumno(user.id))
+                {
                     tipo = 1;
-                } else if (Docente.esDocente(user.id)) {
+                }
+                else if (Docente.esDocente(user.id))
+                {
                     tipo = 2;
-                } else if (ONG.esOng(user.id)) {
+                }
+                else if (ONG.esOng(user.id))
+                {
                     tipo = 3;
-                } else
+                }
+                else
                 {
                     tipo = 4;
                 }
@@ -55,7 +57,9 @@ namespace ServiLearn
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Visible = true;
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Datos incorrectos.");
             }
         }

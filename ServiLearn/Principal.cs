@@ -1,13 +1,7 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BDLibrary;
 
 namespace ServiLearn
 {
@@ -239,21 +233,7 @@ namespace ServiLearn
         {
 
         }
-
-        private void lbCursos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedCurso = -1;
-            foreach (Tuple<int, int> tupla in indiceIdCurso)
-            {
-
-                if (lbCursos.SelectedIndex == tupla.Item1)
-                {
-                    selectedCurso = tupla.Item2;
-                }
-            }
-            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Curs: " + selectedCurso);
-        }
-
+       
         private void tbBuscadorCurso_TextChanged(object sender, EventArgs e)
         {
             actualizarCursos();
@@ -315,47 +295,21 @@ namespace ServiLearn
             }
         }
 
-      
-
-        private void lbEventos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedEvento = -1;
-            foreach (Tuple<int, int> tupla in indiceIdEvento)
-            {
-
-                if (lbCursos.SelectedIndex == tupla.Item1)
-                {
-                    selectedEvento = tupla.Item2;
-                }
-            }
-            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Evento: " + selectedEvento);
-        }
-
-        private void buttonCrearEvento_Click_1(object sender, EventArgs e)
-        {
-            fCrearEvento ventana3 = new fCrearEvento(user);
-            ventana3.ShowDialog();
-            actualizarEventos();
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCrearCurso_Click_1(object sender, EventArgs e)
+        private void buttonCrearCurso_Click(object sender, EventArgs e)
         {
             CreacionCurso ventana = new CreacionCurso(user, tipo);
             ventana.ShowDialog();
             actualizarCursos();
         }
 
-        private void refresh_Click(object sender, EventArgs e)
+        private void buttonCrearEvento_Click(object sender, EventArgs e)
         {
-            consultarCursos();
-            consultarEventos();
+            fCrearEvento ventana3 = new fCrearEvento(user);
+            ventana3.ShowDialog();
             actualizarCursos();
-            actualizarEventos();
+
         }
+
+
     }
 }

@@ -1,12 +1,6 @@
 ﻿using BDLibrary;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ServiLearn
@@ -15,6 +9,7 @@ namespace ServiLearn
     {
         String nombre;
         String desc;
+        String adic;
         Cuenta user;
         int tipo;
         public CreacionCurso(Cuenta u, int t)
@@ -27,8 +22,10 @@ namespace ServiLearn
         public void InsertarCurso(string name, string desc, int owner)
         {
             MySQLDB miBD = new MySQLDB();
-            
-            miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
+
+            adic = "vacio";
+
+            miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', '" + adic + "');");
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -40,10 +37,10 @@ namespace ServiLearn
         {
             nombre = tbCurso.Text;
             desc = tbDescripcion.Text;
-            if((nombre=="" || nombre== "Introduzca el Nombre del Curso")
+            if ((nombre == "" || nombre == "Introduzca el Nombre del Curso")
                 || (desc == "" || desc == "Introduzca una descripción del curso"))
             {
-                if(nombre == "" || nombre == "Introduzca el Nombre del Curso")
+                if (nombre == "" || nombre == "Introduzca el Nombre del Curso")
                 {
                     MessageBox.Show("Por favor añada un nombre al curso");
                 }
@@ -58,7 +55,7 @@ namespace ServiLearn
 
                 if (result == DialogResult.Yes)
                 {
-                    
+
                     InsertarCurso(nombre, desc, user.id);
                     MessageBox.Show("Curso Creado");
                     this.Visible = false;
