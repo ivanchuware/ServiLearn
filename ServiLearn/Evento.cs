@@ -7,27 +7,8 @@ using System.Threading.Tasks;
 
 namespace ServiLearn
 {
-    class Evento
+    public class Evento
     {
-<<<<<<< Updated upstream
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
-
-        private string nombre;
-        private string descripcion;
-        private int fecha;
-
-        public Evento(string n, string d, int fecha)
-        {
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE Nombre = '" + n + "';")[0];
-
-            nombre = (string)tupla[0];
-            descripcion = (string)tupla[1];
-            //fecha = (int)tupla[2];
-=======
 
         private string nombre;
         private string descripcion;
@@ -74,7 +55,6 @@ namespace ServiLearn
             }
 
 
->>>>>>> Stashed changes
         }
 
         public List<Evento> ListaEventos()
@@ -86,8 +66,8 @@ namespace ServiLearn
             {
                 string n = (string)tupla[0];
                 string d = (string)tupla[1];
-                int f = (int)tupla[2];
-                lista.Add(new Evento(n, d, f));
+                DateTime f = (DateTime)tupla[2];
+                lista.Add(new Evento(n, d));
             }
             return lista;
         }
@@ -107,8 +87,6 @@ namespace ServiLearn
                 nombre = value;
             }
         }
-<<<<<<< Updated upstream
-=======
 
         public string Adicional
         {
@@ -116,7 +94,25 @@ namespace ServiLearn
             {
                 return adicional;
             }
->>>>>>> Stashed changes
+
+        }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+        }
+
+        public int IdOwner
+        {
+            get
+            {
+                return idOwner;
+            }
+        }
+
 
         public String Descripcion
         {
@@ -134,29 +130,6 @@ namespace ServiLearn
             }
         }
 
-<<<<<<< Updated upstream
-        public int Fecha
-=======
-
-        public String Descripcion
->>>>>>> Stashed changes
-        {
-            get
-            {
-                return fecha;
-            }
-
-            set
-            {
-                MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Evento SET Fecha = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                fecha = value;
-            }
-        }
-<<<<<<< Updated upstream
-=======
-
         public void BorrarEvento()
         {
             MySQLDB miBD = new MySQLDB();
@@ -167,6 +140,5 @@ namespace ServiLearn
         }
 
 
->>>>>>> Stashed changes
     }
 }

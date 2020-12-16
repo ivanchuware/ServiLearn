@@ -12,14 +12,6 @@ namespace ServiLearn
 {
     public partial class PantallaCurso : Form
     {
-<<<<<<< Updated upstream
-        public PantallaCurso()
-        {
-            InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-=======
         private Curso seleccionado;
         private Cuenta user;
         private int tipo;
@@ -57,9 +49,18 @@ namespace ServiLearn
         }
 
         private void bEliCurso_Click(object sender, EventArgs e)
->>>>>>> Stashed changes
         {
-
+            try
+            {
+                seleccionado.BorrarCurso();
+                seleccionado = null;
+                MessageBox.Show("Se ha eliminado el curso");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
 
         private void lProfesores_Click(object sender, EventArgs e)

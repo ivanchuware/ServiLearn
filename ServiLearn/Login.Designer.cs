@@ -30,12 +30,12 @@ namespace ServiLearn
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbClave = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,13 +48,13 @@ namespace ServiLearn
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
-            // textBox1
+            // tbUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbUsuario.Location = new System.Drawing.Point(371, 163);
+            this.tbUsuario.Name = "tbUsuario";
+            this.tbUsuario.Size = new System.Drawing.Size(144, 20);
+            this.tbUsuario.TabIndex = 1;
+            this.tbUsuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -66,13 +66,13 @@ namespace ServiLearn
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña";
             // 
-            // textBox2
+            // tbClave
             // 
-            this.textBox2.Location = new System.Drawing.Point(371, 232);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbClave.Location = new System.Drawing.Point(371, 232);
+            this.tbClave.Name = "tbClave";
+            this.tbClave.Size = new System.Drawing.Size(144, 20);
+            this.tbClave.TabIndex = 3;
+            this.tbClave.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // linkLabel1
             // 
@@ -95,27 +95,27 @@ namespace ServiLearn
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "He olvidado la contraseña";
             // 
-            // button1
+            // buttonLogin
             // 
-            this.button1.Location = new System.Drawing.Point(545, 232);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 20);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Iniciar Sesion";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLogin.Location = new System.Drawing.Point(545, 232);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(78, 20);
+            this.buttonLogin.TabIndex = 6;
+            this.buttonLogin.Text = "Iniciar Sesion";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbClave);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "ServiLearn - Inicio de Sesion";
@@ -127,12 +127,12 @@ namespace ServiLearn
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbUsuario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbClave;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLogin;
     }
 }
 

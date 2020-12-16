@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< Updated upstream
-using BDLibrary;
-using System.Text;
-using System.Threading.Tasks;
-=======
 using System.Text;
 using System.Threading.Tasks;
 using BDLibrary;
->>>>>>> Stashed changes
 
 namespace ServiLearn
 {
     public class Cuenta
     {
-
 
         public string nombre;
         public string clave;
@@ -28,7 +21,7 @@ namespace ServiLearn
             List<Cuenta> lista = new List<Cuenta>();
             MySQLDB miBD = new MySQLDB();
 
-            foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave FROM Cuenta;"))
+            foreach (object[] tupla in miBD.Select("SELECT nombre, clave FROM Cuenta;"))
             {
                 string n = (string)tupla[0];
                 string c = (string)tupla[1];
@@ -38,28 +31,16 @@ namespace ServiLearn
             return lista;
         }
 
-        public Cuenta(string n, string c)
+        public Cuenta(int i)
         {
-            try
-            {
-                MySQLDB miBD = new MySQLDB();
-                object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            MySQLDB miBD = new MySQLDB();
 
-                id = (int)tupla[0];
-                nombre = (string)tupla[1];
-                clave = (string)tupla[2];
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
 
-                if (!clave.Equals(c))
-                {
-                    nombre = null;
-                    clave = null;
-                    throw new Error("Datos incorrectos: ");
-                }
-            }
-            catch
-            {
-                throw new Error("Datos incorrectos: ");
-            }
+            id = (int)tupla[0];
+            nombre = (string)tupla[1];
+            clave = (string)tupla[2];
+
         }
 
         public Cuenta(string n, string p, bool r)
@@ -68,12 +49,39 @@ namespace ServiLearn
             MySQLDB miBD = new MySQLDB();
             //string b = "NULL";
             //miBD.Insert($"INSERT INTO Cuenta VALUES('{b}', '{n}', '{p}');");
-            miBD.Insert("INSERT INTO Cuenta VALUES(" + " NULL "+ ", '" + n + "' , '" + p + " ');");
+            miBD.Insert("INSERT INTO Cuenta VALUES(" + " NULL " + ", '" + n + "' , '" + p + " ');");
 
             nombre = n;
             clave = p;
 
 
+        }
+
+        public Cuenta(string n, string c)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
+
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE nombre = '" + n + "';")[0];
+
+                id = (int)tupla[0];
+
+                nombre = (string)tupla[1];
+                Console.Write(nombre);
+                clave = (string)tupla[2];
+
+                if (!clave.Equals(c))
+                {
+                    nombre = null;
+                    clave = null;
+                    throw new Error("Datos incorrectos.");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Error("Datos incorrectos." + e.Message);
+            }
         }
 
         public string Nombre
@@ -107,23 +115,6 @@ namespace ServiLearn
                 clave = value;
             }
         }
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Cuenta SET id_Cuenta = " + value
-                        + " WHERE Nombre = '" + nombre + "';");
-                id = value;
-            }
-        }
-
-       
 
         public void InsertarInvitado(string n)
         {
@@ -135,7 +126,7 @@ namespace ServiLearn
             int idCuenta = (int)tupla[0];
 
             miBD.Insert("INSERT INTO Invitado VALUES(" + idCuenta + ");");
-            
+
 
         }
 

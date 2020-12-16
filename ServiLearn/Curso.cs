@@ -7,29 +7,35 @@ using System.Threading.Tasks;
 
 namespace ServiLearn
 {
-    class Curso
+    public class Curso
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-        private static string BD_USER = Properties.Settings.Default.BD_USER;
-        private static string BD_PWD = Properties.Settings.Default.BD_PWD;
-
         private string nombre;
         private string descripcion;
-<<<<<<< Updated upstream
-=======
         private int id;
         private int idOwner;
         private string adicional;
->>>>>>> Stashed changes
 
+        public Curso(string n)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
+
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
+        }
         public Curso(string n, string d)
         {
             MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE Nombre = '" + n + "';")[0];
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
 
-            nombre = (string)tupla[0];
-            descripcion = (string)tupla[1];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
         }
 
         public List<Curso> ListaCursos()
@@ -37,10 +43,10 @@ namespace ServiLearn
             List<Curso> lista = new List<Curso>();
             MySQLDB miBD = new MySQLDB();
 
-            foreach (object[] tupla in miBD.Select("SELECT Nombre, Descripcion FROM Curso;"))
+            foreach (object[] tupla in miBD.Select("SELECT nombre, descripcion FROM Curso;"))
             {
-                string n = (string)tupla[0];
-                string d = (string)tupla[1];
+                string n = (string)tupla[2];
+                string d = (string)tupla[3];
                 lista.Add(new Curso(n, d));
             }
             return lista;
@@ -56,7 +62,7 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Curso SET Nombre = '" + value
+                miBD.Update("UPDATE Curso SET nombre = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
             }
@@ -72,17 +78,11 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Curso SET Descripcion = '" + value
+                miBD.Update("UPDATE Curso SET descripcion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 descripcion = value;
             }
         }
-<<<<<<< Updated upstream
-    }
-
-
-}
-=======
         public int Id
         {
             get
@@ -129,4 +129,3 @@ namespace ServiLearn
 
     }
 }
->>>>>>> Stashed changes

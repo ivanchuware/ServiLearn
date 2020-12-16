@@ -25,48 +25,12 @@ namespace ServiLearn.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com")]
-        public string BD_SERVER {
-            get {
-                return ((string)(this["BD_SERVER"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("apsgrupo11")]
-        public string BD_NAME {
-            get {
-                return ((string)(this["BD_NAME"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com;Initial " +
-            "Catalog=apsgrupo11;Integrated Security=True")]
-        public string apsgrupo11ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("user id=grupo11;server=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.c" +
+            "om;password=villalbaaguayo2020;persistsecurityinfo=True;database=apsgrupo11")]
+        public string bdUsuariosConnectionString {
             get {
-                return ((string)(this["apsgrupo11ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("grupo11")]
-        public string BD_USER {
-            get {
-                return ((string)(this["BD_USER"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("villalbaaguayo2020")]
-        public string BD_PWD {
-            get {
-                return ((string)(this["BD_PWD"]));
+                return ((string)(this["bdUsuariosConnectionString"]));
             }
         }
     }

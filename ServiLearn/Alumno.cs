@@ -2,49 +2,55 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-<<<<<<< Updated upstream
-using BDLibrary;
-using System.Threading.Tasks;
-=======
 using System.Threading.Tasks;
 using BDLibrary;
->>>>>>> Stashed changes
 
 namespace ServiLearn
 {
     class Alumno : Cuenta
     {
-        
-        private string password;
         private string email;
 
-        public Alumno(string n, string c, string e, bool r) : base(n,c,r) {
-
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
-            int idCuenta = (int)tupla[0];
-            miBD.Insert("INSERT INTO Alumno VALUES(" + idCuenta  + ", '" + e + "');");
-
-            this.nombre = n;
-            this.password = c;
-            this.email = e;
-
-
-        }
-        public Alumno(string n, string c, string e) : base(n,c)
+        public static bool esAlumno(int id)
         {
             try
             {
                 MySQLDB miBD = new MySQLDB();
-                object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Alumno WHERE id_Alumno = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
+            }
+        }
 
-                
-                nombre = (string)tupla[1];
-                password = (string)tupla[2];
+        public Alumno(string n, string c, string e, bool r) : base(n, c, r)
+        {
 
-                if (!password.Equals(c))
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Alumno VALUES(" + idCuenta + ", '" + e + "');");
+
+            
+            this.email = e;
+
+
+        }
+
+        public Alumno(string n, string c, string e) : base(n, c)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
+                object[] tupla = miBD.Select("SELECT * FROM Alumno WHERE Nombre = '" + n + "';")[0];
+
+                email = (string)tupla[2];
+
+                if (!clave.Equals(c))
                 {
-                    nombre = password = null;
+                    nombre = clave = email = null;
                     throw new Error("Usuario o Contraseña Incorrecta: ");
                 }
             }
@@ -65,11 +71,13 @@ namespace ServiLearn
                 string n = (string)tupla[0];
                 string p = (string)tupla[1];
                 string e = (string)tupla[2];
-                lista.Add(new Alumno(n, p,e));
+                lista.Add(new Alumno(n, p, e));
             }
 
             return lista;
         }
+
+
 
         public string Email
         {

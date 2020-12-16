@@ -7,48 +7,30 @@ using BDLibrary;
 
 namespace ServiLearn
 {
+
     class Invitado : Cuenta
     {
-        
 
-       
-        public Invitado(string n, string c, bool r) : base(c, c, r)
+        public Invitado(string n, string c) : base(c, c)
         {
 
-            
         }
 
-
-        public string Nombre
+        public static bool esInvitado(int id)
         {
-            get
-            {
-                return nombre;
-            }
-
-            set
+            try
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Invitado SET Nombre = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                nombre = value;
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Invitado WHERE id_Invitado = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
             }
         }
 
-        public string Clave
-        {
-            get
-            {
-                return clave;
-            }
 
-            set
-            {
-                MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Invitado SET Clave = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                clave = value;
-            }
-        }
+
     }
 }

@@ -1,11 +1,5 @@
-<<<<<<< Updated upstream
-﻿using MySql.Data.MySqlClient;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-=======
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
->>>>>>> Stashed changes
 
 namespace BDLibrary
 {

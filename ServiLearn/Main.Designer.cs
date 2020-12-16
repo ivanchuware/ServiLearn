@@ -50,7 +50,6 @@ namespace ServiLearn
             this.Controls.Add(this.label1);
             this.Name = "Main";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
