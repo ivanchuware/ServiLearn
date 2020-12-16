@@ -47,7 +47,6 @@ W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\Syst
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.PreviewCurso.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.CreacionCurso.resources
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.exe.config
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.exe
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\ServiLearn.pdb
@@ -89,9 +88,3 @@ C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.cspro
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Registro.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.TipoUsuario.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fCrearEvento.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEvento.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEventoMod.resources
-W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.EventoPreview.resources
