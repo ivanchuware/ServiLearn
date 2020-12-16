@@ -59,9 +59,9 @@ namespace ServiLearn
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(303, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 13);
+            this.label2.Size = new System.Drawing.Size(199, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Introduce la nueva descripcion del evento";
+            this.label2.Text = "Introduce la nueva descripcion del curso";
             // 
             // textBox2
             // 

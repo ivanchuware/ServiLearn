@@ -7,21 +7,19 @@ using BDLibrary;
 
 namespace ServiLearn
 {
-    class Docente : Cuenta
+    class ONG : Cuenta
     {
-        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
-        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
         private string email;
         private string telefono;
         private string direccion;
 
-        public Docente(string n, string c, string e, string t, string d) : base(n,c)
+        public ONG(string n, string c, string e, string t, string d) : base(n, c)
         {
             try
             {
                 MySQLDB miBD = new MySQLDB();
-                object[] tupla = miBD.Select("SELECT * FROM Docente WHERE Nombre = '" + n + "';")[0];
+                object[] tupla = miBD.Select("SELECT * FROM ONG WHERE Nombre = '" + n + "';")[0];
 
                 email = (string)tupla[2];
                 telefono = (string)tupla[3];
@@ -39,20 +37,20 @@ namespace ServiLearn
             }
         }
 
-        public static List<Docente> ListaDocentes()
+        public static List<ONG> ListaONGs()
         {
-            List<Docente> lista = new List<Docente>();
+            List<ONG> lista = new List<ONG>();
 
             MySQLDB miBD = new MySQLDB();
 
-            foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email, Telefono, Direccion FROM Docente;"))
+            foreach (object[] tupla in miBD.Select("SELECT Nombre, Clave, Email FROM ONG;"))
             {
                 string n = (string)tupla[0];
                 string p = (string)tupla[1];
                 string e = (string)tupla[2];
                 string t = (string)tupla[3];
                 string d = (string)tupla[4];
-                lista.Add(new Docente(n, p, e,t,d));
+                lista.Add(new ONG(n, p, e,t,d));
             }
 
             return lista;
@@ -68,7 +66,7 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Docente SET Email = '" + value
+                miBD.Update("UPDATE ONG SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
             }
@@ -84,7 +82,7 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Docente SET Telefono = '" + value
+                miBD.Update("UPDATE ONG SET Telefono = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 telefono = value;
             }
@@ -100,10 +98,11 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Docente SET Direccion = '" + value
+                miBD.Update("UPDATE ONG SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 direccion = value;
             }
         }
+
     }
 }

@@ -2,37 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BDLibrary;
 using System.Threading.Tasks;
+using BDLibrary;
 
 namespace ServiLearn
 {
-    public class Curso
+    class Curso
     {
+
         private string nombre;
         private string descripcion;
-        private int idOwner;
-        private int id;
 
-        public Curso(string n)
-        {
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
-
-            id = (int)tupla[0];
-            idOwner = (int)tupla[1];
-            nombre = (string)tupla[2];
-            descripcion = (string)tupla[3];
-        }
         public Curso(string n, string d)
         {
             MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE Nombre = '" + n + "';")[0];
 
-            id = (int)tupla[0];
-            idOwner = (int)tupla[1];
-            nombre = (string)tupla[2];
-            descripcion = (string)tupla[3];
+            nombre = (string)tupla[0];
+            descripcion = (string)tupla[1];
         }
 
         public List<Curso> ListaCursos()
@@ -40,15 +27,14 @@ namespace ServiLearn
             List<Curso> lista = new List<Curso>();
             MySQLDB miBD = new MySQLDB();
 
-            foreach (object[] tupla in miBD.Select("SELECT nombre, descripcion FROM Curso;"))
+            foreach (object[] tupla in miBD.Select("SELECT Nombre, Descripcion FROM Curso;"))
             {
-                string n = (string)tupla[2];
-                string d = (string)tupla[3];
+                string n = (string)tupla[0];
+                string d = (string)tupla[1];
                 lista.Add(new Curso(n, d));
             }
             return lista;
         }
-        
 
         public string Nombre
         {
@@ -60,7 +46,7 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Curso SET nombre = '" + value
+                miBD.Update("UPDATE Curso SET Nombre = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
             }
@@ -76,29 +62,12 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Curso SET descripcion = '" + value
+                miBD.Update("UPDATE Curso SET Descripcion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 descripcion = value;
             }
         }
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-
-            
-        }
-        public int IdOwner
-        {
-            get
-            {
-                return idOwner;
-            }
-        }
-
-
-
     }
+
+
 }

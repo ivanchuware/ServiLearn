@@ -23,21 +23,13 @@ namespace ServiLearn
         private void button1_Click(object sender, EventArgs e)
         {
             MySQLDB miBD = new MySQLDB();
-            //Object[] tupla = miBD.Select("SELECT id_Cuenta FROM Cuenta WHERE Nombre = '" + seleccionado.nombre + "';")[0];
-            //int id_cue = (int)tupla[0];
-            int id_cue = seleccionado.id;
+            Object[] tupla = miBD.Select("SELECT id_Cuenta FROM Cuenta WHERE Nombre = '" + seleccionado.nombre + "';")[0];
+            int id_cue = (int)tupla[0];
             string nombre = textBox1.Text;
             string descripcion = textBox2.Text;
             if (!nombre.Equals("") && !descripcion.Equals(""))
             {
-                
-                miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" +nombre+ "', '" + descripcion + "', null, null);");
-                //miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
-                this.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Nombre o Descripción incorrecto");
+                miBD.Insert("INSERT INTO Evento (id_Owner, nombre, descripcion) VALUES (" + id_cue + ",'" +nombre+ "', '" + descripcion + "' ;");
             }
         }
     }
