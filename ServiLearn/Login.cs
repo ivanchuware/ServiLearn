@@ -12,13 +12,11 @@ namespace ServiLearn
 {
     public partial class Login : Form
     {
-        private Cuenta user;
-        private int tipo;
-
+        public Cuenta user;
         public Login()
         {
-            tipo = -1;
             InitializeComponent();
+            user = null;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -26,46 +24,18 @@ namespace ServiLearn
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            try {
-                user = new Cuenta(tbUsuario.Text, tbClave.Text);
-
-                if (Invitado.esInvitado(user.id)) {
-                    tipo = 0;
-                } else if (Alumno.esAlumno(user.id)) {
-                    tipo = 1;
-                } else if (Docente.esDocente(user.id)) {
-                    tipo = 2;
-                } else if (ONG.esOng(user.id)) {
-                    tipo = 3;
-                } else
-                {
-                    tipo = 4;
-                }
-                Principal ventana = new Principal(user, tipo);
-
-
-
-                this.Visible = false;
-                ventana.ShowDialog();
-                this.Visible = true;
-            } catch (Exception ex) {
-                MessageBox.Show("Datos incorrectos.");
+            try
+            {
+                user = new Cuenta(textUser.Text, textPwd.Text);
+                Principal ventana = new Principal(user,1);
+                ventana.Show();
             }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            TipoUsuario ventana = new TipoUsuario(this);
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
