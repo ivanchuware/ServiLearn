@@ -36,8 +36,6 @@ namespace ServiLearn
             this.tAdicional = new System.Windows.Forms.TextBox();
             this.bMod = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.tEvento = new System.Windows.Forms.TextBox();
-            this.tOrganizador = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -105,29 +103,11 @@ namespace ServiLearn
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tEvento
-            // 
-            this.tEvento.Location = new System.Drawing.Point(228, 53);
-            this.tEvento.Name = "tEvento";
-            this.tEvento.ReadOnly = true;
-            this.tEvento.Size = new System.Drawing.Size(100, 20);
-            this.tEvento.TabIndex = 8;
-            // 
-            // tOrganizador
-            // 
-            this.tOrganizador.Location = new System.Drawing.Point(228, 86);
-            this.tOrganizador.Name = "tOrganizador";
-            this.tOrganizador.ReadOnly = true;
-            this.tOrganizador.Size = new System.Drawing.Size(100, 20);
-            this.tOrganizador.TabIndex = 9;
-            // 
             // fEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
-            this.Controls.Add(this.tOrganizador);
-            this.Controls.Add(this.tEvento);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bMod);
             this.Controls.Add(this.tAdicional);
@@ -151,7 +131,5 @@ namespace ServiLearn
         private System.Windows.Forms.TextBox tAdicional;
         private System.Windows.Forms.Button bMod;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox tEvento;
-        private System.Windows.Forms.TextBox tOrganizador;
     }
 }

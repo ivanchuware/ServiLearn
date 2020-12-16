@@ -91,3 +91,7 @@ C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Registro.resources
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.TipoUsuario.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fCrearEvento.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEvento.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEventoMod.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.EventoPreview.resources

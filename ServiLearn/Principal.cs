@@ -137,6 +137,37 @@ namespace ServiLearn
             return r;
         }
 
+        private bool CuentaEnEvento(Cuenta u, Evento e)
+        {
+            int idCuenta = u.id;
+            int idEvento = e.Id;
+            bool r;
+
+            MySQLDB miBD = new MySQLDB();
+            try
+            {
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Evento WHERE id_Cuenta = '" + idCuenta + "' and id_Evento = '" + idEvento + "';")[0];
+
+
+                if (idCuenta != (int)tupla[0] || idEvento != (int)tupla[1])
+                {
+
+                    r = false;
+
+                }
+                else
+                {
+                    r = true;
+                }
+            }
+            catch
+            {
+                r = false;
+            }
+
+            return r;
+        }
+
 
         public Principal(Cuenta u, int t)
         {
@@ -255,10 +286,49 @@ namespace ServiLearn
            
         }
 
+        private void lbEventos_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                string aux = lbEventos.SelectedItem.ToString();
+                
+                Evento evento = new Evento(aux);
+                
+                if (CuentaEnEvento(user, evento) == true)
+                {
+                    
+                    fEvento ventana1 = new fEvento(user, tipo, evento);
+                    ventana1.ShowDialog();
+                }
+                else
+                {
+                    
+                    EventoPreview ventana2 = new EventoPreview(user, tipo, evento);
+                    ventana2.ShowDialog();
+                }
+
+            }
+            catch (Exception exce)
+            {
+            
+            }
+        }
+
         private void buttonCrearCurso_Click(object sender, EventArgs e)
         {
             CreacionCurso ventana = new CreacionCurso(user, tipo);
             ventana.ShowDialog();
+            actualizarCursos();
         }
+
+        private void buttonCrearEvento_Click(object sender, EventArgs e)
+        {
+            fCrearEvento ventana3 = new fCrearEvento(user);
+            ventana3.ShowDialog();
+            actualizarCursos();
+            
+        }
+
+        
     }
 }
