@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbCursos = new System.Windows.Forms.ListBox();
             this.lbEventos = new System.Windows.Forms.ListBox();
+            this.refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -94,6 +95,7 @@
             this.buttonCrearCurso.TabIndex = 7;
             this.buttonCrearCurso.Text = "Crear curso";
             this.buttonCrearCurso.UseVisualStyleBackColor = true;
+            this.buttonCrearCurso.Click += new System.EventHandler(this.buttonCrearCurso_Click_1);
             // 
             // buttonCrearEvento
             // 
@@ -103,6 +105,7 @@
             this.buttonCrearEvento.TabIndex = 8;
             this.buttonCrearEvento.Text = "Crear evento";
             this.buttonCrearEvento.UseVisualStyleBackColor = true;
+            this.buttonCrearEvento.Click += new System.EventHandler(this.buttonCrearEvento_Click_1);
             // 
             // label1
             // 
@@ -133,12 +136,25 @@
             this.lbEventos.Name = "lbEventos";
             this.lbEventos.Size = new System.Drawing.Size(163, 173);
             this.lbEventos.TabIndex = 11;
+            this.lbEventos.SelectedIndexChanged += new System.EventHandler(this.lbEventos_SelectedIndexChanged);
+            this.lbEventos.DoubleClick += new System.EventHandler(this.lbEventos_DoubleClick);
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(183, 425);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 12;
+            this.refresh.Text = "Actualizar";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.refresh);
             this.Controls.Add(this.lbEventos);
             this.Controls.Add(this.lbCursos);
             this.Controls.Add(this.label1);
@@ -151,6 +167,7 @@
             this.Controls.Add(this.labelTitulo);
             this.Name = "Principal";
             this.Text = "ServiLearn";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +185,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbCursos;
         private System.Windows.Forms.ListBox lbEventos;
+        private System.Windows.Forms.Button refresh;
     }
 }

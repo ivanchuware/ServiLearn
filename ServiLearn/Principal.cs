@@ -111,7 +111,7 @@ namespace ServiLearn
             int idCuenta = u.id;
             int idCurso = c.Id;
             bool r;
-            
+
             MySQLDB miBD = new MySQLDB();
             try
             {
@@ -133,7 +133,38 @@ namespace ServiLearn
             {
                 r = false;
             }
-           
+
+            return r;
+        }
+
+        private bool CuentaEnEvento(Cuenta u, Evento e)
+        {
+            int idCuenta = u.id;
+            int idEvento = e.Id;
+            bool r;
+
+            MySQLDB miBD = new MySQLDB();
+            try
+            {
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Evento WHERE id_Cuenta = '" + idCuenta + "' and id_Evento = '" + idEvento + "';")[0];
+
+
+                if (idCuenta != (int)tupla[0] || idEvento != (int)tupla[1])
+                {
+
+                    r = false;
+
+                }
+                else
+                {
+                    r = true;
+                }
+            }
+            catch
+            {
+                r = false;
+            }
+
             return r;
         }
 
@@ -230,22 +261,101 @@ namespace ServiLearn
 
         private void lbCursos_DoubleClick(object sender, EventArgs e)
         {
-            //String nombre = (String)lbCursos.SelectedItem;
-            Curso curso = new Curso(lbCursos.SelectedItem.ToString());
-            
+            try
+            {
+                string n = lbCursos.SelectedItem.ToString();
+
+                Curso curso = new Curso(n);
 
 
-            if (CuentaEnCurso(user,curso)==true)
-            {
-                PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
-                ventana1.ShowDialog();
+
+                if (CuentaEnCurso(user, curso) == true)
+                {
+                    PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
+                    ventana1.ShowDialog();
+                }
+                else
+                {
+                    PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
+                    ventana2.ShowDialog();
+                }
             }
-            else
+            catch (Exception exc)
             {
-                PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
-                ventana2.ShowDialog();
+
             }
-           
+
+        }
+
+        private void lbEventos_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                string aux = lbEventos.SelectedItem.ToString();
+
+                Evento evento = new Evento(aux);
+
+                if (CuentaEnEvento(user, evento) == true)
+                {
+
+                    fEvento ventana1 = new fEvento(user, tipo, evento);
+                    ventana1.ShowDialog();
+                }
+                else
+                {
+
+                    EventoPreview ventana2 = new EventoPreview(user, tipo, evento);
+                    ventana2.ShowDialog();
+                }
+
+            }
+            catch (Exception exce)
+            {
+
+            }
+        }
+
+      
+
+        private void lbEventos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedEvento = -1;
+            foreach (Tuple<int, int> tupla in indiceIdEvento)
+            {
+
+                if (lbCursos.SelectedIndex == tupla.Item1)
+                {
+                    selectedEvento = tupla.Item2;
+                }
+            }
+            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Evento: " + selectedEvento);
+        }
+
+        private void buttonCrearEvento_Click_1(object sender, EventArgs e)
+        {
+            fCrearEvento ventana3 = new fCrearEvento(user);
+            ventana3.ShowDialog();
+            actualizarEventos();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCrearCurso_Click_1(object sender, EventArgs e)
+        {
+            CreacionCurso ventana = new CreacionCurso(user, tipo);
+            ventana.ShowDialog();
+            actualizarCursos();
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            consultarCursos();
+            consultarEventos();
+            actualizarCursos();
+            actualizarEventos();
         }
     }
 }

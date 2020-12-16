@@ -25,6 +25,20 @@ namespace ServiLearn
             }
         }
 
+        public Alumno(string n, string c, string e, bool r) : base(n, c, r)
+        {
+
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Alumno VALUES(" + idCuenta + ", '" + e + "');");
+
+            
+            this.email = e;
+
+
+        }
+
         public Alumno(string n, string c, string e) : base(n, c)
         {
             try

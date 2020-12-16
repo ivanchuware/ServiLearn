@@ -27,5 +27,20 @@ namespace ServiLearn
         {
 
         }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bEliCurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lProfesores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,6 +31,32 @@ namespace ServiLearn
             return lista;
         }
 
+        public Cuenta(int i)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
+
+            id = (int)tupla[0];
+            nombre = (string)tupla[1];
+            clave = (string)tupla[2];
+
+        }
+
+        public Cuenta(string n, string p, bool r)
+        {
+
+            MySQLDB miBD = new MySQLDB();
+            //string b = "NULL";
+            //miBD.Insert($"INSERT INTO Cuenta VALUES('{b}', '{n}', '{p}');");
+            miBD.Insert("INSERT INTO Cuenta VALUES(" + " NULL " + ", '" + n + "' , '" + p + " ');");
+
+            nombre = n;
+            clave = p;
+
+
+        }
+
         public Cuenta(string n, string c)
         {
             try
@@ -44,7 +70,7 @@ namespace ServiLearn
                 nombre = (string)tupla[1];
                 Console.Write(nombre);
                 clave = (string)tupla[2];
-                
+
                 if (!clave.Equals(c))
                 {
                     nombre = null;
@@ -52,22 +78,10 @@ namespace ServiLearn
                     throw new Error("Datos incorrectos.");
                 }
             }
-            catch
+            catch (Exception e)
             {
-                throw new Error("Datos incorrectos.");
+                throw new Error("Datos incorrectos." + e.Message);
             }
-        }
-
-        public Cuenta(int i)
-        {
-            MySQLDB miBD = new MySQLDB();
-
-            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
-
-            id = (int)tupla[0];
-            nombre = (string)tupla[1];
-            clave = (string)tupla[2];
-
         }
 
         public string Nombre
@@ -100,6 +114,20 @@ namespace ServiLearn
                         + "' WHERE Nombre = '" + nombre + "';");
                 clave = value;
             }
+        }
+
+        public void InsertarInvitado(string n)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+
+            int idCuenta = (int)tupla[0];
+
+            miBD.Insert("INSERT INTO Invitado VALUES(" + idCuenta + ");");
+
+
         }
 
 

@@ -62,7 +62,7 @@ namespace ServiLearn
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TipoUsuario ventana = new TipoUsuario(this);
+            SeleccionRegistro ventana = new SeleccionRegistro();
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;

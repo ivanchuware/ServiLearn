@@ -56,6 +56,7 @@ namespace ServiLearn
             this.lProfesores.Size = new System.Drawing.Size(71, 13);
             this.lProfesores.TabIndex = 1;
             this.lProfesores.Text = "Impartido por:";
+            this.lProfesores.Click += new System.EventHandler(this.lProfesores_Click);
             // 
             // textBox1
             // 
@@ -90,6 +91,7 @@ namespace ServiLearn
             this.bEliCurso.TabIndex = 5;
             this.bEliCurso.Text = "Eliminar Curso";
             this.bEliCurso.UseVisualStyleBackColor = true;
+            this.bEliCurso.Click += new System.EventHandler(this.bEliCurso_Click);
             // 
             // bVolver
             // 
@@ -99,8 +101,9 @@ namespace ServiLearn
             this.bVolver.TabIndex = 6;
             this.bVolver.Text = "Volver a la lista de cursos";
             this.bVolver.UseVisualStyleBackColor = true;
+            this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
-            // Form1
+            // PantallaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +115,7 @@ namespace ServiLearn
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lProfesores);
             this.Controls.Add(this.lCurso);
-            this.Name = "Form1";
+            this.Name = "PantallaCurso";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
