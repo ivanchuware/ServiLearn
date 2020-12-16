@@ -16,6 +16,12 @@ namespace ServiLearn
 
         private string nombre;
         private string descripcion;
+<<<<<<< Updated upstream
+=======
+        private int id;
+        private int idOwner;
+        private string adicional;
+>>>>>>> Stashed changes
 
         public Curso(string n, string d)
         {
@@ -71,7 +77,56 @@ namespace ServiLearn
                 descripcion = value;
             }
         }
+<<<<<<< Updated upstream
     }
 
 
 }
+=======
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            
+        }
+        public String Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+
+            set
+            {
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET adicional = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
+                descripcion = value;
+            }
+        }
+        public int IdOwner
+        {
+            get
+            {
+                return idOwner;
+            }
+        }
+
+        public void BorrarCurso()
+        {
+            MySQLDB miBD = new MySQLDB();
+            miBD.Delete("DELETE FROM Cuenta_Curso where id_Curso = '" + id + "';");
+            miBD.Delete("DELETE FROM Curso where nombre = '" + nombre + "';");
+            nombre = descripcion = null;
+
+        }
+
+
+
+
+    }
+}
+>>>>>>> Stashed changes

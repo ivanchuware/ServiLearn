@@ -90,6 +90,38 @@ namespace ServiLearn
             this.bEliCurso.TabIndex = 5;
             this.bEliCurso.Text = "Eliminar Curso";
             this.bEliCurso.UseVisualStyleBackColor = true;
+<<<<<<< Updated upstream
+=======
+            this.bEliCurso.Click += new System.EventHandler(this.bEliCurso_Click);
+            // 
+            // tvCont
+            // 
+            this.tvCont.Location = new System.Drawing.Point(56, 134);
+            this.tvCont.Multiline = true;
+            this.tvCont.Name = "tvCont";
+            this.tvCont.ReadOnly = true;
+            this.tvCont.Size = new System.Drawing.Size(636, 70);
+            this.tvCont.TabIndex = 6;
+            // 
+            // tvAdic
+            // 
+            this.tvAdic.Location = new System.Drawing.Point(56, 243);
+            this.tvAdic.Multiline = true;
+            this.tvAdic.Name = "tvAdic";
+            this.tvAdic.ReadOnly = true;
+            this.tvAdic.Size = new System.Drawing.Size(636, 141);
+            this.tvAdic.TabIndex = 7;
+            this.tvAdic.TextChanged += new System.EventHandler(this.tvAdic_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Detalles adicionales:";
+>>>>>>> Stashed changes
             // 
             // bVolver
             // 
@@ -114,6 +146,7 @@ namespace ServiLearn
             this.Controls.Add(this.lCurso);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.PantallaCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

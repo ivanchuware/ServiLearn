@@ -9,6 +9,7 @@ namespace ServiLearn
 {
     class Evento
     {
+<<<<<<< Updated upstream
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
         private static string BD_USER = Properties.Settings.Default.BD_USER;
@@ -26,6 +27,54 @@ namespace ServiLearn
             nombre = (string)tupla[0];
             descripcion = (string)tupla[1];
             //fecha = (int)tupla[2];
+=======
+
+        private string nombre;
+        private string descripcion;
+        private string adicional;
+        private int id;
+        private int idOwner;
+
+        public Evento(string n, string d)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
+
+
+        }
+
+        public Evento(string n)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            try
+            {
+
+                if (!tupla[4].GetType().Equals(System.DBNull.Value))
+                {
+                    adicional = (string)tupla[4];
+                }
+                else
+                {
+                    adicional = "";
+                }
+            }
+            catch (Exception e)
+            {
+                adicional = "";
+            }
+
+
+>>>>>>> Stashed changes
         }
 
         public List<Evento> ListaEventos()
@@ -58,6 +107,16 @@ namespace ServiLearn
                 nombre = value;
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        public string Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+>>>>>>> Stashed changes
 
         public String Descripcion
         {
@@ -75,7 +134,12 @@ namespace ServiLearn
             }
         }
 
+<<<<<<< Updated upstream
         public int Fecha
+=======
+
+        public String Descripcion
+>>>>>>> Stashed changes
         {
             get
             {
@@ -90,5 +154,19 @@ namespace ServiLearn
                 fecha = value;
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        public void BorrarEvento()
+        {
+            MySQLDB miBD = new MySQLDB();
+            miBD.Delete("DELETE FROM Cuenta_Evento where id_Evento = '" + id + "';");
+            miBD.Delete("DELETE FROM Evento where nombre = '" + nombre + "';");
+            nombre = descripcion = null;
+
+        }
+
+
+>>>>>>> Stashed changes
     }
 }

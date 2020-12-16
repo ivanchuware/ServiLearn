@@ -101,11 +101,57 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="CreacionCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreacionCurso.designer.cs">
+      <DependentUpon>CreacionCurso.cs</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="Cuenta.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Docente.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Evento.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="EventoPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCrearEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.designer.cs">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEventoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invitado.cs" />
+    <Compile Include="RegistroInvitado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +177,7 @@
     <Compile Include="RegistroInvitado.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="RegistroInvitado.Designer.cs">
       <DependentUpon>RegistroInvitado.cs</DependentUpon>
     </Compile>
@@ -145,6 +192,10 @@
     </Compile>
     <Compile Include="RegistroTutor.Designer.cs">
       <DependentUpon>RegistroTutor.cs</DependentUpon>
+=======
+    <Compile Include="PreviewCurso.Designer.cs">
+      <DependentUpon>PreviewCurso.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="RegistroUsuario.cs">
       <SubType>Form</SubType>
@@ -158,6 +209,29 @@
     <Compile Include="SeleccionRegistro.Designer.cs">
       <DependentUpon>SeleccionRegistro.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreacionCurso.resx">
+      <DependentUpon>CreacionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventoPreview.resx">
+      <DependentUpon>EventoPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCrearEvento.resx">
+      <DependentUpon>fCrearEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCursoMod.resx">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEvento.resx">
+      <DependentUpon>fEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEventoMod.resx">
+      <DependentUpon>fEventoMod.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +241,15 @@
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="PreviewCurso.resx">
+      <DependentUpon>PreviewCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -25,6 +25,7 @@ namespace ServiLearn
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             try
             {
                 cuenta = new Cuenta(textBox1.Text, textBox2.Text);
@@ -36,6 +37,32 @@ namespace ServiLearn
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+=======
+            try {
+                user = new Cuenta(tbUsuario.Text, tbClave.Text);
+
+                if (Invitado.esInvitado(user.id)) {
+                    tipo = 0;
+                } else if (Alumno.esAlumno(user.id)) {
+                    tipo = 1;
+                } else if (Docente.esDocente(user.id)) {
+                    tipo = 2;
+                } else if (ONG.esOng(user.id)) {
+                    tipo = 3;
+                } else
+                {
+                    tipo = 4;
+                }
+                Principal ventana = new Principal(user, tipo);
+
+
+
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Visible = true;
+            } catch (Exception ex) {
+                MessageBox.Show("Datos incorrectos.");
+>>>>>>> Stashed changes
             }
         }
 
