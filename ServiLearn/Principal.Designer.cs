@@ -94,6 +94,7 @@
             this.buttonCrearCurso.TabIndex = 7;
             this.buttonCrearCurso.Text = "Crear curso";
             this.buttonCrearCurso.UseVisualStyleBackColor = true;
+            this.buttonCrearCurso.Click += new System.EventHandler(this.buttonCrearCurso_Click);
             // 
             // buttonCrearEvento
             // 
@@ -103,6 +104,7 @@
             this.buttonCrearEvento.TabIndex = 8;
             this.buttonCrearEvento.Text = "Crear evento";
             this.buttonCrearEvento.UseVisualStyleBackColor = true;
+            this.buttonCrearEvento.Click += new System.EventHandler(this.buttonCrearEvento_Click);
             // 
             // label1
             // 
@@ -133,6 +135,7 @@
             this.lbEventos.Name = "lbEventos";
             this.lbEventos.Size = new System.Drawing.Size(163, 173);
             this.lbEventos.TabIndex = 11;
+            this.lbEventos.DoubleClick += new System.EventHandler(this.lbEventos_DoubleClick);
             // 
             // Principal
             // 

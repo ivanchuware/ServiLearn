@@ -11,6 +11,7 @@ namespace ServiLearn
     {
         private string nombre;
         private string descripcion;
+        private int idOwner;
         private int id;
 
         public Curso(string n)
@@ -19,6 +20,7 @@ namespace ServiLearn
             object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
 
             id = (int)tupla[0];
+            idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
         }
@@ -28,6 +30,7 @@ namespace ServiLearn
             object[] tupla = miBD.Select("SELECT * FROM Curso WHERE nombre = '" + n + "';")[0];
 
             id = (int)tupla[0];
+            idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
         }
@@ -45,6 +48,7 @@ namespace ServiLearn
             }
             return lista;
         }
+        
 
         public string Nombre
         {
@@ -85,6 +89,13 @@ namespace ServiLearn
             }
 
             
+        }
+        public int IdOwner
+        {
+            get
+            {
+                return idOwner;
+            }
         }
 
 
