@@ -1,10 +1,6 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BDLibrary;
 
 namespace ServiLearn
 {
@@ -35,7 +31,8 @@ namespace ServiLearn
                 {
                     adicional = "";
                 }
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 adicional = "";
             }
@@ -126,7 +123,7 @@ namespace ServiLearn
             }
         }
 
-        
+
 
         public void BorrarEvento()
         {

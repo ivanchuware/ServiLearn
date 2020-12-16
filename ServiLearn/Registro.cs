@@ -1,12 +1,6 @@
 ﻿using BDLibrary;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ServiLearn
@@ -83,7 +77,8 @@ namespace ServiLearn
 
         }
 
-        private void buttonAceptar_Click(object sender, EventArgs e) {
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
 
             hayErrores = false;
 
@@ -96,50 +91,57 @@ namespace ServiLearn
             errorTelefono.Hide();
             errorDireccion.Hide();
 
-            if (textBoxUsuario.Text == "") {
-               
+            if (textBoxUsuario.Text == "")
+            {
+
                 errorUsuario.Show();
                 hayErrores = true;
             }
 
-            if (textBoxContr.Text == "") {
-               
+            if (textBoxContr.Text == "")
+            {
+
                 errorContr.Show();
                 hayErrores = true;
             }
 
-            else if (textBoxContr.Text.Length < 6){
+            else if (textBoxContr.Text.Length < 6)
+            {
 
                 errorContrCorta.Show();
                 textBoxContr.Clear();
                 hayErrores = true;
             }
 
-            if (textBoxCorreo.Text == "" && tipo != 0) {
-                
+            if (textBoxCorreo.Text == "" && tipo != 0)
+            {
+
                 errorCorreo.Show();
                 hayErrores = true;
             }
 
-            if (textBoxTelefono.Text == "" && tipo != 0 && tipo != 1 ) {
-                
+            if (textBoxTelefono.Text == "" && tipo != 0 && tipo != 1)
+            {
+
                 errorTelefono.Show();
                 hayErrores = true;
             }
 
-            if (textBoxDireccion.Text == "" && tipo == 3) {
+            if (textBoxDireccion.Text == "" && tipo == 3)
+            {
 
                 errorDireccion.Show();
                 hayErrores = true;
             }
 
-            
-            if(hayErrores == true)
+
+            if (hayErrores == true)
             {
                 MessageBox.Show("Ha habido algún problema al crear su cuenta, revise los datos aportados.");
             }
-            
-            else {
+
+            else
+            {
 
                 //try
                 {
@@ -151,7 +153,7 @@ namespace ServiLearn
                         {
                             hayErrores = true;
                             nombreRepetido = cuenta.nombre;
-                            MessageBox.Show("Ya existe un Usuario con el nombre " 
+                            MessageBox.Show("Ya existe un Usuario con el nombre "
                                 + nombreRepetido + ", por favor cambie su Usuario.");
                             errorUsuarioExiste.Show();
                             textBoxUsuario.Clear();
@@ -166,12 +168,14 @@ namespace ServiLearn
                         int posicionArroba = 0;
                         int posicionPunto = 0;
 
-                        if (correo.Contains("@")){
+                        if (correo.Contains("@"))
+                        {
 
                             posicionArroba = correo.IndexOf("@");
                         }
 
-                        if (correo.Contains(".")){
+                        if (correo.Contains("."))
+                        {
 
                             posicionPunto = correo.IndexOf(".");
                         }
@@ -187,8 +191,10 @@ namespace ServiLearn
 
                     MySQLDB miBD = new MySQLDB();
 
-                    if (hayErrores == false) {
-                        if (tipo == 0) {
+                    if (hayErrores == false)
+                    {
+                        if (tipo == 0)
+                        {
 
                             miBD.Insert("INSERT INTO Cuenta (nombre, clave) VALUES ( '" + textBoxUsuario.Text +
                                 "' , '" + textBoxContr.Text + "' )");
@@ -203,10 +209,11 @@ namespace ServiLearn
                             miBD.Update("SET FOREIGN_KEY_CHECKS = 1;");
                             miBD.Update("ALTER TABLE Cuenta AUTO_INCREMENT = 1;");
 
-                            MessageBox.Show("La cuenta de Invitado se ha creado correctamente");                     
+                            MessageBox.Show("La cuenta de Invitado se ha creado correctamente");
                         }
 
-                        else if (tipo == 1) {
+                        else if (tipo == 1)
+                        {
 
                             miBD.Insert("INSERT INTO Cuenta (nombre, clave) VALUES ( '" + textBoxUsuario.Text +
                                 "' , '" + textBoxContr.Text + "' )");
@@ -224,7 +231,8 @@ namespace ServiLearn
                             MessageBox.Show("La cuenta de Alumno se ha creado correctamente");
                         }
 
-                        else if (tipo == 2) {
+                        else if (tipo == 2)
+                        {
 
                             miBD.Insert("INSERT INTO Cuenta (nombre, clave) VALUES ( '" + textBoxUsuario.Text +
                                 "' , '" + textBoxContr.Text + "' )");
@@ -243,7 +251,8 @@ namespace ServiLearn
                             MessageBox.Show("La cuenta de Docente se ha creado correctamente");
                         }
 
-                        else if (tipo == 3) {
+                        else if (tipo == 3)
+                        {
 
                             miBD.Insert("INSERT INTO Cuenta (nombre, clave) VALUES ( '" + textBoxUsuario.Text +
                                 "' , '" + textBoxContr.Text + "' )");
@@ -270,7 +279,7 @@ namespace ServiLearn
                 //    MessageBox.Show("Ha habido algún error al crear su cuenta.");
                 //}
             }
-            
+
         }
     }
 }

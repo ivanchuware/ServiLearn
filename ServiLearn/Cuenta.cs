@@ -1,9 +1,6 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BDLibrary;
 
 namespace ServiLearn
 {
@@ -44,7 +41,7 @@ namespace ServiLearn
                 nombre = (string)tupla[1];
                 Console.Write(nombre);
                 clave = (string)tupla[2];
-                
+
                 if (!clave.Equals(c))
                 {
                     nombre = null;

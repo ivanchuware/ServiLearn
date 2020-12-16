@@ -1,23 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using BDLibrary;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BDLibrary;
 
 namespace ServiLearn
 {
@@ -32,7 +15,7 @@ namespace ServiLearn
             user = u;
             tipo = t;
             curso = c;
-            
+
             InitializeComponent();
 
             Cuenta cuenta = new Cuenta(c.IdOwner);
@@ -41,7 +24,7 @@ namespace ServiLearn
             {
                 bInscribirse.Visible = false;
             }
-            
+
             lCurso.Text = ("Curso: " + c.Nombre);
             lImp.Text = ("Impartido por: " + cuenta.nombre);
             tbDesc.Text = c.Descripcion;
@@ -81,7 +64,7 @@ namespace ServiLearn
             {
                 this.Visible = false;
             }
-            
+
         }
     }
 }

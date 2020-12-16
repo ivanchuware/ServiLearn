@@ -1,13 +1,7 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BDLibrary;
 
 namespace ServiLearn
 {
@@ -111,7 +105,7 @@ namespace ServiLearn
             int idCuenta = u.id;
             int idCurso = c.Id;
             bool r;
-            
+
             MySQLDB miBD = new MySQLDB();
             try
             {
@@ -133,7 +127,7 @@ namespace ServiLearn
             {
                 r = false;
             }
-           
+
             return r;
         }
 
@@ -279,11 +273,12 @@ namespace ServiLearn
                     PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
                     ventana2.ShowDialog();
                 }
-            } catch (Exception exc)
+            }
+            catch (Exception exc)
             {
 
             }
-           
+
         }
 
         private void lbEventos_DoubleClick(object sender, EventArgs e)
@@ -291,18 +286,18 @@ namespace ServiLearn
             try
             {
                 string aux = lbEventos.SelectedItem.ToString();
-                
+
                 Evento evento = new Evento(aux);
-                
+
                 if (CuentaEnEvento(user, evento) == true)
                 {
-                    
+
                     fEvento ventana1 = new fEvento(user, tipo, evento);
                     ventana1.ShowDialog();
                 }
                 else
                 {
-                    
+
                     EventoPreview ventana2 = new EventoPreview(user, tipo, evento);
                     ventana2.ShowDialog();
                 }
@@ -310,7 +305,7 @@ namespace ServiLearn
             }
             catch (Exception exce)
             {
-            
+
             }
         }
 
@@ -326,9 +321,9 @@ namespace ServiLearn
             fCrearEvento ventana3 = new fCrearEvento(user);
             ventana3.ShowDialog();
             actualizarCursos();
-            
+
         }
 
-        
+
     }
 }
