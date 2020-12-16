@@ -95,3 +95,4 @@ W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\Serv
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEvento.resources
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fEventoMod.resources
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.EventoPreview.resources
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.CreacionCurso.resources
