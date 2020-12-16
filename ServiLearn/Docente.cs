@@ -12,7 +12,6 @@ namespace ServiLearn
 
         private string email;
         private string telefono;
-        private string direccion;
 
         public static bool esDocente(int id)
         {
@@ -28,7 +27,7 @@ namespace ServiLearn
             }
         }
 
-        public Docente(string n, string c, string e, string t, string d) : base(n, c)
+        public Docente(string n, string c, string e, string t) : base(n, c)
         {
             try
             {
@@ -37,11 +36,10 @@ namespace ServiLearn
 
                 email = (string)tupla[2];
                 telefono = (string)tupla[3];
-                direccion = (string)tupla[4];
 
                 if (!clave.Equals(c))
                 {
-                    nombre = clave = email = telefono = direccion = null;
+                    nombre = clave = email = telefono = null;
                     throw new Error("Usuario o Contraseña Incorrecta: ");
                 }
             }
@@ -61,8 +59,7 @@ namespace ServiLearn
                 string p = (string)tupla[1];
                 string e = (string)tupla[2];
                 string t = (string)tupla[3];
-                string d = (string)tupla[4];
-                lista.Add(new Docente(n, p, e, t, d));
+                lista.Add(new Docente(n, p, e, t));
             }
 
             return lista;
@@ -98,22 +95,6 @@ namespace ServiLearn
             {
                 MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Docente SET Telefono = '" + value
-                        + "' WHERE Nombre = '" + nombre + "';");
-                telefono = value;
-            }
-        }
-
-        public string Direccion
-        {
-            get
-            {
-                return direccion;
-            }
-
-            set
-            {
-                MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Docente SET Direccion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 telefono = value;
             }

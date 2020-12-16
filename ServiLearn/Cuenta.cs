@@ -44,7 +44,7 @@ namespace ServiLearn
                 nombre = (string)tupla[1];
                 Console.Write(nombre);
                 clave = (string)tupla[2];
-
+                
                 if (!clave.Equals(c))
                 {
                     nombre = null;
@@ -52,10 +52,22 @@ namespace ServiLearn
                     throw new Error("Datos incorrectos.");
                 }
             }
-            catch (Exception e)
+            catch
             {
-                throw new Error("Datos incorrectos." + e.Message);
+                throw new Error("Datos incorrectos.");
             }
+        }
+
+        public Cuenta(int i)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE id_Cuenta = '" + i + "';")[0];
+
+            id = (int)tupla[0];
+            nombre = (string)tupla[1];
+            clave = (string)tupla[2];
+
         }
 
         public string Nombre

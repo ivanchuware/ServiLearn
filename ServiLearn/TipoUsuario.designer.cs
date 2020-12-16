@@ -29,11 +29,11 @@ namespace ServiLearn
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.atras = new System.Windows.Forms.LinkLabel();
+            this.buttonAlu = new System.Windows.Forms.Button();
+            this.buttonONG = new System.Windows.Forms.Button();
+            this.buttonTut = new System.Windows.Forms.Button();
+            this.buttonInv = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,71 +46,71 @@ namespace ServiLearn
             this.label1.TabIndex = 0;
             this.label1.Text = "Elige el tipo de usuario que quieres crear:";
             // 
-            // linkLabel1
+            // atras
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(49, 31);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(31, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Atrás";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.atras.AutoSize = true;
+            this.atras.Location = new System.Drawing.Point(49, 31);
+            this.atras.Name = "atras";
+            this.atras.Size = new System.Drawing.Size(31, 13);
+            this.atras.TabIndex = 4;
+            this.atras.TabStop = true;
+            this.atras.Text = "Atrás";
+            this.atras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // button1
+            // buttonAlu
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button1.Location = new System.Drawing.Point(482, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(320, 160);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Alumno";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.buttonAlu.Location = new System.Drawing.Point(482, 165);
+            this.buttonAlu.Name = "buttonAlu";
+            this.buttonAlu.Size = new System.Drawing.Size(320, 160);
+            this.buttonAlu.TabIndex = 7;
+            this.buttonAlu.Text = "Alumno";
+            this.buttonAlu.UseVisualStyleBackColor = true;
+            this.buttonAlu.Click += new System.EventHandler(this.buttonAlu_Click);
             // 
-            // button2
+            // buttonONG
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button2.Location = new System.Drawing.Point(482, 377);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(320, 160);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "ONG / Administración Pública";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.buttonONG.Location = new System.Drawing.Point(482, 377);
+            this.buttonONG.Name = "buttonONG";
+            this.buttonONG.Size = new System.Drawing.Size(320, 160);
+            this.buttonONG.TabIndex = 8;
+            this.buttonONG.Text = "ONG / Administración Pública";
+            this.buttonONG.UseVisualStyleBackColor = true;
+            this.buttonONG.Click += new System.EventHandler(this.buttonONG_Click);
             // 
-            // button3
+            // buttonTut
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button3.Location = new System.Drawing.Point(102, 377);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(320, 160);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Tutor";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonTut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.buttonTut.Location = new System.Drawing.Point(102, 377);
+            this.buttonTut.Name = "buttonTut";
+            this.buttonTut.Size = new System.Drawing.Size(320, 160);
+            this.buttonTut.TabIndex = 9;
+            this.buttonTut.Text = "Tutor";
+            this.buttonTut.UseVisualStyleBackColor = true;
+            this.buttonTut.Click += new System.EventHandler(this.buttonTut_Click);
             // 
-            // button4
+            // buttonInv
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.button4.Location = new System.Drawing.Point(102, 165);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(320, 160);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Cuenta de Invitado";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.buttonInv.Location = new System.Drawing.Point(102, 165);
+            this.buttonInv.Name = "buttonInv";
+            this.buttonInv.Size = new System.Drawing.Size(320, 160);
+            this.buttonInv.TabIndex = 10;
+            this.buttonInv.Text = "Cuenta de Invitado";
+            this.buttonInv.UseVisualStyleBackColor = true;
+            this.buttonInv.Click += new System.EventHandler(this.buttonInv_Click);
             // 
             // TipoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.buttonInv);
+            this.Controls.Add(this.buttonTut);
+            this.Controls.Add(this.buttonONG);
+            this.Controls.Add(this.buttonAlu);
+            this.Controls.Add(this.atras);
             this.Controls.Add(this.label1);
             this.Name = "TipoUsuario";
             this.Text = "ServiLearn - Elección Tipo Usuario";
@@ -123,11 +123,11 @@ namespace ServiLearn
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.LinkLabel atras;
+        private System.Windows.Forms.Button buttonAlu;
+        private System.Windows.Forms.Button buttonONG;
+        private System.Windows.Forms.Button buttonTut;
+        private System.Windows.Forms.Button buttonInv;
     }
 }
 

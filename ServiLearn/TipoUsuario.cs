@@ -35,7 +35,7 @@ namespace ServiLearn
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonInv_Click(object sender, EventArgs e)
         {
             tipo = 0;
             Registro ventana = new Registro(tipo);
@@ -44,7 +44,7 @@ namespace ServiLearn
             this.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAlu_Click(object sender, EventArgs e)
         {
             tipo = 1;
             Registro ventana = new Registro(tipo);
@@ -53,7 +53,7 @@ namespace ServiLearn
             this.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonTut_Click(object sender, EventArgs e)
         {
             tipo = 2;
             Registro ventana = new Registro(tipo);
@@ -62,7 +62,7 @@ namespace ServiLearn
             this.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonONG_Click(object sender, EventArgs e)
         {
             tipo = 3;
             Registro ventana = new Registro(tipo);

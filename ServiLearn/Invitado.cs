@@ -11,7 +11,7 @@ namespace ServiLearn
     class Invitado : Cuenta
     {
 
-        public Invitado(string n, string c) : base(c, c)
+        public Invitado(string n, string c) : base(n, c)
         {
 
         }
