@@ -9,10 +9,23 @@ namespace ServiLearn
 {
     class Alumno : Cuenta
     {
-
         private string email;
 
-        public Alumno(string n, string c, string e) : base(n,c)
+        public static bool esAlumno(int id)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Alumno WHERE id_Alumno = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
+            }
+        }
+
+        public Alumno(string n, string c, string e) : base(n, c)
         {
             try
             {
@@ -44,11 +57,13 @@ namespace ServiLearn
                 string n = (string)tupla[0];
                 string p = (string)tupla[1];
                 string e = (string)tupla[2];
-                lista.Add(new Alumno(n, p,e));
+                lista.Add(new Alumno(n, p, e));
             }
 
             return lista;
         }
+
+
 
         public string Email
         {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using BDLibrary;
 
 namespace ServiLearn
@@ -37,22 +36,25 @@ namespace ServiLearn
             try
             {
                 MySQLDB miBD = new MySQLDB();
-                object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE nombre = '" + n + "';")[0];
 
                 id = (int)tupla[0];
+
                 nombre = (string)tupla[1];
+                Console.Write(nombre);
                 clave = (string)tupla[2];
 
                 if (!clave.Equals(c))
                 {
                     nombre = null;
                     clave = null;
-                    throw new Error("matadme: ");
+                    throw new Error("Datos incorrectos.");
                 }
             }
-            catch
+            catch (Exception e)
             {
-                throw new Error("Datos incorrectos: ");
+                throw new Error("Datos incorrectos." + e.Message);
             }
         }
 
@@ -78,8 +80,8 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Cuenta SET nombre = '" + value
-                        + "' WHERE nombre = '" + nombre + "';");
+                miBD.Update("UPDATE Cuenta SET Nombre = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
             }
         }
@@ -94,8 +96,8 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Cuenta SET clave = '" + value
-                        + "' WHERE nombre = '" + nombre + "';");
+                miBD.Update("UPDATE Cuenta SET Clave = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
                 clave = value;
             }
         }

@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using BDLibrary;
+using System.Threading.Tasks;
 
 namespace ServiLearn
 {
-    public class Evento
+    class Evento
     {
+
         private string nombre;
         private string descripcion;
-        private DateTime fecha;
+        private int fecha;
 
-        public Evento(string n, string d, DateTime fecha)
+        public Evento(string n, string d, int fecha)
         {
             MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
-            nombre = (string)tupla[2];
-            descripcion = (string)tupla[3];
-            fecha = (DateTime)tupla[5];
-            
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE Nombre = '" + n + "';")[0];
+
+            nombre = (string)tupla[0];
+            descripcion = (string)tupla[1];
+            //fecha = (int)tupla[2];
         }
 
         public List<Evento> ListaEventos()
@@ -32,7 +33,7 @@ namespace ServiLearn
             {
                 string n = (string)tupla[0];
                 string d = (string)tupla[1];
-                DateTime f = (DateTime)tupla[2];
+                int f = (int)tupla[2];
                 lista.Add(new Evento(n, d, f));
             }
             return lista;
@@ -48,8 +49,8 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
-                miBD.Update("UPDATE Evento SET nombre = '" + value
-                        + "' WHERE nombre = '" + nombre + "';");
+                miBD.Update("UPDATE Evento SET Nombre = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
                 nombre = value;
             }
         }
@@ -70,7 +71,7 @@ namespace ServiLearn
             }
         }
 
-        public DateTime Fecha
+        public int Fecha
         {
             get
             {
@@ -79,19 +80,11 @@ namespace ServiLearn
 
             set
             {
-                MySQLDB miBD = new MySQLDB(); 
+                MySQLDB miBD = new MySQLDB();
                 miBD.Update("UPDATE Evento SET Fecha = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 fecha = value;
             }
-        }
-
-        public void BorrarEvento()
-        {
-            MySQLDB miBD = new MySQLDB();
-            miBD.Delete("DELETE FROM Evento where nombre = '" + nombre + "';");
-            nombre = descripcion = null;
-            
         }
     }
 }

@@ -11,8 +11,8 @@ namespace ServiLearn
     {
         private string nombre;
         private string descripcion;
-        private int id;
         private int idOwner;
+        private int id;
 
         public Curso(string n)
         {
@@ -48,6 +48,7 @@ namespace ServiLearn
             }
             return lista;
         }
+        
 
         public string Nombre
         {
@@ -87,7 +88,7 @@ namespace ServiLearn
                 return id;
             }
 
-
+            
         }
         public int IdOwner
         {
@@ -95,9 +96,8 @@ namespace ServiLearn
             {
                 return idOwner;
             }
-
-
         }
+
 
 
     }
