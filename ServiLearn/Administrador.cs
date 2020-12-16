@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using BDLibrary;
+using System.Threading.Tasks;
 
 namespace ServiLearn
 {
@@ -11,6 +11,19 @@ namespace ServiLearn
     {
         private string email;
 
+        public static bool esAdmin(int id)
+        {
+            try
+            {
+                MySQLDB miBD = new MySQLDB();
+                List<object[]> tuplas = miBD.Select("SELECT * FROM Admin WHERE id_Admin = " + id + ";");
+                return tuplas.Count != 0;
+            }
+            catch (Exception e)
+            {
+                throw new Error(e.Message);
+            }
+        }
         public Administrador(string n, string c, string e) : base(n, c)
         {
             try
@@ -59,6 +72,7 @@ namespace ServiLearn
             set
             {
                 MySQLDB miBD = new MySQLDB();
+
                 miBD.Update("UPDATE Administrador SET Email = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 email = value;
