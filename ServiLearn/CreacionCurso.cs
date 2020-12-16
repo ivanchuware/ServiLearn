@@ -9,6 +9,7 @@ namespace ServiLearn
     {
         String nombre;
         String desc;
+        String adic;
         Cuenta user;
         int tipo;
         public CreacionCurso(Cuenta u, int t)
@@ -22,7 +23,9 @@ namespace ServiLearn
         {
             MySQLDB miBD = new MySQLDB();
 
-            miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
+            adic = "vacio";
+
+            miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', '" + adic + "');");
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

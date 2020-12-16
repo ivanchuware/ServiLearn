@@ -8,6 +8,7 @@ namespace ServiLearn
     {
         private string nombre;
         private string descripcion;
+        private string adicional;
         private int idOwner;
         private int id;
 
@@ -20,6 +21,7 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
         }
         public Curso(string n, string d)
         {
@@ -30,6 +32,7 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
         }
 
         public List<Curso> ListaCursos()
@@ -78,6 +81,23 @@ namespace ServiLearn
                 descripcion = value;
             }
         }
+
+        public String Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+        
+            set
+            {
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET adicional = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
+                descripcion = value;
+            }
+        }
+
         public int Id
         {
             get
@@ -95,7 +115,14 @@ namespace ServiLearn
             }
         }
 
+        public void BorrarCurso()
+        {
+            MySQLDB miBD = new MySQLDB();
+            miBD.Delete("DELETE FROM Cuenta_Curso where id_Curso = '" + id + "';");
+            miBD.Delete("DELETE FROM Curso where nombre = '" + nombre + "';");
+            nombre = descripcion = null;
 
+        }
 
     }
 }

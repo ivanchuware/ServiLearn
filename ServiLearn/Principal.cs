@@ -233,21 +233,7 @@ namespace ServiLearn
         {
 
         }
-
-        private void lbCursos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int selectedCurso = -1;
-            foreach (Tuple<int, int> tupla in indiceIdCurso)
-            {
-
-                if (lbCursos.SelectedIndex == tupla.Item1)
-                {
-                    selectedCurso = tupla.Item2;
-                }
-            }
-            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Curs: " + selectedCurso);
-        }
-
+       
         private void tbBuscadorCurso_TextChanged(object sender, EventArgs e)
         {
             actualizarCursos();

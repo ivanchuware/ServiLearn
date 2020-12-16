@@ -25,13 +25,12 @@ namespace ServiLearn
             label1.Text = "Evento: " + seleccionado.Nombre;
             label2.Text = "Organizado por: " + seleccionado.IdOwner;
             tDescripcion.Text = seleccionado.Descripcion;
-            
-                tAdicional.Text = seleccionado.Adicional;
+            tAdicional.Text = seleccionado.Adicional;
             
 
             bMod.Visible = false;
             button2.Visible = false;
-            if (tipo == 3 || tipo == 4)
+            if (seleccionado.IdOwner == user.id || tipo == 4)
             {
                 bMod.Visible = true;
                 button2.Visible = true;
@@ -40,7 +39,7 @@ namespace ServiLearn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fEventoMod ventana = new fEventoMod(user, tipo, seleccionado.Nombre, seleccionado.Descripcion);
+            fEventoMod ventana = new fEventoMod(user, tipo, seleccionado.Nombre, seleccionado.Descripcion, seleccionado.Adicional);
             this.Visible = false;
             ventana.ShowDialog();
             
@@ -54,7 +53,7 @@ namespace ServiLearn
             {
                 seleccionado.BorrarEvento();
                 seleccionado = null;
-                MessageBox.Show("Se ha eliminado el curso");
+                MessageBox.Show("Se ha eliminado el evento");
                 this.Close();
             }
             catch (Exception ex)

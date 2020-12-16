@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -99,18 +98,24 @@
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="fCrearEvento.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Include="fEventoMod.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Include="fEvento.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Include="EventoPreview.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
+    <Compile Include="fCrearEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.Designer.cs">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEventoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventoPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreacionCurso.Designer.cs">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
     </Compile>
@@ -154,18 +159,18 @@
     <Compile Include="PreviewCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="EventoPreview.Designer.cs">
-		  <DependentUpon>EventoPreview.cs</DependentUpon>
-	  </Compile>
-	  <Compile Include="fEvento.Designer.cs">
-		  <DependentUpon>fEvento.cs</DependentUpon>
-	  </Compile>
-	  <Compile Include="fEventoMod.Designer.cs">
-		  <DependentUpon>fEventoMod.cs</DependentUpon>
-	  </Compile>
-	  <Compile Include="fCrearEvento.Designer.cs">
-		  <DependentUpon>fCrearEvento.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="EventoPreview.Designer.cs">
+      <DependentUpon>EventoPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEvento.Designer.cs">
+      <DependentUpon>fEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEventoMod.Designer.cs">
+      <DependentUpon>fEventoMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCrearEvento.Designer.cs">
+      <DependentUpon>fCrearEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="PreviewCurso.Designer.cs">
       <DependentUpon>PreviewCurso.cs</DependentUpon>
     </Compile>
@@ -179,6 +184,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreacionCurso.resx">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCursoMod.resx">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
@@ -195,18 +203,18 @@
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="fEvento.resx">
-		  <DependentUpon>fEvento.cs</DependentUpon>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="fEventoMod.resx">
-		  <DependentUpon>fEventoMod.cs</DependentUpon>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="fCrearEvento.resx">
-		  <DependentUpon>fCrearEvento.cs</DependentUpon>
-	  </EmbeddedResource>
-	  <EmbeddedResource Include="EventoPreview.resx">
-		  <DependentUpon>EventoPreview.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="fEvento.resx">
+      <DependentUpon>fEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEventoMod.resx">
+      <DependentUpon>fEventoMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCrearEvento.resx">
+      <DependentUpon>fCrearEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventoPreview.resx">
+      <DependentUpon>EventoPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PreviewCurso.resx">
       <DependentUpon>PreviewCurso.cs</DependentUpon>
     </EmbeddedResource>

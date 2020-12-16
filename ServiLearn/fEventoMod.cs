@@ -17,7 +17,7 @@ namespace ServiLearn
         string aux;
         Cuenta user;
         int tipo;
-        public fEventoMod(Cuenta u, int t, string evento, string desc)
+        public fEventoMod(Cuenta u, int t, string evento, string desc, string adic)
         {
             InitializeComponent();
             user = u;
@@ -25,6 +25,7 @@ namespace ServiLearn
             aux = evento;
             textBox1.Text = evento;
             textBox2.Text = desc;
+            textBox3.Text = adic;
         }
 
         private void bUpd_Click(object sender, EventArgs e)
@@ -41,11 +42,9 @@ namespace ServiLearn
                 miBD.Update("UPDATE Evento SET descripcion = '" + descripcion
                         + "' WHERE nombre = '" + nombre + "';");
 
-                if (!adicional.Equals(""))
-                {
-                    miBD.Update("UPDATE Evento SET post = '" + adicional
-                        + "' WHERE nombre = '" + nombre + "';");
-                }
+                miBD.Update("UPDATE Evento SET post = '" + adicional
+                    + "' WHERE nombre = '" + nombre + "';");
+                
                 Evento eve = new Evento(nombre);
 
                 fEvento ventana = new fEvento(user, tipo, eve);
