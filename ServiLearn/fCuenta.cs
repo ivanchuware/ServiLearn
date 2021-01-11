@@ -20,6 +20,11 @@ namespace ServiLearn
             InitializeComponent();
             user = u;
             tipo = t;
+            actualizarCuenta();
+        }
+        private void actualizarCuenta()
+        {
+            user = new Cuenta(user.id);
             lNombre.Text = "Nombre de usuario: " + user.nombre;
             String tp;
             switch (tipo)
@@ -41,7 +46,21 @@ namespace ServiLearn
                     break;
             }
             lTipo.Text = "Tipo de cuenta: " + tp;
+        }
 
+        private void bCambiarNombre_Click(object sender, EventArgs e)
+        {
+            fCambiarNombre ventana = new fCambiarNombre(user);
+            ventana.ShowDialog();
+            actualizarCuenta();
+            
+        }
+
+        private void bCambiarContraseña_Click(object sender, EventArgs e)
+        {
+            fCambiarClave ventana = new fCambiarClave(user);
+            ventana.ShowDialog();
+            actualizarCuenta();
         }
     }
 }

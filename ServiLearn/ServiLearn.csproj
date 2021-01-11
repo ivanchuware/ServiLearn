@@ -109,6 +109,18 @@
     <Compile Include="EventoPreview.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="fCambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCambiarClave.Designer.cs">
+      <DependentUpon>fCambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCambiarNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCambiarNombre.Designer.cs">
+      <DependentUpon>fCambiarNombre.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCrearEvento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventoPreview.resx">
       <DependentUpon>EventoPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCambiarClave.resx">
+      <DependentUpon>fCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCambiarNombre.resx">
+      <DependentUpon>fCambiarNombre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearEvento.resx">
       <DependentUpon>fCrearEvento.cs</DependentUpon>

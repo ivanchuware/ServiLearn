@@ -157,3 +157,5 @@ W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\Serv
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.RegistroUsuario.resources
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.SeleccionRegistro.resources
 W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fCuenta.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fCambiarNombre.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fCambiarClave.resources
