@@ -74,5 +74,10 @@ namespace ServiLearn
         {
             this.Visible = false;
         }
+
+        private void tbDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

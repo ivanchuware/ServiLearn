@@ -83,6 +83,7 @@ namespace ServiLearn
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Registrarse";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -93,6 +94,7 @@ namespace ServiLearn
             this.linkLabel2.TabIndex = 5;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "He olvidado la contraseña";
+            this.linkLabel2.Visible = false;
             // 
             // buttonLogin
             // 
@@ -117,6 +119,7 @@ namespace ServiLearn
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.label1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiLearn - Inicio de Sesion";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -59,5 +59,13 @@ namespace ServiLearn
                 MessageBox.Show("Datos incorrectos.");
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SeleccionRegistro ventana = new SeleccionRegistro();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

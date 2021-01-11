@@ -28,6 +28,23 @@ namespace ServiLearn
             }
         }
 
+        public Docente(string n, string c, string e, string d, string t, bool r) : base(n, c, r)
+        {
+
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Cuenta WHERE Nombre = '" + n + "';")[0];
+            int idCuenta = (int)tupla[0];
+            miBD.Insert("INSERT INTO Docente VALUES(" + idCuenta + ", '" + e + "', '" + d + "', '" + t + "');");
+
+
+            this.email = e;
+            this.telefono = t;
+            this.direccion = d;
+
+
+        }
+
+
         public Docente(string n, string c, string e, string t, string d) : base(n, c)
         {
             try

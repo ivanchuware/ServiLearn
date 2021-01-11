@@ -59,6 +59,7 @@ namespace ServiLearn
             this.tbDescripcion.Size = new System.Drawing.Size(374, 240);
             this.tbDescripcion.TabIndex = 2;
             this.tbDescripcion.Text = "Introduzca una descripción del curso";
+            this.tbDescripcion.TextChanged += new System.EventHandler(this.tbDescripcion_TextChanged);
             // 
             // bAceptar
             // 
@@ -90,6 +91,7 @@ namespace ServiLearn
             this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.tbCurso);
             this.Name = "CreacionCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreacionCurso";
             this.ResumeLayout(false);
             this.PerformLayout();

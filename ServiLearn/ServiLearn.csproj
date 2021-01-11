@@ -98,7 +98,7 @@
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreacionCurso.Designer.cs">
+    <Compile Include="CreacionCurso.designer.cs">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Cuenta.cs" />
@@ -106,18 +106,45 @@
     <Compile Include="Docente.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="EventoPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCrearEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCursoMod.designer.cs">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEventoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Invitado.cs" />
+    <Compile Include="RegistroInvitado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroTutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="ONG.cs" />
     <Compile Include="PantallaCurso.cs">
@@ -143,11 +170,23 @@
     <EmbeddedResource Include="CreacionCurso.resx">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EventoPreview.resx">
+      <DependentUpon>EventoPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCrearEvento.resx">
+      <DependentUpon>fCrearEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCursoMod.resx">
+      <DependentUpon>fCursoMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEvento.resx">
+      <DependentUpon>fEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEventoMod.resx">
+      <DependentUpon>fEventoMod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
@@ -167,6 +206,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistroInvitado.resx">
+      <DependentUpon>RegistroInvitado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroONG.resx">
+      <DependentUpon>RegistroONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroTutor.resx">
+      <DependentUpon>RegistroTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroUsuario.resx">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionRegistro.resx">
+      <DependentUpon>SeleccionRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

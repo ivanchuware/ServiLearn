@@ -94,6 +94,7 @@ namespace ServiLearn
             this.Controls.Add(this.lImp);
             this.Controls.Add(this.lCurso);
             this.Name = "PreviewCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PreviewCurso";
             this.ResumeLayout(false);
             this.PerformLayout();
