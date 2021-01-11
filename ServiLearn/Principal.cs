@@ -355,5 +355,11 @@ namespace ServiLearn
             actualizarCursos();
             actualizarEventos();
         }
+
+        private void bCuenta_Click(object sender, EventArgs e)
+        {
+            fCuenta ventana = new fCuenta(user, tipo);
+            ventana.ShowDialog();
+        }
     }
 }
