@@ -104,6 +104,7 @@ namespace ServiLearn
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "fCrearEvento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fCrearEvento";
             this.ResumeLayout(false);
             this.PerformLayout();

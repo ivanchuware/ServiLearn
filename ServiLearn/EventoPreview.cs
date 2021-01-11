@@ -131,6 +131,7 @@ namespace ServiLearn
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EventoPreview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventoPreview";
             this.ResumeLayout(false);
             this.PerformLayout();

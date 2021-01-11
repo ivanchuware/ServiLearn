@@ -9,6 +9,8 @@ namespace ServiLearn
     {
         private Cuenta user;
         private int tipo;
+        private int selectedEvento = -1;
+        private int selectedCurso = -1;
         List<object[]> tuplasCursos;
         List<object[]> tuplasEventos;
 
@@ -233,7 +235,21 @@ namespace ServiLearn
         {
 
         }
-       
+
+        private void lbCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedCurso = -1;
+            foreach (Tuple<int, int> tupla in indiceIdCurso)
+            {
+
+                if (lbCursos.SelectedIndex == tupla.Item1)
+                {
+                    selectedCurso = tupla.Item2;
+                }
+            }
+            Console.WriteLine("Sel: " + lbCursos.SelectedIndex + " Curs: " + selectedCurso);
+        }
+
         private void tbBuscadorCurso_TextChanged(object sender, EventArgs e)
         {
             actualizarCursos();
@@ -243,9 +259,9 @@ namespace ServiLearn
         {
             try
             {
-                string n = lbCursos.SelectedItem.ToString();
+               
 
-                Curso curso = new Curso(n);
+                Curso curso = new Curso(selectedCurso);
 
 
 
@@ -262,7 +278,7 @@ namespace ServiLearn
             }
             catch (Exception exc)
             {
-
+                Console.WriteLine(exc.Message);
             }
 
         }
@@ -271,9 +287,9 @@ namespace ServiLearn
         {
             try
             {
-                string aux = lbEventos.SelectedItem.ToString();
+                
 
-                Evento evento = new Evento(aux);
+                Evento evento = new Evento(selectedEvento);
 
                 if (CuentaEnEvento(user, evento) == true)
                 {
@@ -295,21 +311,49 @@ namespace ServiLearn
             }
         }
 
-        private void buttonCrearCurso_Click(object sender, EventArgs e)
+      
+
+        private void lbEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CreacionCurso ventana = new CreacionCurso(user, tipo);
-            ventana.ShowDialog();
-            actualizarCursos();
+            selectedEvento = -1;
+            foreach (Tuple<int, int> tupla in indiceIdEvento)
+            {
+
+                if (lbEventos.SelectedIndex == tupla.Item1)
+                {
+                    selectedEvento = tupla.Item2;
+                }
+            }
+            Console.WriteLine("Sel: " + lbEventos.SelectedIndex + " Evento: " + selectedEvento);
         }
 
-        private void buttonCrearEvento_Click(object sender, EventArgs e)
+        private void buttonCrearEvento_Click_1(object sender, EventArgs e)
         {
             fCrearEvento ventana3 = new fCrearEvento(user);
             ventana3.ShowDialog();
-            actualizarCursos();
+            consultarEventos();
+            actualizarEventos();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
 
         }
 
+        private void buttonCrearCurso_Click_1(object sender, EventArgs e)
+        {
+            CreacionCurso ventana = new CreacionCurso(user, tipo);
+            ventana.ShowDialog();
+            consultarCursos();
+            actualizarCursos();
+        }
 
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            consultarCursos();
+            consultarEventos();
+            actualizarCursos();
+            actualizarEventos();
+        }
     }
 }

@@ -94,6 +94,7 @@ namespace ServiLearn
             this.tvAdic.ReadOnly = true;
             this.tvAdic.Size = new System.Drawing.Size(636, 141);
             this.tvAdic.TabIndex = 7;
+            this.tvAdic.TextChanged += new System.EventHandler(this.tvAdic_TextChanged);
             // 
             // label1
             // 
@@ -127,7 +128,9 @@ namespace ServiLearn
             this.Controls.Add(this.lProfesores);
             this.Controls.Add(this.lCurso);
             this.Name = "PantallaCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.PantallaCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

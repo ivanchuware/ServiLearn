@@ -112,6 +112,7 @@ namespace ServiLearn
             this.Controls.Add(this.clave);
             this.Controls.Add(this.nombreUsuario);
             this.Name = "RegistroInvitado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroInvitado";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,11 +12,54 @@ namespace ServiLearn
         private int id;
         private int idOwner;
 
+        public Evento(string n, string d)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
+
+
+        }
+        public Evento(string n, string d)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
+            id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            adicional = (string)tupla[4];
+
         public Evento(string n)
         {
             MySQLDB miBD = new MySQLDB();
             object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
             id = (int)tupla[0];
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+            try
+            {
+                adicional = (string)tupla[4];
+            }
+            catch (Exception e)
+            {
+                adicional = "";
+                Console.WriteLine(e.Message);
+            }
+
+
+        }
+
+        public Evento(int id)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE id_Evento = " + id + ";")[0];
+            this.id = id;
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
@@ -36,18 +79,6 @@ namespace ServiLearn
             {
                 adicional = "";
             }
-
-
-        }
-        public Evento(string n, string d)
-        {
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT * FROM Evento WHERE nombre = '" + n + "';")[0];
-            id = (int)tupla[0];
-            idOwner = (int)tupla[1];
-            nombre = (string)tupla[2];
-            descripcion = (string)tupla[3];
-            adicional = (string)tupla[4];
 
 
         }
@@ -89,6 +120,13 @@ namespace ServiLearn
                 return adicional;
             }
 
+        public string Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+
         }
         public int Id
         {
@@ -107,6 +145,7 @@ namespace ServiLearn
             }
         }
 
+
         public String Descripcion
         {
             get
@@ -123,8 +162,6 @@ namespace ServiLearn
             }
         }
 
-
-
         public void BorrarEvento()
         {
             MySQLDB miBD = new MySQLDB();
@@ -133,5 +170,7 @@ namespace ServiLearn
             nombre = descripcion = null;
 
         }
+
+
     }
 }

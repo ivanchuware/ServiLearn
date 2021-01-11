@@ -8,9 +8,9 @@ namespace ServiLearn
     {
         private string nombre;
         private string descripcion;
-        private string adicional;
-        private int idOwner;
         private int id;
+        private int idOwner;
+        private string adicional;
 
         public Curso(string n)
         {
@@ -22,6 +22,28 @@ namespace ServiLearn
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
             adicional = (string)tupla[4];
+        }
+
+        public Curso(int id)
+        {
+            MySQLDB miBD = new MySQLDB();
+            object[] tupla = miBD.Select("SELECT * FROM Curso WHERE id_Curso = " + id + ";")[0];
+
+            try
+            {
+                adicional = (string)tupla[4];
+            }
+            catch (Exception e)
+            {
+                adicional = "";
+                Console.WriteLine(e.Message);
+            }
+
+            this.id = id;
+            idOwner = (int)tupla[1];
+            nombre = (string)tupla[2];
+            descripcion = (string)tupla[3];
+           
         }
         public Curso(string n, string d)
         {
@@ -107,6 +129,21 @@ namespace ServiLearn
 
 
         }
+        public String Adicional
+        {
+            get
+            {
+                return adicional;
+            }
+
+            set
+            {
+                MySQLDB miBD = new MySQLDB();
+                miBD.Update("UPDATE Curso SET adicional = '" + value
+                        + "' WHERE Nombre = '" + nombre + "';");
+                descripcion = value;
+            }
+        }
         public int IdOwner
         {
             get
@@ -123,6 +160,9 @@ namespace ServiLearn
             nombre = descripcion = null;
 
         }
+
+
+
 
     }
 }

@@ -165,6 +165,7 @@
             this.Controls.Add(this.labelCursos);
             this.Controls.Add(this.labelTitulo);
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiLearn";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.ResumeLayout(false);
