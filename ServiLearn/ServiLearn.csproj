@@ -112,6 +112,12 @@
     <Compile Include="fCrearEvento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="fCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCuenta.Designer.cs">
+      <DependentUpon>fCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCursoMod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearEvento.resx">
       <DependentUpon>fCrearEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCuenta.resx">
+      <DependentUpon>fCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCursoMod.resx">
       <DependentUpon>fCursoMod.cs</DependentUpon>

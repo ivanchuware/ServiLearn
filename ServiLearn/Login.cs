@@ -56,7 +56,15 @@ namespace ServiLearn
                 ventana.ShowDialog();
                 this.Visible = true;
             } catch (Exception ex) {
-                MessageBox.Show("Datos incorrectos.");
+                if (ex.Message.Contains("Too many connections"))
+                {
+                    MessageBox.Show("Base de datos sobrecargada, por favor, intentalo de nuevo");
+                }
+                else
+                {
+                    MessageBox.Show("Datos incorrectos.");
+                }
+              
             }
         }
 

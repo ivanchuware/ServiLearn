@@ -39,6 +39,7 @@
             this.lbCursos = new System.Windows.Forms.ListBox();
             this.lbEventos = new System.Windows.Forms.ListBox();
             this.refresh = new System.Windows.Forms.Button();
+            this.bCuenta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -149,11 +150,22 @@
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
+            // bCuenta
+            // 
+            this.bCuenta.Location = new System.Drawing.Point(79, 63);
+            this.bCuenta.Name = "bCuenta";
+            this.bCuenta.Size = new System.Drawing.Size(75, 23);
+            this.bCuenta.TabIndex = 13;
+            this.bCuenta.Text = "Mi Cuenta";
+            this.bCuenta.UseVisualStyleBackColor = true;
+            this.bCuenta.Click += new System.EventHandler(this.bCuenta_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.bCuenta);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.lbEventos);
             this.Controls.Add(this.lbCursos);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.ListBox lbCursos;
         private System.Windows.Forms.ListBox lbEventos;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button bCuenta;
     }
 }
