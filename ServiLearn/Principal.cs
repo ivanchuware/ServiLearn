@@ -179,6 +179,7 @@ namespace ServiLearn
 
             buttonCrearCurso.Visible = false;
             buttonCrearEvento.Visible = false;
+            bGestionUsuarios.Visible = false;
 
             if (tipo == 2 || tipo == 4)
             {
@@ -188,6 +189,11 @@ namespace ServiLearn
             if (tipo == 3 || tipo == 4)
             {
                 buttonCrearEvento.Visible = true;
+            }
+
+            if(tipo == 4)
+            {
+                bGestionUsuarios.Visible = true;
             }
 
             String tp;
@@ -365,6 +371,12 @@ namespace ServiLearn
         private void bCuenta_Click(object sender, EventArgs e)
         {
             fCuenta ventana = new fCuenta(user, tipo);
+            ventana.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fGestionUsuario ventana = new fGestionUsuario();
             ventana.ShowDialog();
         }
     }

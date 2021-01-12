@@ -142,6 +142,12 @@
     <Compile Include="fEventoMod.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="fGestionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGestionUsuario.Designer.cs">
+      <DependentUpon>fGestionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invitado.cs" />
     <Compile Include="RegistroInvitado.cs">
       <SubType>Form</SubType>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fEventoMod.resx">
       <DependentUpon>fEventoMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGestionUsuario.resx">
+      <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
