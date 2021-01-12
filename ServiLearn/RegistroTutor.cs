@@ -12,9 +12,11 @@ namespace ServiLearn
 {
     public partial class RegistroTutor : Form
     {
-        public RegistroTutor()
+        SeleccionRegistro sr = null;
+        public RegistroTutor(SeleccionRegistro s)
         {
             InitializeComponent();
+            sr = s;
         }
 
         private void nUsuario_TextChanged(object sender, EventArgs e)
@@ -224,7 +226,8 @@ namespace ServiLearn
             this.Controls.Add(this.nombreUsuario);
             this.Name = "RegistroTutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroTutor";
+            this.Text = "ServiLearn - Registro Tutor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroTutor_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +251,11 @@ namespace ServiLearn
         private void RegistroTutor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistroTutor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            sr.Show();
         }
     }
 }

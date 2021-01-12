@@ -12,9 +12,11 @@ namespace ServiLearn
 {
     public partial class RegistroInvitado : Form
     {
-        public RegistroInvitado()
+        SeleccionRegistro sr = null;
+        public RegistroInvitado(SeleccionRegistro s)
         {
             InitializeComponent();
+            sr = s;
         }
 
         private void cnl_Click(object sender, EventArgs e)
@@ -113,7 +115,8 @@ namespace ServiLearn
             this.Controls.Add(this.nombreUsuario);
             this.Name = "RegistroInvitado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroInvitado";
+            this.Text = "ServiLearn - Registro Invitado";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroInvitado_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +134,11 @@ namespace ServiLearn
         private void RegistroInvitado_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistroInvitado_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            sr.Show();
         }
     }
 }

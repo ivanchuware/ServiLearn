@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Ventana de logueo
+
 namespace ServiLearn
 {
     public partial class Login : Form
     {
+        // ID del usuario logueado y su tipo.
         private Cuenta user;
         private int tipo;
+        SeleccionRegistro registro = null;
 
         public Login()
         {
-            tipo = -1;
             InitializeComponent();
+            tbClave.PasswordChar = '*';
+            registro = new SeleccionRegistro(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -34,8 +39,10 @@ namespace ServiLearn
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try {
+                // Se busca cuenta en base de datos.
                 user = new Cuenta(tbUsuario.Text, tbClave.Text);
 
+                // Se mira que tipo de cuenta es.
                 if (Invitado.esInvitado(user.id)) {
                     tipo = 0;
                 } else if (Alumno.esAlumno(user.id)) {
@@ -50,22 +57,30 @@ namespace ServiLearn
                 }
                 Principal ventana = new Principal(user, tipo);
 
-
-
-                this.Visible = false;
-                ventana.ShowDialog();
-                this.Visible = true;
+                ventana.Show();
+                this.Hide();
             } catch (Exception ex) {
-                MessageBox.Show("Datos incorrectos.");
+                if (ex.Message.Contains("Too many connections"))
+                {
+                    MessageBox.Show("Base de datos sobrecargada, por favor, intentalo de nuevo");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+              
             }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SeleccionRegistro ventana = new SeleccionRegistro();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            registro.Show();
+            this.Hide();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
         }
     }
 }

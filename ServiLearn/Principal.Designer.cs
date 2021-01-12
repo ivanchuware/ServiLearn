@@ -39,6 +39,9 @@
             this.lbCursos = new System.Windows.Forms.ListBox();
             this.lbEventos = new System.Windows.Forms.ListBox();
             this.refresh = new System.Windows.Forms.Button();
+            this.bCuenta = new System.Windows.Forms.Button();
+            this.bGestionUsuarios = new System.Windows.Forms.Button();
+            this.btMsgs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -55,7 +58,7 @@
             // labelCursos
             // 
             this.labelCursos.AutoSize = true;
-            this.labelCursos.Location = new System.Drawing.Point(127, 169);
+            this.labelCursos.Location = new System.Drawing.Point(353, 169);
             this.labelCursos.Name = "labelCursos";
             this.labelCursos.Size = new System.Drawing.Size(94, 13);
             this.labelCursos.TabIndex = 1;
@@ -65,7 +68,7 @@
             // labelEventos
             // 
             this.labelEventos.AutoSize = true;
-            this.labelEventos.Location = new System.Drawing.Point(550, 169);
+            this.labelEventos.Location = new System.Drawing.Point(612, 169);
             this.labelEventos.Name = "labelEventos";
             this.labelEventos.Size = new System.Drawing.Size(101, 13);
             this.labelEventos.TabIndex = 2;
@@ -73,7 +76,7 @@
             // 
             // tbBuscadorCurso
             // 
-            this.tbBuscadorCurso.Location = new System.Drawing.Point(121, 134);
+            this.tbBuscadorCurso.Location = new System.Drawing.Point(347, 134);
             this.tbBuscadorCurso.Name = "tbBuscadorCurso";
             this.tbBuscadorCurso.Size = new System.Drawing.Size(100, 20);
             this.tbBuscadorCurso.TabIndex = 3;
@@ -81,7 +84,7 @@
             // 
             // tbBuscadorEvento
             // 
-            this.tbBuscadorEvento.Location = new System.Drawing.Point(553, 134);
+            this.tbBuscadorEvento.Location = new System.Drawing.Point(615, 134);
             this.tbBuscadorEvento.Name = "tbBuscadorEvento";
             this.tbBuscadorEvento.Size = new System.Drawing.Size(93, 20);
             this.tbBuscadorEvento.TabIndex = 4;
@@ -89,7 +92,7 @@
             // 
             // buttonCrearCurso
             // 
-            this.buttonCrearCurso.Location = new System.Drawing.Point(79, 426);
+            this.buttonCrearCurso.Location = new System.Drawing.Point(323, 425);
             this.buttonCrearCurso.Name = "buttonCrearCurso";
             this.buttonCrearCurso.Size = new System.Drawing.Size(75, 23);
             this.buttonCrearCurso.TabIndex = 7;
@@ -99,7 +102,7 @@
             // 
             // buttonCrearEvento
             // 
-            this.buttonCrearEvento.Location = new System.Drawing.Point(517, 425);
+            this.buttonCrearEvento.Location = new System.Drawing.Point(629, 425);
             this.buttonCrearEvento.Name = "buttonCrearEvento";
             this.buttonCrearEvento.Size = new System.Drawing.Size(84, 23);
             this.buttonCrearEvento.TabIndex = 8;
@@ -122,7 +125,7 @@
             // lbCursos
             // 
             this.lbCursos.FormattingEnabled = true;
-            this.lbCursos.Location = new System.Drawing.Point(89, 206);
+            this.lbCursos.Location = new System.Drawing.Point(323, 206);
             this.lbCursos.Name = "lbCursos";
             this.lbCursos.Size = new System.Drawing.Size(169, 173);
             this.lbCursos.TabIndex = 10;
@@ -132,7 +135,7 @@
             // lbEventos
             // 
             this.lbEventos.FormattingEnabled = true;
-            this.lbEventos.Location = new System.Drawing.Point(517, 206);
+            this.lbEventos.Location = new System.Drawing.Point(577, 206);
             this.lbEventos.Name = "lbEventos";
             this.lbEventos.Size = new System.Drawing.Size(163, 173);
             this.lbEventos.TabIndex = 11;
@@ -141,7 +144,7 @@
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(183, 425);
+            this.refresh.Location = new System.Drawing.Point(426, 425);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 12;
@@ -149,11 +152,44 @@
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
+            // bCuenta
+            // 
+            this.bCuenta.Location = new System.Drawing.Point(61, 47);
+            this.bCuenta.Name = "bCuenta";
+            this.bCuenta.Size = new System.Drawing.Size(122, 23);
+            this.bCuenta.TabIndex = 13;
+            this.bCuenta.Text = "Mi Cuenta";
+            this.bCuenta.UseVisualStyleBackColor = true;
+            this.bCuenta.Click += new System.EventHandler(this.bCuenta_Click);
+            // 
+            // bGestionUsuarios
+            // 
+            this.bGestionUsuarios.Location = new System.Drawing.Point(61, 97);
+            this.bGestionUsuarios.Name = "bGestionUsuarios";
+            this.bGestionUsuarios.Size = new System.Drawing.Size(122, 23);
+            this.bGestionUsuarios.TabIndex = 14;
+            this.bGestionUsuarios.Text = "Gestionar Usuarios";
+            this.bGestionUsuarios.UseVisualStyleBackColor = true;
+            this.bGestionUsuarios.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btMsgs
+            // 
+            this.btMsgs.Location = new System.Drawing.Point(61, 134);
+            this.btMsgs.Name = "btMsgs";
+            this.btMsgs.Size = new System.Drawing.Size(122, 23);
+            this.btMsgs.TabIndex = 15;
+            this.btMsgs.Text = "Mis mensajes";
+            this.btMsgs.UseVisualStyleBackColor = true;
+            this.btMsgs.Click += new System.EventHandler(this.btMsgs_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.btMsgs);
+            this.Controls.Add(this.bGestionUsuarios);
+            this.Controls.Add(this.bCuenta);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.lbEventos);
             this.Controls.Add(this.lbCursos);
@@ -187,5 +223,8 @@
         private System.Windows.Forms.ListBox lbCursos;
         private System.Windows.Forms.ListBox lbEventos;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button bCuenta;
+        private System.Windows.Forms.Button bGestionUsuarios;
+        private System.Windows.Forms.Button btMsgs;
     }
 }

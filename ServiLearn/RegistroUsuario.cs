@@ -12,9 +12,11 @@ namespace ServiLearn
 {
     public partial class RegistroUsuario : Form
     {
-        public RegistroUsuario()
+        SeleccionRegistro sr = null;
+        public RegistroUsuario(SeleccionRegistro s)
         {
             InitializeComponent();
+            sr = s;
         }
 
         private void cnl_Click(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace ServiLearn
         {
             Alumno c = new Alumno(nUsuario.Text, cUsuario.Text,eUsuario.Text, true);
             MessageBox.Show("Cuenta creada");
+
             this.Close();
         }
 
@@ -124,7 +127,8 @@ namespace ServiLearn
             this.Controls.Add(this.nombreUsuario);
             this.Name = "RegistroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroUsuario";
+            this.Text = "ServiLearn - Registro Alumno";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuario_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +148,11 @@ namespace ServiLearn
         private void RegistroUsuario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistroUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            sr.Show();
         }
     }
 }

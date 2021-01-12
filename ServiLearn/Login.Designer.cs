@@ -42,7 +42,7 @@ namespace ServiLearn
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 135);
+            this.label1.Location = new System.Drawing.Point(330, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 25);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace ServiLearn
             // 
             // tbUsuario
             // 
-            this.tbUsuario.Location = new System.Drawing.Point(371, 163);
+            this.tbUsuario.Location = new System.Drawing.Point(322, 151);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(144, 20);
             this.tbUsuario.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace ServiLearn
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(368, 204);
+            this.label2.Location = new System.Drawing.Point(330, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 25);
             this.label2.TabIndex = 2;
@@ -68,16 +68,15 @@ namespace ServiLearn
             // 
             // tbClave
             // 
-            this.tbClave.Location = new System.Drawing.Point(371, 232);
+            this.tbClave.Location = new System.Drawing.Point(322, 220);
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(144, 20);
             this.tbClave.TabIndex = 3;
-            this.tbClave.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(368, 290);
+            this.linkLabel1.Location = new System.Drawing.Point(332, 258);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(60, 13);
             this.linkLabel1.TabIndex = 4;
@@ -88,7 +87,7 @@ namespace ServiLearn
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(368, 312);
+            this.linkLabel2.Location = new System.Drawing.Point(332, 275);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(131, 13);
             this.linkLabel2.TabIndex = 5;
@@ -98,7 +97,7 @@ namespace ServiLearn
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(545, 232);
+            this.buttonLogin.Location = new System.Drawing.Point(512, 219);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(78, 20);
             this.buttonLogin.TabIndex = 6;
@@ -110,7 +109,7 @@ namespace ServiLearn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 606);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
@@ -120,7 +119,8 @@ namespace ServiLearn
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ServiLearn - Inicio de Sesion";
+            this.Text = "ServiLearn - Inicio de Sesión";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

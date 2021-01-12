@@ -37,6 +37,10 @@ namespace ServiLearn
             this.tvAdic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbUsuariosInscritos = new System.Windows.Forms.ListBox();
+            this.bExpulsar = new System.Windows.Forms.Button();
+            this.tbBuscarUsuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lCurso
@@ -59,7 +63,7 @@ namespace ServiLearn
             // 
             // bModCurso
             // 
-            this.bModCurso.Location = new System.Drawing.Point(94, 415);
+            this.bModCurso.Location = new System.Drawing.Point(56, 415);
             this.bModCurso.Name = "bModCurso";
             this.bModCurso.Size = new System.Drawing.Size(105, 23);
             this.bModCurso.TabIndex = 4;
@@ -69,7 +73,7 @@ namespace ServiLearn
             // 
             // bEliCurso
             // 
-            this.bEliCurso.Location = new System.Drawing.Point(547, 415);
+            this.bEliCurso.Location = new System.Drawing.Point(373, 415);
             this.bEliCurso.Name = "bEliCurso";
             this.bEliCurso.Size = new System.Drawing.Size(110, 23);
             this.bEliCurso.TabIndex = 5;
@@ -83,7 +87,7 @@ namespace ServiLearn
             this.tvCont.Multiline = true;
             this.tvCont.Name = "tvCont";
             this.tvCont.ReadOnly = true;
-            this.tvCont.Size = new System.Drawing.Size(636, 70);
+            this.tvCont.Size = new System.Drawing.Size(427, 70);
             this.tvCont.TabIndex = 6;
             // 
             // tvAdic
@@ -92,7 +96,7 @@ namespace ServiLearn
             this.tvAdic.Multiline = true;
             this.tvAdic.Name = "tvAdic";
             this.tvAdic.ReadOnly = true;
-            this.tvAdic.Size = new System.Drawing.Size(636, 141);
+            this.tvAdic.Size = new System.Drawing.Size(427, 141);
             this.tvAdic.TabIndex = 7;
             this.tvAdic.TextChanged += new System.EventHandler(this.tvAdic_TextChanged);
             // 
@@ -114,11 +118,51 @@ namespace ServiLearn
             this.label2.TabIndex = 9;
             this.label2.Text = "Descripción:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Lista de usuarios";
+            // 
+            // lbUsuariosInscritos
+            // 
+            this.lbUsuariosInscritos.FormattingEnabled = true;
+            this.lbUsuariosInscritos.Location = new System.Drawing.Point(564, 134);
+            this.lbUsuariosInscritos.Name = "lbUsuariosInscritos";
+            this.lbUsuariosInscritos.Size = new System.Drawing.Size(140, 199);
+            this.lbUsuariosInscritos.TabIndex = 11;
+            this.lbUsuariosInscritos.SelectedIndexChanged += new System.EventHandler(this.lbUsuariosInscritos_SelectedIndexChanged);
+            // 
+            // bExpulsar
+            // 
+            this.bExpulsar.Location = new System.Drawing.Point(564, 415);
+            this.bExpulsar.Name = "bExpulsar";
+            this.bExpulsar.Size = new System.Drawing.Size(75, 23);
+            this.bExpulsar.TabIndex = 12;
+            this.bExpulsar.Text = "Expulsar Usuario";
+            this.bExpulsar.UseVisualStyleBackColor = true;
+            this.bExpulsar.Click += new System.EventHandler(this.bExpulsar_Click);
+            // 
+            // tbBuscarUsuario
+            // 
+            this.tbBuscarUsuario.Location = new System.Drawing.Point(564, 364);
+            this.tbBuscarUsuario.Name = "tbBuscarUsuario";
+            this.tbBuscarUsuario.Size = new System.Drawing.Size(140, 20);
+            this.tbBuscarUsuario.TabIndex = 13;
+            this.tbBuscarUsuario.TextChanged += new System.EventHandler(this.tbBuscarUsuario_TextChanged);
+            // 
             // PantallaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 450);
+            this.Controls.Add(this.tbBuscarUsuario);
+            this.Controls.Add(this.bExpulsar);
+            this.Controls.Add(this.lbUsuariosInscritos);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tvCont);
@@ -146,5 +190,9 @@ namespace ServiLearn
         private System.Windows.Forms.Button bEliCurso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox lbUsuariosInscritos;
+        private System.Windows.Forms.Button bExpulsar;
+        private System.Windows.Forms.TextBox tbBuscarUsuario;
     }
 }
