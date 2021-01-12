@@ -62,7 +62,8 @@ namespace ServiLearn
                 }
                 else
                 {
-                    MessageBox.Show("Datos incorrectos.");
+                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show("Datos incorrectos.");
                 }
               
             }
