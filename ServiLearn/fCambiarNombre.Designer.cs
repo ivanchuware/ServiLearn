@@ -91,7 +91,7 @@ namespace ServiLearn
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.lNombre);
             this.Name = "fCambiarNombre";
-            this.Text = "fCambiarNombre";
+            this.Text = "ServiLearn";
             this.ResumeLayout(false);
             this.PerformLayout();
 

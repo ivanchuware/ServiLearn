@@ -14,45 +14,75 @@ namespace ServiLearn
     public partial class fCambiarNombre : Form
     {
         private Cuenta user;
-        public fCambiarNombre(Cuenta u)
+        
+        private string tipotabla;
+        private string tipoidCuenta;
+        string tipodato;
+        
+        public fCambiarNombre(Cuenta u, string tt, string ti, string td, string cambio)
         {
             InitializeComponent();
             user = u;
-            lNombre.Text = "Nombre actual: " + user.nombre;
+            
+            tipotabla = tt;
+            tipodato = td;
+            tipoidCuenta = ti;
+
+            if (tipodato == "nombre")
+            {
+                lNombre.Text = "Nombre actual: " + user.nombre;
+            } else if (tipodato == "email")
+            {
+                lNombre.Text = "Email actual: " + cambio;
+                tbNombre.Text = "Nuevo Email";
+                bNombre.Text = "Cambiar Email";
+            } else if (tipodato == "telefono")
+            {
+                lNombre.Text = "Telefono actual: " + cambio;
+                tbNombre.Text = "Nuevo telefono";
+                bNombre.Text = "Cambiar Telefono";
+            } else
+            {
+                lNombre.Text = "Dirección actual: " + cambio;
+                tbNombre.Text = "Nueva Dirección";
+                bNombre.Text = "Cambiar Direccion";
+            }
 
         }
 
         private void bNombre_Click(object sender, EventArgs e)
         {
-            //object[] tupla = null;
+            
             MySQLDB miBD = new MySQLDB();
-            /*try
-            {
-                
-                tupla = miBD.Select("SELECT * FROM Cuenta WHERE nombre = '" + tbNombre + "';")[];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            string texto = tupla.Length.ToString();
-                MessageBox.Show(texto);*/
-            try { 
+            
+            try {
 
                 if (tbContraseña.Text == user.clave)
                 {
-                    if (tbNombre.Text != "")
+                    if (tipodato == "nombre")
                     {
-                        miBD.Update("UPDATE Cuenta SET Nombre = '" + tbNombre.Text
+
+                        if (tbNombre.Text != "")
+                        {
+                            miBD.Update("UPDATE Cuenta SET Nombre = '" + tbNombre.Text
                                 + "' WHERE id_cuenta = '" + user.id + "';");
 
-                        MessageBox.Show("Nombre cambiado correctamente");
-                        this.Close();
+                            MessageBox.Show("Nombre cambiado correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nuevo Nombre de Usuario inválido");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Nuevo Nombre de Usuario inválido");
+                        miBD.Update("UPDATE " + tipotabla + " SET " + tipodato + " = '" + tbNombre.Text
+                            + "' WHERE " + tipoidCuenta + " = '" + user.id + "';");
+                        MessageBox.Show("Dato cambiado correctamente");
+                        this.Close();
                     }
+                
                 } else
                 {
                     MessageBox.Show("Contraseña Incorrecta");
