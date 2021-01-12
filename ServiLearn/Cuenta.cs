@@ -49,7 +49,7 @@ namespace ServiLearn
             MySQLDB miBD = new MySQLDB();
             //string b = "NULL";
             //miBD.Insert($"INSERT INTO Cuenta VALUES('{b}', '{n}', '{p}');");
-            miBD.Insert("INSERT INTO Cuenta VALUES(" + " NULL " + ", '" + n + "' , '" + p + " ');");
+            miBD.Insert("INSERT INTO Cuenta VALUES(" + " NULL " + ", '" + n + "' , '" + p + "');");
 
             nombre = n;
             clave = p;
@@ -115,6 +115,16 @@ namespace ServiLearn
                 clave = value;
             }
         }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            
+        }
+
 
         public void InsertarInvitado(string n)
         {
