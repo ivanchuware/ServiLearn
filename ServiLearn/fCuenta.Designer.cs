@@ -98,15 +98,18 @@ namespace ServiLearn
             this.lDireccion.Size = new System.Drawing.Size(52, 13);
             this.lDireccion.TabIndex = 5;
             this.lDireccion.Text = "Dirección";
+            this.lDireccion.Visible = false;
             // 
             // bDirección
             // 
-            this.bDirección.Location = new System.Drawing.Point(144, 136);
+            this.bDirección.Location = new System.Drawing.Point(251, 136);
             this.bDirección.Name = "bDirección";
             this.bDirección.Size = new System.Drawing.Size(107, 23);
             this.bDirección.TabIndex = 6;
             this.bDirección.Text = "Cambiar Direccion";
             this.bDirección.UseVisualStyleBackColor = true;
+            this.bDirección.Visible = false;
+            this.bDirección.Click += new System.EventHandler(this.bDirección_Click);
             // 
             // lEmail
             // 
@@ -116,15 +119,18 @@ namespace ServiLearn
             this.lEmail.Size = new System.Drawing.Size(31, 13);
             this.lEmail.TabIndex = 7;
             this.lEmail.Text = "email";
+            this.lEmail.Visible = false;
             // 
             // bEmail
             // 
-            this.bEmail.Location = new System.Drawing.Point(144, 107);
+            this.bEmail.Location = new System.Drawing.Point(251, 107);
             this.bEmail.Name = "bEmail";
             this.bEmail.Size = new System.Drawing.Size(107, 23);
             this.bEmail.TabIndex = 8;
             this.bEmail.Text = "Cambiar Email";
             this.bEmail.UseVisualStyleBackColor = true;
+            this.bEmail.Visible = false;
+            this.bEmail.Click += new System.EventHandler(this.bEmail_Click);
             // 
             // lTlfn
             // 
@@ -134,15 +140,18 @@ namespace ServiLearn
             this.lTlfn.Size = new System.Drawing.Size(49, 13);
             this.lTlfn.TabIndex = 9;
             this.lTlfn.Text = "Telefono";
+            this.lTlfn.Visible = false;
             // 
             // bTlfn
             // 
-            this.bTlfn.Location = new System.Drawing.Point(144, 165);
+            this.bTlfn.Location = new System.Drawing.Point(251, 165);
             this.bTlfn.Name = "bTlfn";
             this.bTlfn.Size = new System.Drawing.Size(107, 23);
             this.bTlfn.TabIndex = 10;
             this.bTlfn.Text = "Cambiar Telefono";
             this.bTlfn.UseVisualStyleBackColor = true;
+            this.bTlfn.Visible = false;
+            this.bTlfn.Click += new System.EventHandler(this.bTlfn_Click);
             // 
             // fCuenta
             // 
@@ -161,7 +170,7 @@ namespace ServiLearn
             this.Controls.Add(this.lTipo);
             this.Controls.Add(this.lNombre);
             this.Name = "fCuenta";
-            this.Text = "fCuenta";
+            this.Text = "ServiLearn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
