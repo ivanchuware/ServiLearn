@@ -59,8 +59,7 @@ namespace ServiLearn
             } catch (Exception ex)
             {
                 
-                MessageBox.Show(ex.Message);
-                MessageBox.Show(clave + email + correo + password);
+                MessageBox.Show("No se ha podido enviar el correo");
             }
         }
         private void bRecuperar_Click(object sender, EventArgs e)
