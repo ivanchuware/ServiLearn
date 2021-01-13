@@ -95,6 +95,22 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="fValoracionCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValoracionCurso.Designer.cs">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fValoracionEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValoracionEvento.Designer.cs">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.cs" />
+>>>>>>> Stashed changes
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,8 +225,25 @@
     <EmbeddedResource Include="fEventoMod.resx">
       <DependentUpon>fEventoMod.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="fCrearEvento.resx">
       <DependentUpon>fCrearEvento.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="fGestionUsuario.resx">
+      <DependentUpon>fGestionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionCurso.resx">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionEvento.resx">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes.resx">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="EventoPreview.resx">
       <DependentUpon>EventoPreview.cs</DependentUpon>

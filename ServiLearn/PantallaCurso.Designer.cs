@@ -37,6 +37,14 @@ namespace ServiLearn
             this.tvAdic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbUsuariosInscritos = new System.Windows.Forms.ListBox();
+            this.bExpulsar = new System.Windows.Forms.Button();
+            this.tbBuscarUsuario = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+>>>>>>> Stashed changes
             this.SuspendLayout();
             // 
             // lCurso
@@ -113,11 +121,68 @@ namespace ServiLearn
             this.label2.TabIndex = 9;
             this.label2.Text = "Descripción:";
             // 
+<<<<<<< Updated upstream
+=======
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Lista de usuarios";
+            // 
+            // lbUsuariosInscritos
+            // 
+            this.lbUsuariosInscritos.FormattingEnabled = true;
+            this.lbUsuariosInscritos.Location = new System.Drawing.Point(564, 134);
+            this.lbUsuariosInscritos.Name = "lbUsuariosInscritos";
+            this.lbUsuariosInscritos.Size = new System.Drawing.Size(140, 199);
+            this.lbUsuariosInscritos.TabIndex = 11;
+            this.lbUsuariosInscritos.SelectedIndexChanged += new System.EventHandler(this.lbUsuariosInscritos_SelectedIndexChanged);
+            // 
+            // bExpulsar
+            // 
+            this.bExpulsar.Location = new System.Drawing.Point(564, 415);
+            this.bExpulsar.Name = "bExpulsar";
+            this.bExpulsar.Size = new System.Drawing.Size(75, 23);
+            this.bExpulsar.TabIndex = 12;
+            this.bExpulsar.Text = "Expulsar Usuario";
+            this.bExpulsar.UseVisualStyleBackColor = true;
+            this.bExpulsar.Click += new System.EventHandler(this.bExpulsar_Click);
+            // 
+            // tbBuscarUsuario
+            // 
+            this.tbBuscarUsuario.Location = new System.Drawing.Point(564, 364);
+            this.tbBuscarUsuario.Name = "tbBuscarUsuario";
+            this.tbBuscarUsuario.Size = new System.Drawing.Size(140, 20);
+            this.tbBuscarUsuario.TabIndex = 13;
+            this.tbBuscarUsuario.TextChanged += new System.EventHandler(this.tbBuscarUsuario_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(233, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Valorar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+>>>>>>> Stashed changes
             // PantallaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 450);
+<<<<<<< Updated upstream
+=======
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbBuscarUsuario);
+            this.Controls.Add(this.bExpulsar);
+            this.Controls.Add(this.lbUsuariosInscritos);
+            this.Controls.Add(this.label3);
+>>>>>>> Stashed changes
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tvCont);
@@ -143,5 +208,13 @@ namespace ServiLearn
         private System.Windows.Forms.Button bEliCurso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox lbUsuariosInscritos;
+        private System.Windows.Forms.Button bExpulsar;
+        private System.Windows.Forms.TextBox tbBuscarUsuario;
+        private System.Windows.Forms.Button button1;
+>>>>>>> Stashed changes
     }
 }
