@@ -156,6 +156,12 @@
       <DependentUpon>Mensajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Invitado.cs" />
+    <Compile Include="RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroInvitado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecuperarContraseña.resx">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroInvitado.resx">
       <DependentUpon>RegistroInvitado.cs</DependentUpon>
     </EmbeddedResource>

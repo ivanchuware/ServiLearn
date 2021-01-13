@@ -82,5 +82,11 @@ namespace ServiLearn
         {
            
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecuperarContraseña ventana2 = new RecuperarContraseña();
+            ventana2.ShowDialog();
+        }
     }
 }
