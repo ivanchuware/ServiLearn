@@ -95,6 +95,7 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,7 +149,19 @@
     <Compile Include="fGestionUsuario.Designer.cs">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes.Designer.cs">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invitado.cs" />
+    <Compile Include="RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroInvitado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +237,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes.resx">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +258,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecuperarContraseña.resx">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroInvitado.resx">
       <DependentUpon>RegistroInvitado.cs</DependentUpon>
     </EmbeddedResource>

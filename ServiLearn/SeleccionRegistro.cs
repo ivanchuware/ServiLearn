@@ -12,41 +12,51 @@ namespace ServiLearn
 {
     public partial class SeleccionRegistro : Form
     {
-        public SeleccionRegistro()
+
+        Login log = null;
+        RegistroInvitado regInvitado = null;
+        RegistroUsuario regAlumno = null;
+        RegistroTutor regTutor = null;
+        RegistroONG regONG = null;
+
+        public SeleccionRegistro(Login l)
         {
             InitializeComponent();
+            log = l;
+            
+    
         }
 
         private void invitado_bt_Click(object sender, EventArgs e)
         {
-            RegistroInvitado ventana = new RegistroInvitado();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            regInvitado = new RegistroInvitado(this);
+
+            regInvitado.Show();
+            this.Hide();
         }
 
         private void usuario_bt_Click(object sender, EventArgs e)
         {
-            RegistroUsuario ventana = new RegistroUsuario();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            regAlumno = new RegistroUsuario(this);
+
+            regAlumno.Show();
+            this.Hide();
         }
 
         private void tutor_bt_Click(object sender, EventArgs e)
         {
-            RegistroTutor ventana = new RegistroTutor();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            regTutor = new RegistroTutor(this);
+
+            regTutor.Show();
+            this.Hide();
         }
 
         private void ong_bt_Click(object sender, EventArgs e)
         {
-            RegistroONG ventana = new RegistroONG();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            regONG = new RegistroONG(this);
+
+            regONG.Show();
+            this.Hide();
         }
 
         private void InitializeComponent()
@@ -56,6 +66,7 @@ namespace ServiLearn
             this.usuario_bt = new System.Windows.Forms.Button();
             this.tutor_bt = new System.Windows.Forms.Button();
             this.ong_bt = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -107,11 +118,23 @@ namespace ServiLearn
             this.ong_bt.UseVisualStyleBackColor = true;
             this.ong_bt.Click += new System.EventHandler(this.ong_bt_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(46, 13);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "< Volver";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // SeleccionRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.ong_bt);
             this.Controls.Add(this.tutor_bt);
             this.Controls.Add(this.usuario_bt);
@@ -119,8 +142,11 @@ namespace ServiLearn
             this.Controls.Add(this.label1);
             this.Name = "SeleccionRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SeleccionRegistro";
+            this.Text = "ServiLearn - Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SeleccionRegistro_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SeleccionRegistro_FormClosed);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,12 +156,29 @@ namespace ServiLearn
         private System.Windows.Forms.Button invitado_bt;
         private System.Windows.Forms.Button usuario_bt;
         private System.Windows.Forms.Button tutor_bt;
+        private LinkLabel linkLabel1;
         private System.Windows.Forms.Button ong_bt;
     
 
     private void SeleccionRegistro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            log.Show();
+            this.Hide();
+        }
+
+        private void SeleccionRegistro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          
+        }
+
+        private void SeleccionRegistro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

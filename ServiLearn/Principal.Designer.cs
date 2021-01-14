@@ -41,6 +41,7 @@
             this.refresh = new System.Windows.Forms.Button();
             this.bCuenta = new System.Windows.Forms.Button();
             this.bGestionUsuarios = new System.Windows.Forms.Button();
+            this.btMsgs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -171,11 +172,22 @@
             this.bGestionUsuarios.UseVisualStyleBackColor = true;
             this.bGestionUsuarios.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btMsgs
+            // 
+            this.btMsgs.Location = new System.Drawing.Point(61, 134);
+            this.btMsgs.Name = "btMsgs";
+            this.btMsgs.Size = new System.Drawing.Size(122, 23);
+            this.btMsgs.TabIndex = 15;
+            this.btMsgs.Text = "Mis mensajes";
+            this.btMsgs.UseVisualStyleBackColor = true;
+            this.btMsgs.Click += new System.EventHandler(this.btMsgs_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.btMsgs);
             this.Controls.Add(this.bGestionUsuarios);
             this.Controls.Add(this.bCuenta);
             this.Controls.Add(this.refresh);
@@ -213,5 +225,6 @@
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button bCuenta;
         private System.Windows.Forms.Button bGestionUsuarios;
+        private System.Windows.Forms.Button btMsgs;
     }
 }

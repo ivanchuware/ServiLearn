@@ -148,7 +148,7 @@ namespace ServiLearn
             MySQLDB miBD = new MySQLDB();
             try
             {
-                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Evento WHERE id_Cuenta = '" + idCuenta + "' and id_Evento = '" + idEvento + "';")[0];
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Evento WHERE id_Cuenta = " + idCuenta + " and id_Evento = " + idEvento + ";")[0];
 
 
                 if (idCuenta != (int)tupla[0] || idEvento != (int)tupla[1])
@@ -166,7 +166,7 @@ namespace ServiLearn
             {
                 r = false;
             }
-
+            
             return r;
         }
 
@@ -281,11 +281,16 @@ namespace ServiLearn
                 {
                     PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
                     ventana1.ShowDialog();
+                    
+                    consultarCursos();
+                    actualizarCursos();
                 }
                 else
                 {
                     PreviewCurso ventana2 = new PreviewCurso(user, tipo, curso);
                     ventana2.ShowDialog();
+                    consultarCursos();
+                    actualizarCursos();
                 }
             }
             catch (Exception exc)
@@ -308,18 +313,22 @@ namespace ServiLearn
 
                     fEvento ventana1 = new fEvento(user, tipo, evento);
                     ventana1.ShowDialog();
+                    consultarEventos();
+                    actualizarEventos();
                 }
                 else
                 {
 
                     EventoPreview ventana2 = new EventoPreview(user, tipo, evento);
                     ventana2.ShowDialog();
+                    consultarEventos();
+                    actualizarEventos();
                 }
 
             }
             catch (Exception exce)
             {
-
+                Console.WriteLine(exce.Message);
             }
         }
 
@@ -378,6 +387,12 @@ namespace ServiLearn
         {
             fGestionUsuario ventana = new fGestionUsuario();
             ventana.ShowDialog();
+        }
+
+        private void btMsgs_Click(object sender, EventArgs e)
+        {
+            Mensajes msgs = new Mensajes(user);
+            msgs.ShowDialog();
         }
     }
 }

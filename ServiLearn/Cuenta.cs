@@ -75,12 +75,12 @@ namespace ServiLearn
                 {
                     nombre = null;
                     clave = null;
-                    throw new Error("Datos incorrectos.");
+                    throw new Error("CI");
                 }
             }
             catch (Exception e)
             {
-                throw new Error("Datos incorrectos." + e.Message);
+                throw new Error("Datos incorrectos.");
             }
         }
 

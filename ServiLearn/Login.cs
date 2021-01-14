@@ -8,17 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Ventana de logueo
+
 namespace ServiLearn
 {
     public partial class Login : Form
     {
+        // ID del usuario logueado y su tipo.
         private Cuenta user;
         private int tipo;
+        SeleccionRegistro registro = null;
 
         public Login()
         {
             tipo = -1;
             InitializeComponent();
+            tbClave.PasswordChar = '*';
+            registro = new SeleccionRegistro(this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -34,8 +40,10 @@ namespace ServiLearn
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try {
+                // Se busca cuenta en base de datos.
                 user = new Cuenta(tbUsuario.Text, tbClave.Text);
 
+                // Se mira que tipo de cuenta es.
                 if (Invitado.esInvitado(user.id)) {
                     tipo = 0;
                 } else if (Alumno.esAlumno(user.id)) {
@@ -49,12 +57,11 @@ namespace ServiLearn
                     tipo = 4;
                 }
                 Principal ventana = new Principal(user, tipo);
-
-
-
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Visible = true;
+                
+                
             } catch (Exception ex) {
                 if (ex.Message.Contains("Too many connections"))
                 {
@@ -63,7 +70,6 @@ namespace ServiLearn
                 else
                 {
                     MessageBox.Show(ex.Message);
-                    //MessageBox.Show("Datos incorrectos.");
                 }
               
             }
@@ -71,10 +77,19 @@ namespace ServiLearn
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            SeleccionRegistro ventana = new SeleccionRegistro();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            registro.Show();
+            this.Hide();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecuperarContraseña ventana2 = new RecuperarContraseña();
+            ventana2.ShowDialog();
         }
     }
 }

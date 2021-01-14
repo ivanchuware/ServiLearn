@@ -27,8 +27,16 @@ namespace ServiLearn
         public void InsertarCurso(string name, string desc, int owner)
         {
             MySQLDB miBD = new MySQLDB();
-            
-            miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
+            try
+            {
+                miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
+                object[] tupla = miBD.Select("SELECT id_curso FROM Curso where id_owner = " + owner + " AND nombre = '" + name + "' and descripcion = '" + desc + "' ;")[0];
+                int idcurso = (int)tupla[0];
+                miBD.Insert("INSERT INTO Cuenta_Curso VALUES (" + owner + ", " + idcurso + ", null);");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
