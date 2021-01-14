@@ -39,6 +39,13 @@ namespace ServiLearn
             id = -1;
         }
 
+        public void subirMensaje()
+        {
+                MySQLDB miBD = new MySQLDB();
+                miBD.Insert("Insert into Mensajes (idOrigen, idDestino, texto) values (" + idOrigen + "," + idDestino + ",'" + texto +"');");
+        
+        }
+
         public static List<Mensaje> ListaMensajesDeUsuario(int id)
         {
             List<Mensaje> lista = new List<Mensaje>();
