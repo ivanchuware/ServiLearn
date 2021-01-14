@@ -60,7 +60,7 @@ namespace ServiLearn
             int idCuenta = cuenta.id;
             int idEvento = eve.Id;
 
-            miBD.Insert("INSERT INTO Cuenta_Evento VALUES (" + idCuenta + ", " + idEvento + ")");
+            miBD.Insert("INSERT INTO Cuenta_Evento VALUES (" + idCuenta + ", " + idEvento + ", null)");
 
 
         }

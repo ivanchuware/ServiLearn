@@ -56,9 +56,11 @@ namespace ServiLearn
                     tipo = 4;
                 }
                 Principal ventana = new Principal(user, tipo);
-
-                ventana.Show();
-                this.Hide();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Visible = true;
+                
+                
             } catch (Exception ex) {
                 if (ex.Message.Contains("Too many connections"))
                 {

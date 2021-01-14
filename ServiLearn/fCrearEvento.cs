@@ -31,8 +31,19 @@ namespace ServiLearn
             if (!nombre.Equals("") && !descripcion.Equals(""))
             {
                 
-                miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" +nombre+ "', '" + descripcion + "', null, null);");
+                //miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" +nombre+ "', '" + descripcion + "', null, null);");
                 //miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
+                try
+                {
+                    miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" + nombre + "', '" + descripcion + "', null, null);");
+                    object[] tupla = miBD.Select("SELECT id_evento FROM Evento where id_owner = " + id_cue + " AND nombre = '" + nombre + "' and descripcion = '" + descripcion + "' ;")[0];
+                    int idevento = (int)tupla[0];
+                    miBD.Insert("INSERT INTO Cuenta_Evento VALUES (" + id_cue + ", " + idevento + ", null);");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 this.Visible = false;
             }
             else
