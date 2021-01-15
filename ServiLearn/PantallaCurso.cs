@@ -203,5 +203,13 @@ namespace ServiLearn
                 }
             }
         }
+
+        private void bValorar_Click(object sender, EventArgs e)
+        {
+            fValoracionCurso ventana = new fValoracionCurso(user, seleccionado);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
