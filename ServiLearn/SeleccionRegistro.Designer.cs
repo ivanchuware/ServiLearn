@@ -29,6 +29,7 @@ namespace ServiLearn
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeleccionRegistro));
             this.label1 = new System.Windows.Forms.Label();
             this.invitado_bt = new System.Windows.Forms.Button();
             this.usuario_bt = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@ namespace ServiLearn
             this.Controls.Add(this.usuario_bt);
             this.Controls.Add(this.invitado_bt);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeleccionRegistro";
             this.Text = "SeleccionRegistro";
             this.ResumeLayout(false);
@@ -102,11 +104,5 @@ namespace ServiLearn
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button invitado_bt;
-        private System.Windows.Forms.Button usuario_bt;
-        private System.Windows.Forms.Button tutor_bt;
-        private System.Windows.Forms.Button ong_bt;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.labelCursos = new System.Windows.Forms.Label();
             this.labelEventos = new System.Windows.Forms.Label();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.labelEventos);
             this.Controls.Add(this.labelCursos);
             this.Controls.Add(this.labelTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiLearn";

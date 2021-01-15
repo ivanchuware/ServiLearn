@@ -39,20 +39,29 @@ namespace ServiLearn
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 // Se busca cuenta en base de datos.
                 user = new Cuenta(tbUsuario.Text, tbClave.Text);
 
                 // Se mira que tipo de cuenta es.
-                if (Invitado.esInvitado(user.id)) {
+                if (Invitado.esInvitado(user.id))
+                {
                     tipo = 0;
-                } else if (Alumno.esAlumno(user.id)) {
+                }
+                else if (Alumno.esAlumno(user.id))
+                {
                     tipo = 1;
-                } else if (Docente.esDocente(user.id)) {
+                }
+                else if (Docente.esDocente(user.id))
+                {
                     tipo = 2;
-                } else if (ONG.esOng(user.id)) {
+                }
+                else if (ONG.esOng(user.id))
+                {
                     tipo = 3;
-                } else
+                }
+                else
                 {
                     tipo = 4;
                 }
@@ -60,9 +69,11 @@ namespace ServiLearn
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Visible = true;
-                
-                
-            } catch (Exception ex) {
+
+
+            }
+            catch (Exception ex)
+            {
                 if (ex.Message.Contains("Too many connections"))
                 {
                     MessageBox.Show("Base de datos sobrecargada, por favor, intentalo de nuevo");
@@ -71,20 +82,17 @@ namespace ServiLearn
                 {
                     MessageBox.Show(ex.Message);
                 }
-              
+
             }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            registro.Show();
-            this.Hide();
+            this.Visible = false;
+            registro.ShowDialog();
+            this.Visible = true;
         }
 
-        private void Login_FormClosed(object sender, FormClosedEventArgs e)
-        {
-           
-        }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -93,3 +101,4 @@ namespace ServiLearn
         }
     }
 }
+
