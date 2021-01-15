@@ -95,16 +95,24 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
-    <Compile Include="NuevoChat.cs">
+    <Compile Include="fValoracionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="fValoracionCurso.Designer.cs">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fValoracionEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValoracionEvento.Designer.cs">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoChat.cs" />
     <Compile Include="NuevoChat.Designer.cs">
       <DependentUpon>NuevoChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Mensaje.cs" />
-    <Compile Include="CreacionCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CreacionCurso.cs" />
     <Compile Include="CreacionCurso.designer.cs">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
     </Compile>
@@ -113,98 +121,58 @@
     <Compile Include="Docente.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Evento.cs" />
-    <Compile Include="EventoPreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCambiarClave.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="EventoPreview.cs" />
+    <Compile Include="fCambiarClave.cs" />
     <Compile Include="fCambiarClave.Designer.cs">
       <DependentUpon>fCambiarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCambiarNombre.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fCambiarNombre.cs" />
     <Compile Include="fCambiarNombre.Designer.cs">
       <DependentUpon>fCambiarNombre.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCrearEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCuenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fCrearEvento.cs" />
+    <Compile Include="fCuenta.cs" />
     <Compile Include="fCuenta.Designer.cs">
       <DependentUpon>fCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="fCursoMod.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fCursoMod.cs" />
     <Compile Include="fCursoMod.designer.cs">
       <DependentUpon>fCursoMod.cs</DependentUpon>
     </Compile>
-    <Compile Include="fEvento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fEventoMod.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fGestionUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fEvento.cs" />
+    <Compile Include="fEventoMod.cs" />
+    <Compile Include="fGestionUsuario.cs" />
     <Compile Include="fGestionUsuario.Designer.cs">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensajes.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Mensajes.cs" />
     <Compile Include="Mensajes.Designer.cs">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Invitado.cs" />
-    <Compile Include="RecuperarContraseña.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RecuperarContraseña.cs" />
     <Compile Include="RecuperarContraseña.Designer.cs">
       <DependentUpon>RecuperarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroInvitado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroONG.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SeleccionRegistro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="RegistroInvitado.cs" />
+    <Compile Include="RegistroONG.cs" />
+    <Compile Include="RegistroTutor.cs" />
+    <Compile Include="RegistroUsuario.cs" />
+    <Compile Include="SeleccionRegistro.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="ONG.cs" />
-    <Compile Include="PantallaCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PantallaCurso.cs" />
     <Compile Include="PantallaCurso.Designer.cs">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="PreviewCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PreviewCurso.cs" />
     <Compile Include="PreviewCurso.Designer.cs">
       <DependentUpon>PreviewCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Principal.cs" />
     <Compile Include="Principal.designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
@@ -239,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fGestionUsuario.resx">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionCurso.resx">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionEvento.resx">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoChat.resx">
       <DependentUpon>NuevoChat.cs</DependentUpon>

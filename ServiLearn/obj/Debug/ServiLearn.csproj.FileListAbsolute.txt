@@ -325,3 +325,6 @@ C:\Users\EloyB\Desktop\sl\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.csproj
 C:\Users\EloyB\Desktop\sl\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.exe
 C:\Users\EloyB\Desktop\sl\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.pdb
 C:\Users\EloyB\Desktop\sl\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.NuevoChat.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fValoracionCurso.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.fValoracionEvento.resources
+W:\SubEscritorio\Uma\IngenieriaDeRequisitos\ServiLearn\ServiLearn\obj\Debug\ServiLearn.NuevoChat.resources
