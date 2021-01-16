@@ -39,11 +39,6 @@ namespace ServiLearn
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            intentarLogueo();
-        }
-
-        private void intentarLogueo()
-        {
             try
             {
                 // Se busca cuenta en base de datos.
@@ -103,19 +98,6 @@ namespace ServiLearn
         {
             RecuperarContraseña ventana2 = new RecuperarContraseña();
             ventana2.ShowDialog();
-        }
-
-        private void Login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void tbClave_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Return)
-            {
-                intentarLogueo();
-            }
         }
     }
 }

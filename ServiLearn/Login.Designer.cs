@@ -75,7 +75,6 @@ namespace ServiLearn
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(144, 20);
             this.tbClave.TabIndex = 3;
-            this.tbClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbClave_KeyPress);
             // 
             // linkLabel1
             // 
@@ -135,7 +134,6 @@ namespace ServiLearn
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiLearn - Inicio de Sesión";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

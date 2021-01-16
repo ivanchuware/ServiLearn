@@ -107,13 +107,6 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
-    <Compile Include="VerNoticia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VerNoticia.Designer.cs">
-      <DependentUpon>VerNoticia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Noticia.cs" />
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fGestionUsuario.resx">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VerNoticia.resx">
-      <DependentUpon>VerNoticia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fValoracionCurso.resx">
       <DependentUpon>fValoracionCurso.cs</DependentUpon>
