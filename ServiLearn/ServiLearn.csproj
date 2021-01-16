@@ -32,6 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -95,13 +107,13 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="BDLibrary.cs" />
-    <Compile Include="NuevoChat.cs">
+    <Compile Include="VerNoticia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoChat.Designer.cs">
-      <DependentUpon>NuevoChat.cs</DependentUpon>
+    <Compile Include="VerNoticia.Designer.cs">
+      <DependentUpon>VerNoticia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensaje.cs" />
+    <Compile Include="Noticia.cs" />
     <Compile Include="CreacionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,40 +167,46 @@
     <Compile Include="fGestionUsuario.Designer.cs">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensajes.cs">
+    <Compile Include="fValoracionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mensajes.Designer.cs">
-      <DependentUpon>Mensajes.cs</DependentUpon>
+    <Compile Include="fValoracionCurso.Designer.cs">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fValoracionEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValoracionEvento.Designer.cs">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
     </Compile>
     <Compile Include="Invitado.cs" />
-    <Compile Include="RecuperarContraseña.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecuperarContraseña.Designer.cs">
-      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistroInvitado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroONG.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroTutor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SeleccionRegistro.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.cs" />
+    <Compile Include="Mensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes.Designer.cs">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoChat.Designer.cs">
+      <DependentUpon>NuevoChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="ONG.cs" />
     <Compile Include="PantallaCurso.cs">
       <SubType>Form</SubType>
@@ -210,6 +228,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseña.Designer.cs">
+      <DependentUpon>RecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionRegistro.Designer.cs">
+      <DependentUpon>SeleccionRegistro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreacionCurso.resx">
       <DependentUpon>CreacionCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,14 +281,26 @@
     <EmbeddedResource Include="fGestionUsuario.resx">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoChat.resx">
-      <DependentUpon>NuevoChat.cs</DependentUpon>
+    <EmbeddedResource Include="VerNoticia.resx">
+      <DependentUpon>VerNoticia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionCurso.resx">
+      <DependentUpon>fValoracionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoracionEvento.resx">
+      <DependentUpon>fValoracionEvento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoChat.resx">
+      <DependentUpon>NuevoChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaCurso.resx">
       <DependentUpon>PantallaCurso.cs</DependentUpon>
@@ -260,31 +313,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="RecuperarContraseña.resx">
       <DependentUpon>RecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroInvitado.resx">
-      <DependentUpon>RegistroInvitado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistroONG.resx">
-      <DependentUpon>RegistroONG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistroTutor.resx">
-      <DependentUpon>RegistroTutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistroUsuario.resx">
-      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeleccionRegistro.resx">
       <DependentUpon>SeleccionRegistro.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="bin\Debug\ServiLearn.exe.config" />
+    <None Include="obj\Release\ServiLearn.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -298,6 +343,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.pdb" />
+    <Content Include="bin\Debug\Google.Protobuf.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\MySqlConnector.dll" />
+    <Content Include="bin\Debug\MySqlConnector.xml" />
+    <Content Include="bin\Debug\Renci.SshNet.dll" />
+    <Content Include="bin\Debug\Renci.SshNet.xml" />
+    <Content Include="bin\Debug\ServiLearn.exe" />
+    <Content Include="bin\Debug\ServiLearn.pdb" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\Zstandard.Net.dll" />
+    <None Include="Resources\ServiLearn2.jpg" />
+    <Content Include="Resources\ServiLearn1.jpg" />
+    <Content Include="Resources\ServiLearnIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\ServiLearn\v16\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

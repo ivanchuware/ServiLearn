@@ -15,6 +15,7 @@ namespace ServiLearn
     {
         private Evento seleccionado;
         Cuenta user;
+        private Button bValoracion;
         int tipo;
         public fEvento(Cuenta u, int t, Evento eve)
         {
@@ -65,6 +66,7 @@ namespace ServiLearn
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEvento));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,6 +74,7 @@ namespace ServiLearn
             this.tAdicional = new System.Windows.Forms.TextBox();
             this.bMod = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.bValoracion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -139,11 +142,22 @@ namespace ServiLearn
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // bValoracion
+            // 
+            this.bValoracion.Location = new System.Drawing.Point(334, 453);
+            this.bValoracion.Name = "bValoracion";
+            this.bValoracion.Size = new System.Drawing.Size(111, 23);
+            this.bValoracion.TabIndex = 7;
+            this.bValoracion.Text = "Valorar";
+            this.bValoracion.UseVisualStyleBackColor = true;
+            this.bValoracion.Click += new System.EventHandler(this.bValoracion_Click);
+            // 
             // fEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
+            this.Controls.Add(this.bValoracion);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bMod);
             this.Controls.Add(this.tAdicional);
@@ -151,6 +165,7 @@ namespace ServiLearn
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fEvento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -178,6 +193,14 @@ namespace ServiLearn
         private void fEvento_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void bValoracion_Click(object sender, EventArgs e)
+        {
+            fValoracionEvento ventana = new fValoracionEvento(user, seleccionado);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
     }
 }

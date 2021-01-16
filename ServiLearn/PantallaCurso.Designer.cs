@@ -29,6 +29,7 @@ namespace ServiLearn
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaCurso));
             this.lCurso = new System.Windows.Forms.Label();
             this.lProfesores = new System.Windows.Forms.Label();
             this.bModCurso = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace ServiLearn
             this.lbUsuariosInscritos = new System.Windows.Forms.ListBox();
             this.bExpulsar = new System.Windows.Forms.Button();
             this.tbBuscarUsuario = new System.Windows.Forms.TextBox();
+            this.bValorar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lCurso
@@ -154,11 +156,22 @@ namespace ServiLearn
             this.tbBuscarUsuario.TabIndex = 13;
             this.tbBuscarUsuario.TextChanged += new System.EventHandler(this.tbBuscarUsuario_TextChanged);
             // 
+            // bValorar
+            // 
+            this.bValorar.Location = new System.Drawing.Point(222, 415);
+            this.bValorar.Name = "bValorar";
+            this.bValorar.Size = new System.Drawing.Size(101, 23);
+            this.bValorar.TabIndex = 14;
+            this.bValorar.Text = "Valorar";
+            this.bValorar.UseVisualStyleBackColor = true;
+            this.bValorar.Click += new System.EventHandler(this.bValorar_Click);
+            // 
             // PantallaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 450);
+            this.Controls.Add(this.bValorar);
             this.Controls.Add(this.tbBuscarUsuario);
             this.Controls.Add(this.bExpulsar);
             this.Controls.Add(this.lbUsuariosInscritos);
@@ -171,6 +184,7 @@ namespace ServiLearn
             this.Controls.Add(this.tvAdic);
             this.Controls.Add(this.lProfesores);
             this.Controls.Add(this.lCurso);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -194,5 +208,6 @@ namespace ServiLearn
         private System.Windows.Forms.ListBox lbUsuariosInscritos;
         private System.Windows.Forms.Button bExpulsar;
         private System.Windows.Forms.TextBox tbBuscarUsuario;
+        private System.Windows.Forms.Button bValorar;
     }
 }

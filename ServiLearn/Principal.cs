@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BDLibrary;
@@ -17,6 +18,9 @@ namespace ServiLearn
         private int tipo;
         private int selectedEvento = -1;
         private int selectedCurso = -1;
+        int idNoticia1 = -1;
+        int idNoticia2 = -1;
+        int idNoticia3 = -1;
         List<object[]> tuplasCursos;
         List<object[]> tuplasEventos;
 
@@ -106,6 +110,102 @@ namespace ServiLearn
 
 
 
+        }
+
+        private void prepararNoticias()
+        {
+            lNoticias.Visible = false;
+            panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
+
+            try
+            {
+                List<Noticia> lista = Noticia.listaNoticias();
+
+                int len = lista.Count();
+
+                if (len > 0)
+                {
+                    lNoticias.Visible = true;
+                    panel1.Visible = true;
+
+                    idNoticia1 = lista[0].id;
+                    label2.Text = lista[0].titulo;
+                    try
+                    {
+                        label2.Text = lista[0].titulo.Substring(0, 19) + "...";
+                    } catch (Exception ex)
+                    {
+
+                    }
+
+                    label3.Text = Regex.Replace(lista[0].texto, ".{29}", "$0\n");
+                    try
+                    {
+                        label3.Text = label3.Text.Substring(0, 88) + "...";
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                if (len > 1)
+                {
+                    panel2.Visible = true;
+                    idNoticia2 = lista[1].id;
+
+                    label5.Text = lista[1].titulo;
+                    try
+                    {
+                        label5.Text = lista[1].titulo.Substring(0, 19) + "...";
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                    label4.Text = Regex.Replace(lista[1].texto, ".{29}", "$0\n");
+                    try
+                    {
+                        label4.Text = label4.Text.Substring(0, 88) + "...";
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                }
+                if (len > 2)
+                {
+                    panel3.Visible = true;
+                    idNoticia3 = lista[2].id;
+
+                    label7.Text = lista[2].titulo;
+                    try
+                    {
+                        label7.Text = lista[2].titulo.Substring(0, 19) + "...";
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+                    label6.Text = Regex.Replace(lista[2].texto, ".{29}", "$0\n");
+                    try
+                    {
+                        label6.Text = label6.Text.Substring(0, 88) + "...";
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+
+            } catch (Exception exG)
+            {
+
+            }
         }
 
         private bool CuentaEnCurso(Cuenta u, Curso c)
@@ -215,12 +315,14 @@ namespace ServiLearn
                     tp = "Administrador";
                     break;
             }
-            label1.Text = "Bienvenido " + user.nombre + ", está registrado como " + tp;
+            label1.Text = "Bienvenido " + user.nombre + ", está registrado como " + tp + ".";
 
             consultarCursos();
             consultarEventos();
             actualizarCursos();
             actualizarEventos();
+
+            prepararNoticias();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -393,6 +495,108 @@ namespace ServiLearn
         {
             Mensajes msgs = new Mensajes(user);
             msgs.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia1);
+                vn.ShowDialog();
+            } catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void panel2_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia2);
+                vn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void panel3_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia3);
+                vn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia1);
+                vn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia2);
+                vn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VerNoticia vn = new VerNoticia(idNoticia3);
+                vn.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

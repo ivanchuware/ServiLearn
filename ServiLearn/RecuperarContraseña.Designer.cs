@@ -29,6 +29,7 @@ namespace ServiLearn
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecuperarContraseña));
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lEmail = new System.Windows.Forms.Label();
             this.bRecuperar = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@ namespace ServiLearn
             this.Controls.Add(this.bRecuperar);
             this.Controls.Add(this.lEmail);
             this.Controls.Add(this.tbEmail);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecuperarContraseña";
             this.Text = "RecuperarContraseña";
             this.ResumeLayout(false);

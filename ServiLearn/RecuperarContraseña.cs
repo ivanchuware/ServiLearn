@@ -20,6 +20,8 @@ namespace ServiLearn
         int id;
         string correo = "servilearnnoreply@gmail.com";
         string password = "sbevesbeve";
+        SmtpClient smtp;
+        MailMessage mm;
 
         public RecuperarContraseña()
         {
@@ -28,28 +30,34 @@ namespace ServiLearn
 
         private void enviarEmail(int iden, string email)
         {
-            id = iden;
-            MySQLDB miBD = new MySQLDB();
-            object[] tupla = miBD.Select("SELECT clave FROM Cuenta where id_cuenta = '" + id + "' ;")[0];
-            string clave = (string)tupla[0];
-            
-            
+            try
+            {
+                id = iden;
+                MySQLDB miBD = new MySQLDB();
+                object[] tupla = miBD.Select("SELECT clave FROM Cuenta where id_cuenta = '" + id + "' ;")[0];
+                string clave = (string)tupla[0];
 
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(correo, password);
 
-            MailMessage mm = new MailMessage();
-            mm.IsBodyHtml = true;
-            mm.Priority = MailPriority.Normal;
-            mm.From = new MailAddress(correo);
-            mm.Subject = "Recuperación de Contraseña de ServiLearn";
-            mm.Body = "Tu contraseña de ServiLearn asociado a este correo es: " + clave;
-            
-            mm.To.Add(new MailAddress(email));
+
+                smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(correo, password);
+
+                mm = new MailMessage();
+                mm.IsBodyHtml = true;
+                mm.Priority = MailPriority.Normal;
+                mm.From = new MailAddress(correo);
+                mm.Subject = "Recuperación de Contraseña de ServiLearn";
+                mm.Body = "Tu contraseña de ServiLearn asociado a este correo es: " + clave;
+
+                mm.To.Add(new MailAddress(email));
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Hemos encontrado su direccion de correo pero, lamentablemente, no es una dirección de correo válida");
+            }
 
             try
             {

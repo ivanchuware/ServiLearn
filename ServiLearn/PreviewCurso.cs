@@ -50,7 +50,7 @@ namespace ServiLearn
             int idCuenta = cuenta.id;
             int idCurso = curso.Id;
 
-            miBD.Insert("INSERT INTO Cuenta_Curso VALUES (" + idCuenta + ", " + idCurso + ")");
+            miBD.Insert("INSERT INTO Cuenta_Curso VALUES (" + idCuenta + ", " + idCurso + ", null)");
 
 
         }

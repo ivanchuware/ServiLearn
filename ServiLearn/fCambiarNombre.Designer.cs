@@ -29,6 +29,7 @@ namespace ServiLearn
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCambiarNombre));
             this.lNombre = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.bNombre = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@ namespace ServiLearn
             this.Controls.Add(this.bNombre);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.lNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fCambiarNombre";
             this.Text = "ServiLearn";
             this.ResumeLayout(false);
