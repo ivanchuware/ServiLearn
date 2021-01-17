@@ -160,6 +160,12 @@
     <Compile Include="fGestionUsuario.Designer.cs">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Noticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Noticias.Designer.cs">
+      <DependentUpon>Noticias.cs</DependentUpon>
+    </Compile>
     <Compile Include="fValoracionCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fGestionUsuario.resx">
       <DependentUpon>fGestionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Noticias.resx">
+      <DependentUpon>Noticias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fValoracionCurso.resx">
       <DependentUpon>fValoracionCurso.cs</DependentUpon>
