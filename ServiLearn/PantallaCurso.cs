@@ -30,7 +30,8 @@ namespace ServiLearn
             lProfesores.Text = "Impartido por: " + seleccionado.IdOwner;
             tvCont.Text = seleccionado.Descripcion;
             tvAdic.Text = seleccionado.Adicional;
-
+            textBox1.Text = seleccionado.Valoracion;
+            textBox2.Text = seleccionado.Opiniones;
 
             bModCurso.Visible = false;
             bEliCurso.Visible = false;
@@ -206,10 +207,10 @@ namespace ServiLearn
 
         private void bValorar_Click(object sender, EventArgs e)
         {
-            fValoracionCurso ventana = new fValoracionCurso(user, seleccionado);
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            fValoracionCurso ventana = new fValoracionCurso(user, tipo, seleccionado);
+            this.Close();
+            ventana.Visible = true;
         }
+
     }
 }

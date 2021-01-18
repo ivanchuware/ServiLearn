@@ -395,3 +395,8 @@ C:\Users\EloyB\Desktop\ServiLearn-main\ServiLearn-main\ServiLearn\obj\Debug\Serv
 C:\Users\EloyB\Desktop\ServiLearn-main\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.Noticias.resources
 C:\Users\EloyB\Desktop\ServiLearn-main\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.CrearNoticia.resources
 C:\Users\EloyB\Desktop\ServiLearn-main\ServiLearn-main\ServiLearn\obj\Debug\ServiLearn.ModificarNoticia.resources
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csprojAssemblyReference.cache
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.CrearNoticia.resources
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.ModificarNoticia.resources
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Noticias.resources
+C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.VerNoticia.resources

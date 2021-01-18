@@ -43,6 +43,11 @@ namespace ServiLearn
             this.bExpulsar = new System.Windows.Forms.Button();
             this.tbBuscarUsuario = new System.Windows.Forms.TextBox();
             this.bValorar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lCurso
@@ -166,11 +171,61 @@ namespace ServiLearn
             this.bValorar.UseVisualStyleBackColor = true;
             this.bValorar.Click += new System.EventHandler(this.bValorar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(376, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Valoración del Curso:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(561, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "por parte de ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(677, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "usuarios";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(490, 43);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(65, 24);
+            this.textBox1.TabIndex = 18;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(625, 43);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(46, 24);
+            this.textBox2.TabIndex = 19;
+            // 
             // PantallaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bValorar);
             this.Controls.Add(this.tbBuscarUsuario);
             this.Controls.Add(this.bExpulsar);
@@ -187,7 +242,7 @@ namespace ServiLearn
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Servilearn - Curso";
             this.Load += new System.EventHandler(this.PantallaCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,5 +264,10 @@ namespace ServiLearn
         private System.Windows.Forms.Button bExpulsar;
         private System.Windows.Forms.TextBox tbBuscarUsuario;
         private System.Windows.Forms.Button bValorar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

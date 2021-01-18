@@ -14,6 +14,8 @@ namespace ServiLearn
         private int id;
         private int idOwner;
         private string adicional;
+        private double valoracion = 0;
+        private int opiniones = 0;
 
         public Curso(string n)
         {
@@ -25,12 +27,34 @@ namespace ServiLearn
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
             adicional = (string)tupla[4];
+            int sumavaloracion = 0;
+
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Curso WHERE id_Curso = " + this.id + ";");
+
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public Curso(int id)
         {
             MySQLDB miBD = new MySQLDB();
             object[] tupla = miBD.Select("SELECT * FROM Curso WHERE id_Curso = " + id + ";")[0];
+            
 
             try
             {
@@ -46,8 +70,29 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
-           
+            int sumavaloracion = 0;
+
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Curso WHERE id_Curso = " + this.id + ";");
+
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
+
         public Curso(string n, string d)
         {
             MySQLDB miBD = new MySQLDB();
@@ -58,6 +103,27 @@ namespace ServiLearn
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
             adicional = (string)tupla[4];
+            int sumavaloracion = 0;
+
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Curso WHERE id_Curso = " + this.id + ";");
+
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public List<Curso> ListaCursos()
@@ -134,6 +200,23 @@ namespace ServiLearn
             get
             {
                 return idOwner;
+            }
+        }
+
+        public string Valoracion {
+
+            get
+            {
+                return valoracion + " / 10";
+            }
+        }
+
+        public string Opiniones
+        {
+
+            get
+            {
+                return opiniones + "";
             }
         }
 

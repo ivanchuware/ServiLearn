@@ -13,15 +13,17 @@ namespace ServiLearn
 {
     public partial class fValoracionCurso : Form
     {
-        private int valoracion;
+
         private Cuenta user;
         private Curso curso;
+        private int tipo;
 
-        public fValoracionCurso(Cuenta u, Curso cu)
+        public fValoracionCurso(Cuenta u, int t, Curso cu)
         {
             InitializeComponent();
             user = u;
             curso = cu;
+            tipo = t;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,16 +31,21 @@ namespace ServiLearn
             if (!String.IsNullOrWhiteSpace(tbValoracion.Text))
             {
 
-
                 if (Convert.ToInt32(tbValoracion.Text) >= 0 && Convert.ToInt32(tbValoracion.Text) <= 10)
+
                 {
                     try
+
                     {
                         MySQLDB miBD = new MySQLDB();
                         miBD.Update("UPDATE Cuenta_Curso SET Valoracion = " + tbValoracion.Text + " WHERE id_Cuenta = " + user.id + " AND id_Curso = " + curso.Id + ";");
-                        this.Close();
-
+                        
+                        curso = new Curso(curso.Id);
+                            PantallaCurso ventana1 = new PantallaCurso(user, tipo, curso);
+                            ventana1.Show();
+                            this.Close();
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
