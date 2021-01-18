@@ -9,12 +9,13 @@ namespace ServiLearn
 {
     public class Evento
     {
-
         private string nombre;
         private string descripcion;
         private string adicional;
         private int id;
         private int idOwner;
+        private double valoracion = 0;
+        private int opiniones = 0;
 
         public Evento(string n, string d)
         {
@@ -25,8 +26,28 @@ namespace ServiLearn
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
             adicional = (string)tupla[4];
+            int sumavaloracion = 0;
 
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
 
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public Evento(string n)
@@ -47,7 +68,27 @@ namespace ServiLearn
                 Console.WriteLine(e.Message);
             }
 
+            int sumavaloracion = 0;
 
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
+
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public Evento(int id)
@@ -58,6 +99,7 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
+
             try
             {
 
@@ -75,7 +117,27 @@ namespace ServiLearn
                 adicional = "";
             }
 
+            int sumavaloracion = 0;
 
+            try
+            {
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
+
+                foreach (object[] a in val)
+                {
+
+                    sumavaloracion += (int)a[0];
+
+                }
+
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                opiniones = val.Count;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public List<Evento> ListaEventos()
@@ -148,6 +210,24 @@ namespace ServiLearn
                 miBD.Update("UPDATE Evento SET Descripcion = '" + value
                         + "' WHERE Nombre = '" + nombre + "';");
                 descripcion = value;
+            }
+        }
+
+        public string Valoracion
+        {
+
+            get
+            {
+                return valoracion + " / 10";
+            }
+        }
+
+        public string Opiniones
+        {
+
+            get
+            {
+                return opiniones + "";
             }
         }
 

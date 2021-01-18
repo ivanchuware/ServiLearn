@@ -16,6 +16,11 @@ namespace ServiLearn
         private Evento seleccionado;
         Cuenta user;
         private Button bValoracion;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label6;
+        private Label label5;
+        private Label label4;
         int tipo;
         public fEvento(Cuenta u, int t, Evento eve)
         {
@@ -26,9 +31,10 @@ namespace ServiLearn
             label1.Text = "Evento: " + seleccionado.Nombre;
             label2.Text = "Organizado por: " + seleccionado.IdOwner;
             tDescripcion.Text = seleccionado.Descripcion;
-            
-                tAdicional.Text = seleccionado.Adicional;
-            
+            tAdicional.Text = seleccionado.Adicional;
+            textBox1.Text = seleccionado.Valoracion;
+            textBox2.Text = seleccionado.Opiniones;
+
 
             bMod.Visible = false;
             button2.Visible = false;
@@ -75,6 +81,11 @@ namespace ServiLearn
             this.bMod = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bValoracion = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -152,11 +163,66 @@ namespace ServiLearn
             this.bValoracion.UseVisualStyleBackColor = true;
             this.bValoracion.Click += new System.EventHandler(this.bValoracion_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(786, 53);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(46, 24);
+            this.textBox2.TabIndex = 24;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(651, 53);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(65, 24);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(838, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "usuarios";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(722, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "por parte de ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(537, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Valoración del Curso:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // fEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bValoracion);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bMod);
@@ -197,10 +263,34 @@ namespace ServiLearn
 
         private void bValoracion_Click(object sender, EventArgs e)
         {
-            fValoracionEvento ventana = new fValoracionEvento(user, seleccionado);
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            fValoracionEvento ventana = new fValoracionEvento(user, tipo, seleccionado);
+            this.Close();
+            ventana.Visible = true;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

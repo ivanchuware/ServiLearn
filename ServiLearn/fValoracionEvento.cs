@@ -13,14 +13,15 @@ namespace ServiLearn
 {
     public partial class fValoracionEvento : Form
     {
-        private int valoracion;
         private Cuenta user;
         private Evento evento;
-        public fValoracionEvento(Cuenta cu, Evento ev)
+        private int tipo;
+        public fValoracionEvento(Cuenta cu, int t, Evento ev)
         {
             InitializeComponent();
             user = cu;
             evento = ev;
+            tipo = t;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,9 +36,12 @@ namespace ServiLearn
                     {
                         MySQLDB miBD = new MySQLDB();
                         miBD.Update("UPDATE Cuenta_Evento SET Valoracion = " + tbValoracion.Text + " WHERE id_Cuenta = " + user.id + " AND id_Evento = " + evento.Id + ";");
+                        evento = new Evento(evento.Id);
+                        fEvento ventana1 = new fEvento(user, tipo, evento);
+                        ventana1.Show();
                         this.Close();
-
                     }
+
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
