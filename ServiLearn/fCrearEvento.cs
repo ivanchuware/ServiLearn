@@ -28,6 +28,7 @@ namespace ServiLearn
             int id_cue = seleccionado.id;
             string nombre = textBox1.Text;
             string descripcion = textBox2.Text;
+            string date = dateTimePicker1.Text;
             if (!nombre.Equals("") && !descripcion.Equals(""))
             {
                 
@@ -35,7 +36,7 @@ namespace ServiLearn
                 //miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
                 try
                 {
-                    miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" + nombre + "', '" + descripcion + "', null, null);");
+                    miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" + nombre + "', '" + descripcion + "', null, '" + date +"');");
                     object[] tupla = miBD.Select("SELECT id_evento FROM Evento where id_owner = " + id_cue + " AND nombre = '" + nombre + "' and descripcion = '" + descripcion + "' ;")[0];
                     int idevento = (int)tupla[0];
                     miBD.Insert("INSERT INTO Cuenta_Evento VALUES (" + id_cue + ", " + idevento + ", null);");
@@ -60,6 +61,7 @@ namespace ServiLearn
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -105,11 +107,19 @@ namespace ServiLearn
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(169, 406);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
             // fCrearEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 595);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -130,6 +140,7 @@ namespace ServiLearn
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
+        private DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
 
         private void fCrearEvento_Load(object sender, EventArgs e)

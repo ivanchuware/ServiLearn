@@ -54,6 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.calendar1 = new Calendar.NET.Calendar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,7 +74,7 @@
             // labelCursos
             // 
             this.labelCursos.AutoSize = true;
-            this.labelCursos.Location = new System.Drawing.Point(353, 169);
+            this.labelCursos.Location = new System.Drawing.Point(238, 182);
             this.labelCursos.Name = "labelCursos";
             this.labelCursos.Size = new System.Drawing.Size(94, 13);
             this.labelCursos.TabIndex = 1;
@@ -83,7 +84,7 @@
             // labelEventos
             // 
             this.labelEventos.AutoSize = true;
-            this.labelEventos.Location = new System.Drawing.Point(612, 169);
+            this.labelEventos.Location = new System.Drawing.Point(400, 182);
             this.labelEventos.Name = "labelEventos";
             this.labelEventos.Size = new System.Drawing.Size(101, 13);
             this.labelEventos.TabIndex = 2;
@@ -91,7 +92,7 @@
             // 
             // tbBuscadorCurso
             // 
-            this.tbBuscadorCurso.Location = new System.Drawing.Point(347, 134);
+            this.tbBuscadorCurso.Location = new System.Drawing.Point(241, 134);
             this.tbBuscadorCurso.Name = "tbBuscadorCurso";
             this.tbBuscadorCurso.Size = new System.Drawing.Size(100, 20);
             this.tbBuscadorCurso.TabIndex = 3;
@@ -99,7 +100,7 @@
             // 
             // tbBuscadorEvento
             // 
-            this.tbBuscadorEvento.Location = new System.Drawing.Point(615, 134);
+            this.tbBuscadorEvento.Location = new System.Drawing.Point(408, 134);
             this.tbBuscadorEvento.Name = "tbBuscadorEvento";
             this.tbBuscadorEvento.Size = new System.Drawing.Size(93, 20);
             this.tbBuscadorEvento.TabIndex = 4;
@@ -107,7 +108,7 @@
             // 
             // buttonCrearCurso
             // 
-            this.buttonCrearCurso.Location = new System.Drawing.Point(323, 425);
+            this.buttonCrearCurso.Location = new System.Drawing.Point(257, 401);
             this.buttonCrearCurso.Name = "buttonCrearCurso";
             this.buttonCrearCurso.Size = new System.Drawing.Size(75, 23);
             this.buttonCrearCurso.TabIndex = 7;
@@ -117,7 +118,7 @@
             // 
             // buttonCrearEvento
             // 
-            this.buttonCrearEvento.Location = new System.Drawing.Point(629, 425);
+            this.buttonCrearEvento.Location = new System.Drawing.Point(417, 401);
             this.buttonCrearEvento.Name = "buttonCrearEvento";
             this.buttonCrearEvento.Size = new System.Drawing.Size(84, 23);
             this.buttonCrearEvento.TabIndex = 8;
@@ -140,7 +141,7 @@
             // lbCursos
             // 
             this.lbCursos.FormattingEnabled = true;
-            this.lbCursos.Location = new System.Drawing.Point(323, 206);
+            this.lbCursos.Location = new System.Drawing.Point(198, 208);
             this.lbCursos.Name = "lbCursos";
             this.lbCursos.Size = new System.Drawing.Size(169, 173);
             this.lbCursos.TabIndex = 10;
@@ -150,7 +151,7 @@
             // lbEventos
             // 
             this.lbEventos.FormattingEnabled = true;
-            this.lbEventos.Location = new System.Drawing.Point(577, 206);
+            this.lbEventos.Location = new System.Drawing.Point(376, 208);
             this.lbEventos.Name = "lbEventos";
             this.lbEventos.Size = new System.Drawing.Size(163, 173);
             this.lbEventos.TabIndex = 11;
@@ -159,7 +160,7 @@
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(426, 425);
+            this.refresh.Location = new System.Drawing.Point(257, 430);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 12;
@@ -237,7 +238,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(4, 209);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 72);
+            this.panel1.Size = new System.Drawing.Size(180, 72);
             this.panel1.TabIndex = 19;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
@@ -250,7 +251,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(4, 287);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 72);
+            this.panel2.Size = new System.Drawing.Size(180, 56);
             this.panel2.TabIndex = 20;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.DoubleClick += new System.EventHandler(this.panel2_DoubleClick);
@@ -281,9 +282,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(4, 365);
+            this.panel3.Location = new System.Drawing.Point(4, 349);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 72);
+            this.panel3.Size = new System.Drawing.Size(180, 75);
             this.panel3.TabIndex = 21;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             this.panel3.DoubleClick += new System.EventHandler(this.panel3_DoubleClick);
@@ -318,11 +319,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // calendar1
+            // 
+            this.calendar1.AllowEditingEvents = true;
+            this.calendar1.CalendarDate = new System.DateTime(2021, 1, 19, 16, 53, 14, 691);
+            this.calendar1.CalendarView = Calendar.NET.CalendarViews.Month;
+            this.calendar1.DateHeaderFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.calendar1.DayOfWeekFont = new System.Drawing.Font("Arial", 10F);
+            this.calendar1.DaysFont = new System.Drawing.Font("Arial", 10F);
+            this.calendar1.DayViewTimeFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.calendar1.DimDisabledEvents = true;
+            this.calendar1.HighlightCurrentDay = true;
+            this.calendar1.LoadPresetHolidays = false;
+            this.calendar1.Location = new System.Drawing.Point(545, 208);
+            this.calendar1.Name = "calendar1";
+            this.calendar1.ShowArrowControls = true;
+            this.calendar1.ShowDashedBorderOnDisabledEvents = true;
+            this.calendar1.ShowDateInHeader = true;
+            this.calendar1.ShowDisabledEvents = false;
+            this.calendar1.ShowEventTooltips = true;
+            this.calendar1.ShowTodayButton = true;
+            this.calendar1.Size = new System.Drawing.Size(266, 245);
+            this.calendar1.TabIndex = 23;
+            this.calendar1.TodayFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.calendar1.Load += new System.EventHandler(this.calendar1_Load);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.calendar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -385,5 +412,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private Calendar.NET.Calendar calendar1;
     }
 }

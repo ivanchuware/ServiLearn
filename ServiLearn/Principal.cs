@@ -477,6 +477,7 @@ namespace ServiLearn
             consultarEventos();
             actualizarCursos();
             actualizarEventos();
+            calendar1_Load(this, System.EventArgs.Empty);
         }
 
         private void bCuenta_Click(object sender, EventArgs e)
@@ -608,6 +609,29 @@ namespace ServiLearn
             }
             catch (Exception ex)
             {
+
+            }
+        }
+
+        private void calendar1_Load(object sender, EventArgs e)
+        {
+            MySQLDB miBD = new MySQLDB();
+
+            foreach (object[] tupla in miBD.Select("SELECT Nombre, Descripcion, Fecha FROM Evento;"))
+            {
+                string n = (string)tupla[0];
+                string d = (string)tupla[1];
+                var f =
+                _ = (tupla[2] != null) ? tupla[2] : "";
+                var ev = new Calendar.NET.CustomEvent
+                {
+
+                    Date = DateTime.Parse((string)f),
+                    EventText = n
+
+                };
+
+                calendar1.AddEvent(ev);
 
             }
         }
