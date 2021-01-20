@@ -42,17 +42,29 @@ namespace ServiLearn
 
             try
             {
-                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + " AND " +
+                                    "Valoracion IS NOT NULL;");
 
-                foreach (object[] a in val)
+                if (val.Count != 0)
                 {
+                    foreach (object[] a in val)
+                    {
+                        {
+                            sumavaloracion += (int)a[0];
+                        }
 
-                    sumavaloracion += (int)a[0];
+                    }
+
+                    valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
+                    opiniones = val.Count;
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
-                opiniones = val.Count;
+                else
+                {
+                    valoracion = 0;
+                    opiniones = 0;
+                }
 
             }
 
@@ -86,17 +98,29 @@ namespace ServiLearn
 
             try
             {
-                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + " AND " +
+                                    "Valoracion IS NOT NULL;");
 
-                foreach (object[] a in val)
+                if (val.Count != 0)
                 {
+                    foreach (object[] a in val)
+                    {
+                        {
+                            sumavaloracion += (int)a[0];
+                        }
 
-                    sumavaloracion += (int)a[0];
+                    }
+
+                    valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
+                    opiniones = val.Count;
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
-                opiniones = val.Count;
+                else
+                {
+                    valoracion = 0;
+                    opiniones = 0;
+                }
 
             }
             catch (Exception e)
@@ -136,17 +160,29 @@ namespace ServiLearn
 
             try
             {
-                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + ";");
+                List<object[]> val = miBD.Select("SELECT Valoracion FROM Cuenta_Evento WHERE id_Evento = " + this.id + " AND " +
+                                    "Valoracion IS NOT NULL;");
 
-                foreach (object[] a in val)
+                if (val.Count != 0)
                 {
+                    foreach (object[] a in val)
+                    {
+                        {
+                            sumavaloracion += (int)a[0];
+                        }
 
-                    sumavaloracion += (int)a[0];
+                    }
+
+                    valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
+                    opiniones = val.Count;
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
-                opiniones = val.Count;
+                else
+                {
+                    valoracion = 0;
+                    opiniones = 0;
+                }
 
             }
             catch (Exception e)

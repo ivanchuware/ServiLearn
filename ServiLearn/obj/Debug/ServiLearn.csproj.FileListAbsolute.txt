@@ -439,6 +439,4 @@ D:\GitHub\ServiLearn-main\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.Core
 D:\GitHub\ServiLearn-main\ServiLearn\ServiLearn\obj\Debug\ServiLearn.csproj.CopyComplete
 D:\GitHub\ServiLearn-main\ServiLearn\ServiLearn\obj\Debug\ServiLearn.exe
 D:\GitHub\ServiLearn-main\ServiLearn\ServiLearn\obj\Debug\ServiLearn.pdb
-C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\Calendar.NET.pdb
-C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\bin\Debug\Calendar.NET.xml
 C:\Users\Jachi\Documents\GitHub\ServiLearn\ServiLearn\obj\Debug\ServiLearn.Calendario.resources
