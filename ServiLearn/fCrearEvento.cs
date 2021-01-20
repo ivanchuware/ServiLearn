@@ -13,11 +13,15 @@ namespace ServiLearn
 {
     public partial class fCrearEvento : Form
     {
+
         public Cuenta seleccionado;
         public fCrearEvento(Cuenta u)
         {
             InitializeComponent();
             seleccionado = u;
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.ShowUpDown = true;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,7 +32,11 @@ namespace ServiLearn
             int id_cue = seleccionado.id;
             string nombre = textBox1.Text;
             string descripcion = textBox2.Text;
-            string date = dateTimePicker1.Text;
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = " hh:mm:ss";
+            string dateFinal = dateTimePicker1.Text + dateTimePicker2.Text;
             if (!nombre.Equals("") && !descripcion.Equals(""))
             {
                 
@@ -36,7 +44,7 @@ namespace ServiLearn
                 //miBD.Insert("INSERT INTO Curso VALUES (null, '" + owner + "', '" + name + "', '" + desc + "', null);");
                 try
                 {
-                    miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" + nombre + "', '" + descripcion + "', null, '" + date +"');");
+                    miBD.Insert("INSERT INTO Evento VALUES (null, '" + id_cue + "','" + nombre + "', '" + descripcion + "', null, '" + dateFinal +"');");
                     object[] tupla = miBD.Select("SELECT id_evento FROM Evento where id_owner = " + id_cue + " AND nombre = '" + nombre + "' and descripcion = '" + descripcion + "' ;")[0];
                     int idevento = (int)tupla[0];
                     miBD.Insert("INSERT INTO Cuenta_Evento VALUES (" + id_cue + ", " + idevento + ", null);");
@@ -62,6 +70,7 @@ namespace ServiLearn
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +123,19 @@ namespace ServiLearn
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(410, 406);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
             // fCrearEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 595);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -141,6 +158,7 @@ namespace ServiLearn
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
 
         private void fCrearEvento_Load(object sender, EventArgs e)
