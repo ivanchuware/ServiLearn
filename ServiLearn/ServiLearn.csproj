@@ -415,6 +415,7 @@
     <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
     <Content Include="bin\Debug\Zstandard.Net.dll" />
     <None Include="Resources\ServiLearn2.jpg" />
+    <None Include="Resources\empty-profile.png" />
     <Content Include="Resources\ServiLearn1.jpg" />
     <Content Include="Resources\ServiLearnIcon.ico" />
   </ItemGroup>

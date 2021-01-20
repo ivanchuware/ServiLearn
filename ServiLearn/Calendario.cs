@@ -14,12 +14,26 @@ namespace ServiLearn
 {
     public partial class Calendario : Form
     {
-        bool permisos = false;
-        List<Noticia> noticias;
-        public Calendario()
+
+        private Cuenta user;
+        private int tipoCal;
+
+        public Calendario(Cuenta u, int t)
         {
+            
             InitializeComponent();
-            actualizar();
+            user = u;
+            tipoCal = t;
+
+            if (t == 0)
+            {
+                actualizar();
+            }
+            else
+            {
+                actualizarMisEventos();
+            }
+
         }
 
         private void actualizar()
@@ -33,9 +47,21 @@ namespace ServiLearn
             {
 
             }
-
-
         }
+
+        private void actualizarMisEventos()
+        {
+            //try
+            {
+                mostrarCalendarioUser(user);
+
+            }
+            //catch (Exception ex)
+            {
+
+            }
+        }
+
         private void mostrarCalendario()
         {
             MySQLDB miBD = new MySQLDB();
@@ -60,6 +86,48 @@ namespace ServiLearn
                 calendar1.AddEvent(ev);
 
             }
+        }
+
+        private void mostrarCalendarioUser(Cuenta u)
+        {
+            List<Evento> misEventos = u.ListaEventosUser();
+
+            foreach (Evento e in misEventos)
+            {
+                string n = e.Nombre;
+                string d = e.Descripcion;
+                var f =
+                _ = (e.Fecha != null) ? e.Fecha : "";
+
+                var ev = new Calendar.NET.CustomEvent
+                {
+
+                    EventColor = Color.Aquamarine,
+                    EventTextColor = Color.Black,
+                    Date = DateTime.Parse((string)f),
+                    EventText = n,
+
+                };
+
+            calendar1.AddEvent(ev);
+
+            }
+
+        }
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Calendario c = new Calendario(user, 0);
+            c.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Calendario c = new Calendario(user, 1);
+            c.Show();
+            this.Close();
         }
     }
 }

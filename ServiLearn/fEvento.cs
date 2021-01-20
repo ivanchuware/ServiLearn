@@ -15,12 +15,15 @@ namespace ServiLearn
     {
         private Evento seleccionado;
         Cuenta user;
+        private String[] fechaEntera;
         private Button bValoracion;
         private TextBox textBox2;
         private TextBox textBox1;
         private Label label6;
         private Label label5;
         private Label label4;
+        private Label label7;
+        private Label label8;
         int tipo;
         public fEvento(Cuenta u, int t, Evento eve)
         {
@@ -31,6 +34,7 @@ namespace ServiLearn
             tipo = t;
             label1.Text = "Evento: " + seleccionado.Nombre;
             label2.Text = "Organizado por: " + cuenta.nombre;
+            label3.Text = "Fecha y hora: " + FechaFormato();
             tDescripcion.Text = seleccionado.Descripcion;
             tAdicional.Text = seleccionado.Adicional;
             textBox1.Text = seleccionado.Valoracion;
@@ -46,6 +50,55 @@ namespace ServiLearn
                 button2.Visible = true;
 
             }
+        }
+
+        private string getMonth(string m)
+        {
+            int caseSwitch = int.Parse(m);
+
+            switch (caseSwitch)
+            {
+                case 1:
+                    return "Enero";
+                case 2:
+                    return "Febrero";
+                case 3:
+                    return "Marzo";
+                case 4:
+                    return "Abril";
+                case 5:
+                    return "Mayo";
+                case 6:
+                    return "Junio";
+                case 7:
+                    return "Julio";
+                case 8:
+                    return "Agosto";
+                case 9:
+                    return "Septiembre";
+                case 10:
+                    return "Octubre";
+                case 11:
+                    return "Noviembre";
+                case 12:
+                    return "Diciembre";
+                default:
+                    return "error";
+            }
+        }
+
+        private string FechaFormato()
+        {
+            String fechaSinFormato = seleccionado.Fecha;
+
+            fechaEntera = fechaSinFormato.Split(' ');
+
+            String[] fecha = fechaEntera[0].Split('-');
+
+            String[] hora = fechaEntera[1].Split(':');
+
+            return "El evento ocurrirá a las " + hora[0] + " horas, " + hora[1] + " minutos y " + hora[2] + " segundos" +
+                " del día " + fecha[2] + " de " + getMonth(fecha[1]) + " del año " + fecha[0] + ".";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,12 +142,14 @@ namespace ServiLearn
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 56);
+            this.label1.Location = new System.Drawing.Point(124, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -103,7 +158,7 @@ namespace ServiLearn
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 89);
+            this.label2.Location = new System.Drawing.Point(124, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 1;
@@ -112,11 +167,11 @@ namespace ServiLearn
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(124, 120);
+            this.label3.Location = new System.Drawing.Point(124, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Descripcion:";
+            this.label3.Text = "Fecha y hora:";
             // 
             // tDescripcion
             // 
@@ -216,11 +271,32 @@ namespace ServiLearn
             this.label4.Text = "Valoración del Curso:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(124, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Descripción:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(124, 280);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Detalles Adicionales";
+            // 
             // fEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 606);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
@@ -237,7 +313,7 @@ namespace ServiLearn
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fEvento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Ventana Evento";
             this.Load += new System.EventHandler(this.fEvento_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,6 +368,11 @@ namespace ServiLearn
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

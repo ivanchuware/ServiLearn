@@ -63,6 +63,16 @@ namespace ServiLearn.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap empty_profile {
+            get {
+                object obj = ResourceManager.GetObject("empty_profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ServiLearn1 {
             get {
                 object obj = ResourceManager.GetObject("ServiLearn1", resourceCulture);

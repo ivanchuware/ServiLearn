@@ -16,6 +16,7 @@ namespace ServiLearn
         private int idOwner;
         private double valoracion = 0;
         private int opiniones = 0;
+        private string fecha;
 
         public Evento(string n, string d)
         {
@@ -25,7 +26,18 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
-            adicional = (string)tupla[4];
+            fecha = (string)tupla[5];
+
+            try
+            {
+                adicional = (string)tupla[4];
+            }
+            catch (Exception e)
+            {
+                adicional = "";
+                Console.WriteLine(e.Message);
+            }
+
             int sumavaloracion = 0;
 
             try
@@ -58,6 +70,8 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
+            fecha = (string)tupla[5];
+
             try
             {
                 adicional = (string)tupla[4];
@@ -99,6 +113,7 @@ namespace ServiLearn
             idOwner = (int)tupla[1];
             nombre = (string)tupla[2];
             descripcion = (string)tupla[3];
+            fecha = (string)tupla[5];
 
             try
             {
@@ -193,6 +208,14 @@ namespace ServiLearn
             get
             {
                 return idOwner;
+            }
+        }
+
+        public string Fecha
+        {
+            get
+            {
+                return fecha;
             }
         }
 

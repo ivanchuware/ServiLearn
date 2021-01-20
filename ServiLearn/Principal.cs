@@ -23,6 +23,8 @@ namespace ServiLearn
         int idNoticia3 = -1;
         List<object[]> tuplasCursos;
         List<object[]> tuplasEventos;
+        List<object[]> bdCurso;
+        List<object[]> bdEvento;
 
         private void consultarCursos()
         {
@@ -48,6 +50,7 @@ namespace ServiLearn
                 MessageBox.Show(e.Message);
             }
         }
+
         List<Tuple<int, int>> indiceIdCurso;
         List<Tuple<int, int>> indiceIdEvento;
 
@@ -239,6 +242,37 @@ namespace ServiLearn
             return r;
         }
 
+        private bool CuentaEnCursoId(Cuenta u, int id)
+        {
+            int idCuenta = u.id;
+            int idCurso = id;
+            bool r;
+
+            MySQLDB miBD = new MySQLDB();
+            try
+            {
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Curso WHERE id_Cuenta = '" + idCuenta + "' and id_Curso = '" + idCurso + "';")[0];
+
+
+                if (idCuenta != (int)tupla[0] || idCurso != (int)tupla[1])
+                {
+
+                    r = false;
+
+                }
+                else
+                {
+                    r = true;
+                }
+            }
+            catch
+            {
+                r = false;
+            }
+
+            return r;
+        }
+
         private bool CuentaEnEvento(Cuenta u, Evento e)
         {
             int idCuenta = u.id;
@@ -270,6 +304,36 @@ namespace ServiLearn
             return r;
         }
 
+        private bool CuentaEnEventoid(Cuenta u, int id)
+        {
+            int idCuenta = u.id;
+            int idEvento = id;
+            bool r;
+
+            MySQLDB miBD = new MySQLDB();
+            try
+            {
+                object[] tupla = miBD.Select("SELECT * FROM Cuenta_Evento WHERE id_Cuenta = " + idCuenta + " and id_Evento = " + idEvento + ";")[0];
+
+
+                if (idCuenta != (int)tupla[0] || idEvento != (int)tupla[1])
+                {
+
+                    r = false;
+
+                }
+                else
+                {
+                    r = true;
+                }
+            }
+            catch
+            {
+                r = false;
+            }
+
+            return r;
+        }
 
         public Principal(Cuenta u, int t)
         {
@@ -280,6 +344,8 @@ namespace ServiLearn
             buttonCrearCurso.Visible = false;
             buttonCrearEvento.Visible = false;
             bGestionUsuarios.Visible = false;
+            button5.Visible = false;
+            button6.Visible = false;
 
             if (tipo == 2 || tipo == 4)
             {
@@ -642,8 +708,69 @@ namespace ServiLearn
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Calendario c = new Calendario();
+            Calendario c = new Calendario(user, 0);
             c.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            lbEventos.Items.Clear();
+            indiceIdEvento = new List<Tuple<int, int>>();
+            int index = 0;
+            List<Evento> lista = new List<Evento>();
+
+            foreach (Object[] evento in tuplasEventos)
+            {
+                    if (CuentaEnEventoid(user, (int)evento[0]) == true)
+                    {
+                        lbEventos.Items.Add(evento[2]);
+                        indiceIdEvento.Add(new Tuple<int, int>(index, (int)evento[0]));
+                        index++;
+                    }
+            }
+
+            button5.Visible = true;
+            button4.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            actualizarEventos();
+            button4.Visible = true;
+            button5.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lbCursos.Items.Clear();
+            indiceIdCurso = new List<Tuple<int, int>>();
+            int index = 0;
+            List<Curso> lista = new List<Curso>();
+
+            foreach (Object[] curso in tuplasCursos)
+            {
+                if (CuentaEnCursoId(user, (int)curso[0]) == true)
+                {
+
+                    lbCursos.Items.Add(curso[2]);
+                    indiceIdCurso.Add(new Tuple<int, int>(index, (int)curso[0]));
+                    index++;
+
+                }
+            }
+
+            button6.Visible = true;
+            button3.Visible = false;
+
+        } 
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            actualizarCursos();
+            button3.Visible = true;
+            button6.Visible = false;
+        }
+
+       
     }
 }

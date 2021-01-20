@@ -60,10 +60,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -176,11 +182,11 @@
             // 
             // bCuenta
             // 
-            this.bCuenta.Location = new System.Drawing.Point(12, 373);
+            this.bCuenta.Location = new System.Drawing.Point(12, 266);
             this.bCuenta.Name = "bCuenta";
             this.bCuenta.Size = new System.Drawing.Size(115, 23);
             this.bCuenta.TabIndex = 13;
-            this.bCuenta.Text = "Mi Cuenta";
+            this.bCuenta.Text = "Ajustes de Cuenta";
             this.bCuenta.UseVisualStyleBackColor = true;
             this.bCuenta.Click += new System.EventHandler(this.bCuenta_Click);
             // 
@@ -196,9 +202,9 @@
             // 
             // btMsgs
             // 
-            this.btMsgs.Location = new System.Drawing.Point(12, 402);
+            this.btMsgs.Location = new System.Drawing.Point(683, 306);
             this.btMsgs.Name = "btMsgs";
-            this.btMsgs.Size = new System.Drawing.Size(115, 23);
+            this.btMsgs.Size = new System.Drawing.Size(115, 40);
             this.btMsgs.TabIndex = 15;
             this.btMsgs.Text = "Mis mensajes";
             this.btMsgs.UseVisualStyleBackColor = true;
@@ -399,11 +405,65 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 383);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 42);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "Ver mis cursos";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(683, 383);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 42);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "Ver mis eventos";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ServiLearn.Properties.Resources.empty_profile;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 295);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(75, 74);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(683, 383);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(115, 42);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Ver todos los eventos";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 383);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(115, 42);
+            this.button6.TabIndex = 33;
+            this.button6.Text = "Ver todos los cursos";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 492);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lbCursos);
             this.Controls.Add(this.label10);
@@ -429,6 +489,7 @@
             this.Controls.Add(this.labelCursos);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.calendar1);
+            this.Controls.Add(this.button6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -441,6 +502,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +541,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

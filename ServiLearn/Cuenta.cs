@@ -153,5 +153,24 @@ namespace ServiLearn
         }
 
 
+        public List<Evento> ListaEventosUser()
+        {
+            List<Evento> lista = new List<Evento>();
+            MySQLDB miBD = new MySQLDB();
+
+            List<object[]> misEventos = miBD.Select("SELECT id_Evento FROM Cuenta_Evento WHERE id_Cuenta = " + id + ";");
+
+            foreach (object[] i in misEventos)
+            {
+                int id = (int)i[0];
+                object[] tupla = miBD.Select("SELECT Nombre, Descripcion FROM Evento WHERE id_Evento = " + id + ";")[0];
+                string n = (string)tupla[0];
+                string d = (string)tupla[1];
+
+                lista.Add(new Evento(n, d));
+            }
+            return lista;
+        }
+
     }
 }

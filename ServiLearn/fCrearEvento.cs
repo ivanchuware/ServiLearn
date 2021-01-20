@@ -35,7 +35,7 @@ namespace ServiLearn
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.CustomFormat = " hh:mm:ss";
+            dateTimePicker2.CustomFormat = " HH:mm:ss";
             string dateFinal = dateTimePicker1.Text + dateTimePicker2.Text;
             if (!nombre.Equals("") && !descripcion.Equals(""))
             {
