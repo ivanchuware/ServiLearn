@@ -134,16 +134,16 @@ namespace ServiLearn
                     label2.Text = lista[0].titulo;
                     try
                     {
-                        label2.Text = lista[0].titulo.Substring(0, 19) + "...";
+                        label2.Text = lista[0].titulo.Substring(0, 28) + "...";
                     } catch (Exception ex)
                     {
 
                     }
 
-                    label3.Text = Regex.Replace(lista[0].texto, ".{29}", "$0\n");
+                    label3.Text = Regex.Replace(lista[0].texto, ".{42}", "$0\n");
                     try
                     {
-                        label3.Text = label3.Text.Substring(0, 88) + "...";
+                        label3.Text = label3.Text.Substring(0, 126) + "...";
                     }
                     catch (Exception ex)
                     {
@@ -158,17 +158,17 @@ namespace ServiLearn
                     label5.Text = lista[1].titulo;
                     try
                     {
-                        label5.Text = lista[1].titulo.Substring(0, 19) + "...";
+                        label5.Text = lista[1].titulo.Substring(0, 28) + "...";
                     }
                     catch (Exception ex)
                     {
 
                     }
 
-                    label4.Text = Regex.Replace(lista[1].texto, ".{29}", "$0\n");
+                    label4.Text = Regex.Replace(lista[1].texto, ".{42}", "$0\n");
                     try
                     {
-                        label4.Text = label4.Text.Substring(0, 88) + "...";
+                        label4.Text = label4.Text.Substring(0, 126) + "...";
                     }
                     catch (Exception ex)
                     {
@@ -184,17 +184,17 @@ namespace ServiLearn
                     label7.Text = lista[2].titulo;
                     try
                     {
-                        label7.Text = lista[2].titulo.Substring(0, 19) + "...";
+                        label7.Text = lista[2].titulo.Substring(0, 28) + "...";
                     }
                     catch (Exception ex)
                     {
 
                     }
 
-                    label6.Text = Regex.Replace(lista[2].texto, ".{29}", "$0\n");
+                    label6.Text = Regex.Replace(lista[2].texto, ".{42}", "$0\n");
                     try
                     {
-                        label6.Text = label6.Text.Substring(0, 88) + "...";
+                        label6.Text = label6.Text.Substring(0, 126) + "...";
                     }
                     catch (Exception ex)
                     {
@@ -321,7 +321,6 @@ namespace ServiLearn
             consultarEventos();
             actualizarCursos();
             actualizarEventos();
-
             prepararNoticias();
         }
 
@@ -623,17 +622,28 @@ namespace ServiLearn
                 string d = (string)tupla[1];
                 var f =
                 _ = (tupla[2] != null) ? tupla[2] : "";
+
                 var ev = new Calendar.NET.CustomEvent
                 {
 
+                    EventColor = Color.Aquamarine,
+                    EventTextColor = Color.Black,
                     Date = DateTime.Parse((string)f),
-                    EventText = n
+                    EventText = n,
 
                 };
 
                 calendar1.AddEvent(ev);
 
             }
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Calendario c = new Calendario();
+            c.Show();
         }
     }
 }

@@ -26,10 +26,11 @@ namespace ServiLearn
         {
             InitializeComponent();
             seleccionado = eve;
+            Cuenta cuenta = new Cuenta(seleccionado.IdOwner);
             user = u;
             tipo = t;
             label1.Text = "Evento: " + seleccionado.Nombre;
-            label2.Text = "Organizado por: " + seleccionado.IdOwner;
+            label2.Text = "Organizado por: " + cuenta.nombre;
             tDescripcion.Text = seleccionado.Descripcion;
             tAdicional.Text = seleccionado.Adicional;
             textBox1.Text = seleccionado.Valoracion;
@@ -38,10 +39,12 @@ namespace ServiLearn
 
             bMod.Visible = false;
             button2.Visible = false;
-            if (tipo == 3 || tipo == 4)
+            if (user.id == seleccionado.IdOwner || tipo == 4)
             {
+
                 bMod.Visible = true;
                 button2.Visible = true;
+
             }
         }
 

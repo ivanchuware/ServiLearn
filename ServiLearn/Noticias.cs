@@ -61,7 +61,7 @@ namespace ServiLearn
                 string titulo = n.titulo;
                 string texto = n.texto;
 
-                if (titulo.ToUpper().Contains(textBox1.Text.ToUpper()) || texto.ToUpper().Contains(textBox1.Text.ToUpper()))
+                if (titulo.ToUpper().Contains(textBox1.Text.ToUpper())) //|| texto.ToUpper().Contains(textBox1.Text.ToUpper()))
                 {
                     try
                     {
@@ -196,6 +196,11 @@ namespace ServiLearn
 
             }
             
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

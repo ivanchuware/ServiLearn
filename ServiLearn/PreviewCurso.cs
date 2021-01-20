@@ -8,15 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using BDLibrary;
 
 namespace ServiLearn
@@ -32,6 +23,7 @@ namespace ServiLearn
             tipo = t;
             curso = c;
             InitializeComponent();
+            Cuenta cuenta = new Cuenta(curso.IdOwner);
 
 
 
@@ -41,6 +33,7 @@ namespace ServiLearn
             }
 
             lCurso.Text = ("Curso: " + c.Nombre);
+            lImp.Text = ("Organizado por: " + cuenta.Nombre);
             tbDesc.Text = c.Descripcion;
         }
         private void InsertarCuentaEnCurso(Cuenta cuenta, Curso curso)

@@ -40,7 +40,7 @@ namespace ServiLearn
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
                 opiniones = val.Count;
 
             }
@@ -83,7 +83,7 @@ namespace ServiLearn
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
                 opiniones = val.Count;
 
             }
@@ -116,7 +116,7 @@ namespace ServiLearn
 
                 }
 
-                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 1);
+                valoracion = Math.Round((double)sumavaloracion / (double)val.Count, 2);
                 opiniones = val.Count;
 
             }

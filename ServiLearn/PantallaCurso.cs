@@ -24,10 +24,11 @@ namespace ServiLearn
         {
             InitializeComponent();
             seleccionado = cur;
+            Cuenta cuenta = new Cuenta(seleccionado.IdOwner);
             user = u;
             tipo = t;
             lCurso.Text = "Curso: " + seleccionado.Nombre;
-            lProfesores.Text = "Impartido por: " + seleccionado.IdOwner;
+            lProfesores.Text = "Impartido por: " + cuenta.nombre;
             tvCont.Text = seleccionado.Descripcion;
             tvAdic.Text = seleccionado.Adicional;
             textBox1.Text = seleccionado.Valoracion;
