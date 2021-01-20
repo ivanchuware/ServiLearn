@@ -38,6 +38,7 @@ namespace ServiLearn
             // calendar1
             // 
             this.calendar1.AllowEditingEvents = true;
+            this.calendar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.calendar1.CalendarDate = new System.DateTime(2021, 1, 19, 16, 53, 14, 691);
             this.calendar1.CalendarView = Calendar.NET.CalendarViews.Month;
             this.calendar1.DateHeaderFont = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
@@ -61,6 +62,7 @@ namespace ServiLearn
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Location = new System.Drawing.Point(243, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 23);
@@ -71,6 +73,7 @@ namespace ServiLearn
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Location = new System.Drawing.Point(410, 29);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 23);

@@ -39,6 +39,7 @@ namespace ServiLearn
             // 
             // lCurso
             // 
+            this.lCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lCurso.AutoSize = true;
             this.lCurso.Location = new System.Drawing.Point(41, 30);
             this.lCurso.Name = "lCurso";
@@ -48,6 +49,7 @@ namespace ServiLearn
             // 
             // lImp
             // 
+            this.lImp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lImp.AutoSize = true;
             this.lImp.Location = new System.Drawing.Point(41, 72);
             this.lImp.Name = "lImp";
@@ -57,6 +59,7 @@ namespace ServiLearn
             // 
             // lDesc
             // 
+            this.lDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lDesc.AutoSize = true;
             this.lDesc.Location = new System.Drawing.Point(41, 119);
             this.lDesc.Name = "lDesc";
@@ -66,6 +69,7 @@ namespace ServiLearn
             // 
             // tbDesc
             // 
+            this.tbDesc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDesc.Location = new System.Drawing.Point(44, 161);
             this.tbDesc.Multiline = true;
             this.tbDesc.Name = "tbDesc";
@@ -76,6 +80,7 @@ namespace ServiLearn
             // 
             // bInscribirse
             // 
+            this.bInscribirse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bInscribirse.Location = new System.Drawing.Point(243, 357);
             this.bInscribirse.Name = "bInscribirse";
             this.bInscribirse.Size = new System.Drawing.Size(75, 23);

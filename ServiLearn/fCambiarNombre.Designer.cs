@@ -39,6 +39,7 @@ namespace ServiLearn
             // 
             // lNombre
             // 
+            this.lNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lNombre.AutoSize = true;
             this.lNombre.Location = new System.Drawing.Point(33, 36);
             this.lNombre.Name = "lNombre";
@@ -48,6 +49,7 @@ namespace ServiLearn
             // 
             // tbNombre
             // 
+            this.tbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNombre.Location = new System.Drawing.Point(36, 65);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(196, 20);
@@ -55,6 +57,7 @@ namespace ServiLearn
             // 
             // bNombre
             // 
+            this.bNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bNombre.Location = new System.Drawing.Point(36, 126);
             this.bNombre.Name = "bNombre";
             this.bNombre.Size = new System.Drawing.Size(103, 23);
@@ -65,6 +68,7 @@ namespace ServiLearn
             // 
             // bCancelar
             // 
+            this.bCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bCancelar.Location = new System.Drawing.Point(145, 126);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(87, 23);
@@ -75,6 +79,7 @@ namespace ServiLearn
             // 
             // tbContraseña
             // 
+            this.tbContraseña.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbContraseña.Location = new System.Drawing.Point(36, 100);
             this.tbContraseña.Name = "tbContraseña";
             this.tbContraseña.Size = new System.Drawing.Size(196, 20);

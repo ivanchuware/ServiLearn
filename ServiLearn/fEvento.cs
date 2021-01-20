@@ -148,6 +148,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(124, 53);
             this.label1.Name = "label1";
@@ -157,6 +158,7 @@ namespace ServiLearn
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(124, 80);
             this.label2.Name = "label2";
@@ -166,6 +168,7 @@ namespace ServiLearn
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(124, 109);
             this.label3.Name = "label3";
@@ -175,6 +178,7 @@ namespace ServiLearn
             // 
             // tDescripcion
             // 
+            this.tDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tDescripcion.Location = new System.Drawing.Point(127, 151);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
@@ -184,6 +188,7 @@ namespace ServiLearn
             // 
             // tAdicional
             // 
+            this.tAdicional.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tAdicional.Location = new System.Drawing.Point(127, 296);
             this.tAdicional.Multiline = true;
             this.tAdicional.Name = "tAdicional";
@@ -193,6 +198,7 @@ namespace ServiLearn
             // 
             // bMod
             // 
+            this.bMod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bMod.Location = new System.Drawing.Point(127, 453);
             this.bMod.Name = "bMod";
             this.bMod.Size = new System.Drawing.Size(111, 23);
@@ -203,6 +209,7 @@ namespace ServiLearn
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Location = new System.Drawing.Point(566, 453);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 23);
@@ -213,6 +220,7 @@ namespace ServiLearn
             // 
             // bValoracion
             // 
+            this.bValoracion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bValoracion.Location = new System.Drawing.Point(334, 453);
             this.bValoracion.Name = "bValoracion";
             this.bValoracion.Size = new System.Drawing.Size(111, 23);
@@ -223,6 +231,7 @@ namespace ServiLearn
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.Location = new System.Drawing.Point(786, 53);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -233,6 +242,7 @@ namespace ServiLearn
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(651, 53);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -243,6 +253,7 @@ namespace ServiLearn
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(838, 56);
             this.label6.Name = "label6";
@@ -253,6 +264,7 @@ namespace ServiLearn
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(722, 56);
             this.label5.Name = "label5";
@@ -263,6 +275,7 @@ namespace ServiLearn
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(537, 56);
             this.label4.Name = "label4";
@@ -273,6 +286,7 @@ namespace ServiLearn
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(124, 135);
             this.label7.Name = "label7";
@@ -283,6 +297,7 @@ namespace ServiLearn
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(124, 280);
             this.label8.Name = "label8";

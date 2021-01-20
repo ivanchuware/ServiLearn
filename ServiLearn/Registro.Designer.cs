@@ -57,6 +57,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(161, 44);
@@ -67,6 +68,7 @@ namespace ServiLearn
             // 
             // buttonAceptar
             // 
+            this.buttonAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonAceptar.Location = new System.Drawing.Point(378, 386);
             this.buttonAceptar.Name = "buttonAceptar";
@@ -78,6 +80,7 @@ namespace ServiLearn
             // 
             // textBoxUsuario
             // 
+            this.textBoxUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxUsuario.Location = new System.Drawing.Point(467, 120);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(134, 20);
@@ -85,6 +88,7 @@ namespace ServiLearn
             // 
             // textBoxContr
             // 
+            this.textBoxContr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxContr.Location = new System.Drawing.Point(467, 176);
             this.textBoxContr.Name = "textBoxContr";
             this.textBoxContr.Size = new System.Drawing.Size(134, 20);
@@ -92,6 +96,7 @@ namespace ServiLearn
             // 
             // labelUsuario
             // 
+            this.labelUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuario.Location = new System.Drawing.Point(252, 124);
@@ -102,6 +107,7 @@ namespace ServiLearn
             // 
             // labelContr
             // 
+            this.labelContr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelContr.AutoSize = true;
             this.labelContr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelContr.Location = new System.Drawing.Point(284, 176);
@@ -112,6 +118,7 @@ namespace ServiLearn
             // 
             // labelInvitado
             // 
+            this.labelInvitado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelInvitado.AutoSize = true;
             this.labelInvitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInvitado.Location = new System.Drawing.Point(552, 44);
@@ -122,6 +129,7 @@ namespace ServiLearn
             // 
             // labelONG
             // 
+            this.labelONG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelONG.AutoSize = true;
             this.labelONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelONG.Location = new System.Drawing.Point(552, 44);
@@ -132,6 +140,7 @@ namespace ServiLearn
             // 
             // labelTutor
             // 
+            this.labelTutor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTutor.AutoSize = true;
             this.labelTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTutor.Location = new System.Drawing.Point(552, 44);
@@ -142,6 +151,7 @@ namespace ServiLearn
             // 
             // labelAlumno
             // 
+            this.labelAlumno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelAlumno.AutoSize = true;
             this.labelAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlumno.Location = new System.Drawing.Point(552, 44);
@@ -152,6 +162,7 @@ namespace ServiLearn
             // 
             // textBoxCorreo
             // 
+            this.textBoxCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxCorreo.Location = new System.Drawing.Point(467, 231);
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.Size = new System.Drawing.Size(134, 20);
@@ -159,6 +170,7 @@ namespace ServiLearn
             // 
             // textBoxTelefono
             // 
+            this.textBoxTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxTelefono.Location = new System.Drawing.Point(467, 287);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(134, 20);
@@ -166,6 +178,7 @@ namespace ServiLearn
             // 
             // textBoxDireccion
             // 
+            this.textBoxDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxDireccion.Location = new System.Drawing.Point(467, 337);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(134, 20);
@@ -173,6 +186,7 @@ namespace ServiLearn
             // 
             // labelDireccion
             // 
+            this.labelDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDireccion.Location = new System.Drawing.Point(288, 337);
@@ -183,6 +197,7 @@ namespace ServiLearn
             // 
             // labelTelefono
             // 
+            this.labelTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTelefono.AutoSize = true;
             this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefono.Location = new System.Drawing.Point(288, 285);
@@ -193,6 +208,7 @@ namespace ServiLearn
             // 
             // labelCorreo
             // 
+            this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCorreo.AutoSize = true;
             this.labelCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCorreo.Location = new System.Drawing.Point(258, 231);
@@ -203,6 +219,7 @@ namespace ServiLearn
             // 
             // errorUsuario
             // 
+            this.errorUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorUsuario.AutoSize = true;
             this.errorUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorUsuario.ForeColor = System.Drawing.Color.Red;
@@ -215,6 +232,7 @@ namespace ServiLearn
             // 
             // errorContr
             // 
+            this.errorContr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorContr.AutoSize = true;
             this.errorContr.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorContr.ForeColor = System.Drawing.Color.Red;
@@ -227,6 +245,7 @@ namespace ServiLearn
             // 
             // errorCorreo
             // 
+            this.errorCorreo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorCorreo.AutoSize = true;
             this.errorCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorCorreo.ForeColor = System.Drawing.Color.Red;
@@ -239,6 +258,7 @@ namespace ServiLearn
             // 
             // errorTelefono
             // 
+            this.errorTelefono.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorTelefono.AutoSize = true;
             this.errorTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorTelefono.ForeColor = System.Drawing.Color.Red;
@@ -251,6 +271,7 @@ namespace ServiLearn
             // 
             // errorDireccion
             // 
+            this.errorDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorDireccion.AutoSize = true;
             this.errorDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorDireccion.ForeColor = System.Drawing.Color.Red;
@@ -263,6 +284,7 @@ namespace ServiLearn
             // 
             // errorContrCorta
             // 
+            this.errorContrCorta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorContrCorta.AutoSize = true;
             this.errorContrCorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorContrCorta.ForeColor = System.Drawing.Color.Red;
@@ -275,6 +297,7 @@ namespace ServiLearn
             // 
             // errorCorreoFormato
             // 
+            this.errorCorreoFormato.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorCorreoFormato.AutoSize = true;
             this.errorCorreoFormato.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorCorreoFormato.ForeColor = System.Drawing.Color.Red;
@@ -287,6 +310,7 @@ namespace ServiLearn
             // 
             // errorUsuarioExiste
             // 
+            this.errorUsuarioExiste.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorUsuarioExiste.AutoSize = true;
             this.errorUsuarioExiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.errorUsuarioExiste.ForeColor = System.Drawing.Color.Red;

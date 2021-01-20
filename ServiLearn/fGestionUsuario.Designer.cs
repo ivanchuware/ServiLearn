@@ -38,6 +38,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(90, 63);
@@ -48,6 +49,7 @@ namespace ServiLearn
             // 
             // lbUsuarios
             // 
+            this.lbUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbUsuarios.FormattingEnabled = true;
             this.lbUsuarios.Location = new System.Drawing.Point(94, 119);
             this.lbUsuarios.Name = "lbUsuarios";
@@ -57,6 +59,7 @@ namespace ServiLearn
             // 
             // bEliminarUsuario
             // 
+            this.bEliminarUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bEliminarUsuario.Location = new System.Drawing.Point(460, 217);
             this.bEliminarUsuario.Name = "bEliminarUsuario";
             this.bEliminarUsuario.Size = new System.Drawing.Size(100, 23);
@@ -67,6 +70,7 @@ namespace ServiLearn
             // 
             // tbBuscadorUsuario
             // 
+            this.tbBuscadorUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBuscadorUsuario.Location = new System.Drawing.Point(460, 119);
             this.tbBuscadorUsuario.Name = "tbBuscadorUsuario";
             this.tbBuscadorUsuario.Size = new System.Drawing.Size(100, 20);

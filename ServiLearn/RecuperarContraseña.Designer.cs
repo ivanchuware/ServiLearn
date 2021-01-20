@@ -37,6 +37,7 @@ namespace ServiLearn
             // 
             // tbEmail
             // 
+            this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbEmail.Location = new System.Drawing.Point(71, 73);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(236, 20);
@@ -44,6 +45,7 @@ namespace ServiLearn
             // 
             // lEmail
             // 
+            this.lEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lEmail.AutoSize = true;
             this.lEmail.Location = new System.Drawing.Point(68, 48);
             this.lEmail.Name = "lEmail";
@@ -53,6 +55,7 @@ namespace ServiLearn
             // 
             // bRecuperar
             // 
+            this.bRecuperar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bRecuperar.Location = new System.Drawing.Point(124, 154);
             this.bRecuperar.Name = "bRecuperar";
             this.bRecuperar.Size = new System.Drawing.Size(137, 23);

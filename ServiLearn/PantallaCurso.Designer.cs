@@ -52,6 +52,7 @@ namespace ServiLearn
             // 
             // lCurso
             // 
+            this.lCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lCurso.AutoSize = true;
             this.lCurso.Location = new System.Drawing.Point(53, 28);
             this.lCurso.Name = "lCurso";
@@ -61,6 +62,7 @@ namespace ServiLearn
             // 
             // lProfesores
             // 
+            this.lProfesores.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lProfesores.AutoSize = true;
             this.lProfesores.Location = new System.Drawing.Point(53, 67);
             this.lProfesores.Name = "lProfesores";
@@ -70,6 +72,7 @@ namespace ServiLearn
             // 
             // bModCurso
             // 
+            this.bModCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bModCurso.Location = new System.Drawing.Point(56, 415);
             this.bModCurso.Name = "bModCurso";
             this.bModCurso.Size = new System.Drawing.Size(105, 23);
@@ -80,6 +83,7 @@ namespace ServiLearn
             // 
             // bEliCurso
             // 
+            this.bEliCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bEliCurso.Location = new System.Drawing.Point(373, 415);
             this.bEliCurso.Name = "bEliCurso";
             this.bEliCurso.Size = new System.Drawing.Size(110, 23);
@@ -90,6 +94,7 @@ namespace ServiLearn
             // 
             // tvCont
             // 
+            this.tvCont.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tvCont.Location = new System.Drawing.Point(56, 134);
             this.tvCont.Multiline = true;
             this.tvCont.Name = "tvCont";
@@ -99,6 +104,7 @@ namespace ServiLearn
             // 
             // tvAdic
             // 
+            this.tvAdic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tvAdic.Location = new System.Drawing.Point(56, 243);
             this.tvAdic.Multiline = true;
             this.tvAdic.Name = "tvAdic";
@@ -109,6 +115,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(53, 218);
             this.label1.Name = "label1";
@@ -118,6 +125,7 @@ namespace ServiLearn
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 109);
             this.label2.Name = "label2";
@@ -127,6 +135,7 @@ namespace ServiLearn
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(561, 108);
             this.label3.Name = "label3";
@@ -136,6 +145,7 @@ namespace ServiLearn
             // 
             // lbUsuariosInscritos
             // 
+            this.lbUsuariosInscritos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbUsuariosInscritos.FormattingEnabled = true;
             this.lbUsuariosInscritos.Location = new System.Drawing.Point(564, 134);
             this.lbUsuariosInscritos.Name = "lbUsuariosInscritos";
@@ -145,6 +155,7 @@ namespace ServiLearn
             // 
             // bExpulsar
             // 
+            this.bExpulsar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bExpulsar.Location = new System.Drawing.Point(564, 415);
             this.bExpulsar.Name = "bExpulsar";
             this.bExpulsar.Size = new System.Drawing.Size(75, 23);
@@ -155,6 +166,7 @@ namespace ServiLearn
             // 
             // tbBuscarUsuario
             // 
+            this.tbBuscarUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBuscarUsuario.Location = new System.Drawing.Point(564, 364);
             this.tbBuscarUsuario.Name = "tbBuscarUsuario";
             this.tbBuscarUsuario.Size = new System.Drawing.Size(140, 20);
@@ -163,6 +175,7 @@ namespace ServiLearn
             // 
             // bValorar
             // 
+            this.bValorar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bValorar.Location = new System.Drawing.Point(222, 415);
             this.bValorar.Name = "bValorar";
             this.bValorar.Size = new System.Drawing.Size(101, 23);
@@ -173,6 +186,7 @@ namespace ServiLearn
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(376, 46);
             this.label4.Name = "label4";
@@ -182,6 +196,7 @@ namespace ServiLearn
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(561, 46);
             this.label5.Name = "label5";
@@ -191,6 +206,7 @@ namespace ServiLearn
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(677, 46);
             this.label6.Name = "label6";
@@ -200,6 +216,7 @@ namespace ServiLearn
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(490, 43);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -209,6 +226,7 @@ namespace ServiLearn
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox2.Location = new System.Drawing.Point(625, 43);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";

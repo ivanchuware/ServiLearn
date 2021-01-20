@@ -74,6 +74,7 @@
             // 
             // labelTitulo
             // 
+            this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(316, 18);
@@ -85,6 +86,7 @@
             // 
             // labelCursos
             // 
+            this.labelCursos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelCursos.AutoSize = true;
             this.labelCursos.Location = new System.Drawing.Point(298, 224);
             this.labelCursos.Name = "labelCursos";
@@ -95,6 +97,7 @@
             // 
             // labelEventos
             // 
+            this.labelEventos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelEventos.AutoSize = true;
             this.labelEventos.Location = new System.Drawing.Point(424, 224);
             this.labelEventos.Name = "labelEventos";
@@ -104,6 +107,7 @@
             // 
             // tbBuscadorCurso
             // 
+            this.tbBuscadorCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBuscadorCurso.Location = new System.Drawing.Point(163, 431);
             this.tbBuscadorCurso.Name = "tbBuscadorCurso";
             this.tbBuscadorCurso.Size = new System.Drawing.Size(108, 20);
@@ -112,6 +116,7 @@
             // 
             // tbBuscadorEvento
             // 
+            this.tbBuscadorEvento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBuscadorEvento.Location = new System.Drawing.Point(552, 431);
             this.tbBuscadorEvento.Name = "tbBuscadorEvento";
             this.tbBuscadorEvento.Size = new System.Drawing.Size(105, 20);
@@ -120,6 +125,7 @@
             // 
             // buttonCrearCurso
             // 
+            this.buttonCrearCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCrearCurso.Location = new System.Drawing.Point(289, 432);
             this.buttonCrearCurso.Name = "buttonCrearCurso";
             this.buttonCrearCurso.Size = new System.Drawing.Size(75, 23);
@@ -130,6 +136,7 @@
             // 
             // buttonCrearEvento
             // 
+            this.buttonCrearEvento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCrearEvento.Location = new System.Drawing.Point(450, 431);
             this.buttonCrearEvento.Name = "buttonCrearEvento";
             this.buttonCrearEvento.Size = new System.Drawing.Size(84, 23);
@@ -141,6 +148,7 @@
             // label1
             // 
             this.label1.AccessibleDescription = "Tipo de cuenta:";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(12, 470);
@@ -152,6 +160,7 @@
             // 
             // lbCursos
             // 
+            this.lbCursos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCursos.FormattingEnabled = true;
             this.lbCursos.Location = new System.Drawing.Point(140, 252);
             this.lbCursos.Name = "lbCursos";
@@ -162,6 +171,7 @@
             // 
             // lbEventos
             // 
+            this.lbEventos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbEventos.FormattingEnabled = true;
             this.lbEventos.Location = new System.Drawing.Point(418, 252);
             this.lbEventos.Name = "lbEventos";
@@ -172,6 +182,7 @@
             // 
             // refresh
             // 
+            this.refresh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.refresh.Location = new System.Drawing.Point(370, 457);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
@@ -182,6 +193,7 @@
             // 
             // bCuenta
             // 
+            this.bCuenta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bCuenta.Location = new System.Drawing.Point(12, 266);
             this.bCuenta.Name = "bCuenta";
             this.bCuenta.Size = new System.Drawing.Size(115, 23);
@@ -192,6 +204,7 @@
             // 
             // bGestionUsuarios
             // 
+            this.bGestionUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bGestionUsuarios.Location = new System.Drawing.Point(12, 431);
             this.bGestionUsuarios.Name = "bGestionUsuarios";
             this.bGestionUsuarios.Size = new System.Drawing.Size(115, 23);
@@ -202,6 +215,7 @@
             // 
             // btMsgs
             // 
+            this.btMsgs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btMsgs.Location = new System.Drawing.Point(683, 306);
             this.btMsgs.Name = "btMsgs";
             this.btMsgs.Size = new System.Drawing.Size(115, 40);
@@ -212,6 +226,7 @@
             // 
             // lNoticias
             // 
+            this.lNoticias.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lNoticias.AutoSize = true;
             this.lNoticias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNoticias.Location = new System.Drawing.Point(577, 9);
@@ -244,6 +259,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
@@ -257,6 +273,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
@@ -290,6 +307,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
@@ -323,6 +341,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Location = new System.Drawing.Point(667, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 23);
@@ -334,6 +353,7 @@
             // calendar1
             // 
             this.calendar1.AllowEditingEvents = true;
+            this.calendar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.calendar1.AutoScroll = true;
             this.calendar1.CalendarDate = new System.DateTime(2021, 1, 19, 16, 53, 14, 691);
             this.calendar1.CalendarView = Calendar.NET.CalendarViews.Month;
@@ -359,6 +379,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ServiLearn.Properties.Resources.ServiLearn2;
             this.pictureBox1.Location = new System.Drawing.Point(354, 76);
             this.pictureBox1.Name = "pictureBox1";
@@ -369,6 +390,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(16, 9);
@@ -379,6 +401,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(181, 454);
             this.label9.Name = "label9";
@@ -388,6 +411,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(567, 454);
             this.label10.Name = "label10";
@@ -397,6 +421,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Location = new System.Drawing.Point(133, 10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 23);
@@ -407,6 +432,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.Location = new System.Drawing.Point(12, 383);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 42);
@@ -417,6 +443,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.Location = new System.Drawing.Point(683, 383);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 42);
@@ -427,6 +454,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ServiLearn.Properties.Resources.empty_profile;
             this.pictureBox2.Location = new System.Drawing.Point(31, 295);
             this.pictureBox2.Name = "pictureBox2";
@@ -437,6 +465,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button5.Location = new System.Drawing.Point(683, 383);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 42);
@@ -447,6 +476,7 @@
             // 
             // button6
             // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button6.Location = new System.Drawing.Point(12, 383);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(115, 42);

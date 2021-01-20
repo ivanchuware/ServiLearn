@@ -38,6 +38,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(70, 23);
             this.label1.Name = "label1";
@@ -47,6 +48,7 @@ namespace ServiLearn
             // 
             // tbValoracion
             // 
+            this.tbValoracion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbValoracion.Location = new System.Drawing.Point(73, 81);
             this.tbValoracion.Name = "tbValoracion";
             this.tbValoracion.Size = new System.Drawing.Size(182, 20);
@@ -54,6 +56,7 @@ namespace ServiLearn
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Location = new System.Drawing.Point(73, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -64,6 +67,7 @@ namespace ServiLearn
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Location = new System.Drawing.Point(180, 120);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);

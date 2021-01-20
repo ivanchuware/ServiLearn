@@ -40,6 +40,7 @@ namespace ServiLearn
             // 
             // tbCurso
             // 
+            this.tbCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbCurso.Location = new System.Drawing.Point(30, 32);
             this.tbCurso.Name = "tbCurso";
             this.tbCurso.Size = new System.Drawing.Size(231, 20);
@@ -54,6 +55,7 @@ namespace ServiLearn
             // 
             // tbDescripcion
             // 
+            this.tbDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbDescripcion.Location = new System.Drawing.Point(30, 72);
             this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
@@ -64,6 +66,7 @@ namespace ServiLearn
             // 
             // bAceptar
             // 
+            this.bAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bAceptar.Location = new System.Drawing.Point(30, 351);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(75, 23);
@@ -74,6 +77,7 @@ namespace ServiLearn
             // 
             // bCancelar
             // 
+            this.bCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bCancelar.Location = new System.Drawing.Point(329, 351);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(75, 23);

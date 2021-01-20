@@ -39,6 +39,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(239, 45);
             this.label1.Name = "label1";
@@ -48,6 +49,7 @@ namespace ServiLearn
             // 
             // invitado_bt
             // 
+            this.invitado_bt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invitado_bt.Location = new System.Drawing.Point(347, 140);
             this.invitado_bt.Name = "invitado_bt";
             this.invitado_bt.Size = new System.Drawing.Size(75, 23);
@@ -58,6 +60,7 @@ namespace ServiLearn
             // 
             // usuario_bt
             // 
+            this.usuario_bt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usuario_bt.Location = new System.Drawing.Point(347, 195);
             this.usuario_bt.Name = "usuario_bt";
             this.usuario_bt.Size = new System.Drawing.Size(75, 23);
@@ -68,6 +71,7 @@ namespace ServiLearn
             // 
             // tutor_bt
             // 
+            this.tutor_bt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tutor_bt.Location = new System.Drawing.Point(347, 243);
             this.tutor_bt.Name = "tutor_bt";
             this.tutor_bt.Size = new System.Drawing.Size(75, 23);
@@ -78,6 +82,7 @@ namespace ServiLearn
             // 
             // ong_bt
             // 
+            this.ong_bt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ong_bt.Location = new System.Drawing.Point(347, 296);
             this.ong_bt.Name = "ong_bt";
             this.ong_bt.Size = new System.Drawing.Size(75, 23);

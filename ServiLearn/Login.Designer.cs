@@ -43,6 +43,7 @@ namespace ServiLearn
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(341, 117);
@@ -53,6 +54,7 @@ namespace ServiLearn
             // 
             // tbUsuario
             // 
+            this.tbUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbUsuario.Location = new System.Drawing.Point(346, 151);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(144, 20);
@@ -61,6 +63,7 @@ namespace ServiLearn
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(341, 183);
@@ -71,6 +74,7 @@ namespace ServiLearn
             // 
             // tbClave
             // 
+            this.tbClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbClave.Location = new System.Drawing.Point(346, 220);
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(144, 20);
@@ -79,6 +83,7 @@ namespace ServiLearn
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(343, 253);
             this.linkLabel1.Name = "linkLabel1";
@@ -90,6 +95,7 @@ namespace ServiLearn
             // 
             // linkLabel2
             // 
+            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(343, 275);
             this.linkLabel2.Name = "linkLabel2";
@@ -101,6 +107,7 @@ namespace ServiLearn
             // 
             // buttonLogin
             // 
+            this.buttonLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLogin.Location = new System.Drawing.Point(578, 220);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(78, 20);
@@ -111,6 +118,7 @@ namespace ServiLearn
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ServiLearn.Properties.Resources.ServiLearn2;
             this.pictureBox1.Location = new System.Drawing.Point(76, 117);
             this.pictureBox1.Name = "pictureBox1";
